@@ -302,6 +302,7 @@ nav.scrolled{
 .port-card{
   background:linear-gradient(180deg,var(--card-2),var(--card));border:1px solid var(--border);border-radius:12px;
   overflow:hidden;display:flex;flex-direction:column;
+  text-decoration:none;color:inherit;
   transition:border-color 0.4s,transform 0.4s cubic-bezier(.22,1,.36,1),box-shadow 0.4s;
 }
 .port-card:hover{
@@ -309,13 +310,18 @@ nav.scrolled{
   transform:translateY(-4px);
   box-shadow:0 24px 60px -20px rgba(0,0,0,0.7),0 0 0 1px rgba(201,168,76,0.08);
 }
+.port-card:focus-visible{
+  outline:none;border-color:var(--gold-light);
+  box-shadow:0 0 0 3px rgba(201,168,76,0.22),0 24px 60px -20px rgba(0,0,0,0.7);
+}
 .port-thumb{height:200px;flex:1;background:var(--dark);display:block;overflow:hidden;position:relative}
 .port-thumb svg{display:block;width:100%;height:100%}
 .port-thumb img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 0.5s}
-.port-card:hover .port-thumb img{transform:scale(1.06)}
+.port-card.port-featured .port-thumb img{object-position:center top}
+.port-card:hover .port-thumb img{transform:scale(1.04)}
 .port-thumb-overlay{
   position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(12,12,12,0.2) 0%,rgba(12,12,12,0.85) 100%);
+  background:linear-gradient(180deg,rgba(12,12,12,0.05) 0%,rgba(12,12,12,0.3) 55%,rgba(12,12,12,0.85) 100%);
   display:flex;align-items:flex-end;justify-content:flex-start;
   padding:1.5rem;
   opacity:0;transition:opacity 0.35s;
@@ -972,392 +978,91 @@ footer .foot-logo em{font-family:"Instrument Serif",serif;font-style:italic;font
     <p class="sec-sub">Each one built from scratch for that specific business type. No recycled templates.</p>
     <div class="portfolio-grid">
 
-      <!-- FEATURED: Plumbing (hero example) -->
-      <div class="port-card port-featured reveal">
+      <!-- FEATURED: Plumbing -->
+      <a class="port-card port-featured reveal" href="sites/plumber-landing.html" target="_blank" rel="noopener">
         <div class="port-thumb">
-          <svg viewBox="0 0 640 440" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-            <defs>
-              <linearGradient id="p1bg" x1="0" y1="0" x2="0.6" y2="1">
-                <stop offset="0" stop-color="#0e1a30"/>
-                <stop offset="1" stop-color="#050a18"/>
-              </linearGradient>
-              <linearGradient id="p1cta" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0" stop-color="#e0c478"/><stop offset="1" stop-color="#c9a84c"/>
-              </linearGradient>
-              <radialGradient id="p1glow" cx="0.7" cy="0.25" r="0.6">
-                <stop offset="0" stop-color="#c9a84c" stop-opacity="0.15"/>
-                <stop offset="1" stop-color="#c9a84c" stop-opacity="0"/>
-              </radialGradient>
-            </defs>
-            <rect width="640" height="440" fill="url(#p1bg)"/>
-            <rect width="640" height="440" fill="url(#p1glow)"/>
-            <!-- nav -->
-            <rect x="0" y="0" width="640" height="38" fill="#050a18" opacity="0.6"/>
-            <rect x="28" y="14" width="84" height="10" rx="2" fill="#e0c478"/>
-            <rect x="400" y="16" width="40" height="6" rx="2" fill="#fff" opacity="0.35"/>
-            <rect x="450" y="16" width="40" height="6" rx="2" fill="#fff" opacity="0.35"/>
-            <rect x="500" y="16" width="40" height="6" rx="2" fill="#fff" opacity="0.35"/>
-            <rect x="548" y="11" width="76" height="18" rx="4" fill="url(#p1cta)"/>
-            <!-- emergency pill -->
-            <rect x="30" y="68" width="180" height="26" rx="13" fill="#d94a3a" fill-opacity="0.12" stroke="#d94a3a" stroke-opacity="0.4"/>
-            <circle cx="48" cy="81" r="4" fill="#ff6050"><animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite"/></circle>
-            <text x="60" y="86" fill="#ff8070" font-family="DM Sans,sans-serif" font-size="11" font-weight="700" letter-spacing="2">24/7 EMERGENCY SERVICE</text>
-            <!-- headline serif -->
-            <text x="30" y="148" fill="#fff" font-family="Fraunces,Georgia,serif" font-size="44" font-weight="500" letter-spacing="-1">Houston's trusted</text>
-            <text x="30" y="196" fill="#e0c478" font-family="Instrument Serif,Georgia,serif" font-style="italic" font-size="44" letter-spacing="-1">plumbing team.</text>
-            <rect x="30" y="218" width="340" height="5" rx="2" fill="#fff" opacity="0.3"/>
-            <rect x="30" y="232" width="280" height="5" rx="2" fill="#fff" opacity="0.2"/>
-            <!-- CTAs -->
-            <rect x="30" y="256" width="150" height="34" rx="4" fill="url(#p1cta)"/>
-            <text x="105" y="278" fill="#181310" font-family="DM Sans,sans-serif" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="2">CALL (281) 555-0100</text>
-            <rect x="190" y="256" width="130" height="34" rx="4" fill="none" stroke="#fff" stroke-opacity="0.3"/>
-            <text x="255" y="278" fill="#fff" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" text-anchor="middle" letter-spacing="2" opacity="0.85">GET A QUOTE</text>
-            <!-- stats strip -->
-            <rect x="28" y="320" width="340" height="56" rx="6" fill="#0a1426" stroke="#1a2840"/>
-            <line x1="141" y1="332" x2="141" y2="364" stroke="#1a2840"/>
-            <line x1="254" y1="332" x2="254" y2="364" stroke="#1a2840"/>
-            <text x="85" y="348" fill="#e0c478" font-family="Bebas Neue,sans-serif" font-size="20" text-anchor="middle">15+</text>
-            <text x="85" y="366" fill="#fff" font-family="DM Sans,sans-serif" font-size="8" opacity="0.5" text-anchor="middle">YEARS</text>
-            <text x="198" y="348" fill="#e0c478" font-family="Bebas Neue,sans-serif" font-size="20" text-anchor="middle">2k+</text>
-            <text x="198" y="366" fill="#fff" font-family="DM Sans,sans-serif" font-size="8" opacity="0.5" text-anchor="middle">JOBS DONE</text>
-            <text x="311" y="348" fill="#e0c478" font-family="Bebas Neue,sans-serif" font-size="20" text-anchor="middle">5.0</text>
-            <text x="311" y="366" fill="#fff" font-family="DM Sans,sans-serif" font-size="8" opacity="0.5" text-anchor="middle">RATED</text>
-            <!-- right card: quote form -->
-            <rect x="404" y="68" width="212" height="320" rx="10" fill="#091426" stroke="#e0c478" stroke-opacity="0.25"/>
-            <rect x="420" y="86" width="110" height="10" rx="2" fill="#e0c478" opacity="0.55"/>
-            <rect x="420" y="106" width="180" height="6" rx="2" fill="#fff" opacity="0.3"/>
-            <rect x="420" y="134" width="180" height="32" rx="4" fill="#0e1a2e" stroke="#1a2638"/>
-            <rect x="432" y="146" width="80" height="6" rx="2" fill="#fff" opacity="0.4"/>
-            <rect x="420" y="174" width="180" height="32" rx="4" fill="#0e1a2e" stroke="#1a2638"/>
-            <rect x="432" y="186" width="70" height="6" rx="2" fill="#fff" opacity="0.4"/>
-            <rect x="420" y="214" width="180" height="62" rx="4" fill="#0e1a2e" stroke="#1a2638"/>
-            <rect x="432" y="228" width="140" height="4" rx="2" fill="#fff" opacity="0.25"/>
-            <rect x="432" y="238" width="120" height="4" rx="2" fill="#fff" opacity="0.18"/>
-            <rect x="432" y="248" width="90" height="4" rx="2" fill="#fff" opacity="0.18"/>
-            <rect x="420" y="288" width="180" height="34" rx="4" fill="url(#p1cta)"/>
-            <text x="510" y="310" fill="#181310" font-family="DM Sans,sans-serif" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1.5">REQUEST QUOTE</text>
-            <text x="510" y="344" fill="#fff" font-family="DM Sans,sans-serif" font-size="9" opacity="0.4" text-anchor="middle">Response within 1 hour</text>
-          </svg>
-          <div class="port-thumb-overlay"><span class="port-overlay-btn">View Project</span></div>
+          <img src="sites/thumbnails/plumber-landing.jpg" alt="Rivera Plumbing &amp; Drain website preview" loading="lazy" width="1200" height="750"/>
+          <div class="port-thumb-overlay"><span class="port-overlay-btn">Visit Live Site &rarr;</span></div>
         </div>
         <div class="port-info">
           <div class="port-tag">Plumbing &middot; Featured</div>
           <div class="port-name">Rivera Plumbing &amp; Drain</div>
-          <div class="port-desc">Navy and amber, trust-focused editorial layout. Sticky emergency CTA, inline quote form, 15-year trust stats. Two calls from Google in week one.</div>
-          <a href="#" class="port-link">View Live Site &rarr;</a>
+          <div class="port-desc">Navy and amber, trust-focused editorial layout. Sticky 24/7 emergency stamp, live calls-answered ticker, inline quote form, licensed-bonded-insured crest, and a Houston service-area map.</div>
+          <span class="port-link">View Live Site &rarr;</span>
         </div>
-      </div>
+      </a>
 
-      <!-- HVAC: weather widget focus -->
-      <div class="port-card reveal" style="transition-delay:0.1s">
+      <!-- HVAC -->
+      <a class="port-card reveal" href="sites/hvac-polarair.html" target="_blank" rel="noopener" style="transition-delay:0.1s">
         <div class="port-thumb">
-          <svg viewBox="0 0 360 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-            <defs>
-              <linearGradient id="p2bg" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#0d2340"/><stop offset="1" stop-color="#061628"/>
-              </linearGradient>
-              <linearGradient id="p2cta" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0" stop-color="#5ab0e8"/><stop offset="1" stop-color="#3a7bd5"/>
-              </linearGradient>
-            </defs>
-            <rect width="360" height="240" fill="url(#p2bg)"/>
-            <rect width="360" height="24" fill="#051423"/>
-            <rect x="14" y="8" width="54" height="8" rx="2" fill="#5ab0e8"/>
-            <rect x="300" y="7" width="48" height="11" rx="3" fill="url(#p2cta)"/>
-            <!-- hero split: left text, right weather card -->
-            <text x="20" y="64" fill="#fff" font-family="Fraunces,Georgia,serif" font-size="22" font-weight="500" letter-spacing="-0.5">Cool homes,</text>
-            <text x="20" y="86" fill="#5ab0e8" font-family="Instrument Serif,Georgia,serif" font-style="italic" font-size="22">warm service.</text>
-            <rect x="20" y="98" width="170" height="4" rx="2" fill="#fff" opacity="0.25"/>
-            <rect x="20" y="108" width="140" height="4" rx="2" fill="#fff" opacity="0.15"/>
-            <rect x="20" y="126" width="86" height="24" rx="3" fill="url(#p2cta)"/>
-            <text x="63" y="142" fill="#061628" font-family="DM Sans,sans-serif" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="1">SCHEDULE NOW</text>
-            <!-- weather widget -->
-            <rect x="214" y="44" width="126" height="104" rx="10" fill="#081e36" stroke="#3a7bd5" stroke-opacity="0.35"/>
-            <text x="225" y="62" fill="#5ab0e8" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" letter-spacing="2">HOUSTON, TX</text>
-            <!-- sun icon -->
-            <circle cx="242" cy="90" r="12" fill="#f5c64b"/>
-            <g stroke="#f5c64b" stroke-width="1.5" stroke-linecap="round">
-              <line x1="242" y1="68" x2="242" y2="74"/>
-              <line x1="242" y1="106" x2="242" y2="112"/>
-              <line x1="220" y1="90" x2="226" y2="90"/>
-              <line x1="258" y1="90" x2="264" y2="90"/>
-              <line x1="226" y1="74" x2="230" y2="78"/>
-              <line x1="254" y1="102" x2="258" y2="106"/>
-            </g>
-            <text x="275" y="98" fill="#fff" font-family="Bebas Neue,sans-serif" font-size="32" letter-spacing="1">94&deg;</text>
-            <text x="225" y="130" fill="#fff" font-family="DM Sans,sans-serif" font-size="9" opacity="0.6">Sunny &middot; feels like 101&deg;</text>
-            <text x="225" y="142" fill="#f5c64b" font-family="DM Sans,sans-serif" font-size="8" font-weight="600">AC tune-ups recommended</text>
-            <!-- service cards -->
-            <rect x="14" y="164" width="106" height="64" rx="6" fill="#0a1e35" stroke="#1a3048"/>
-            <rect x="127" y="164" width="106" height="64" rx="6" fill="#0a1e35" stroke="#1a3048"/>
-            <rect x="240" y="164" width="106" height="64" rx="6" fill="#0a1e35" stroke="#1a3048"/>
-            <rect x="26" y="174" width="18" height="18" rx="3" fill="#5ab0e8" opacity="0.15"/>
-            <rect x="139" y="174" width="18" height="18" rx="3" fill="#5ab0e8" opacity="0.15"/>
-            <rect x="252" y="174" width="18" height="18" rx="3" fill="#5ab0e8" opacity="0.15"/>
-            <text x="26" y="208" fill="#fff" font-family="DM Sans,sans-serif" font-size="8" font-weight="700">AC Repair</text>
-            <text x="139" y="208" fill="#fff" font-family="DM Sans,sans-serif" font-size="8" font-weight="700">Heating</text>
-            <text x="252" y="208" fill="#fff" font-family="DM Sans,sans-serif" font-size="8" font-weight="700">Air Quality</text>
-            <text x="26" y="220" fill="#fff" font-family="DM Sans,sans-serif" font-size="6.5" opacity="0.5">24/7 emergency</text>
-            <text x="139" y="220" fill="#fff" font-family="DM Sans,sans-serif" font-size="6.5" opacity="0.5">Tune-ups &amp; installs</text>
-            <text x="252" y="220" fill="#fff" font-family="DM Sans,sans-serif" font-size="6.5" opacity="0.5">Duct cleaning</text>
-          </svg>
-          <div class="port-thumb-overlay"><span class="port-overlay-btn">View Project</span></div>
+          <img src="sites/thumbnails/hvac-polarair.jpg" alt="PolarAir HVAC website preview" loading="lazy" width="1200" height="750"/>
+          <div class="port-thumb-overlay"><span class="port-overlay-btn">Visit Live Site &rarr;</span></div>
         </div>
         <div class="port-info">
           <div class="port-tag">HVAC</div>
           <div class="port-name">PolarAir HVAC Services</div>
-          <div class="port-desc">Live Houston weather widget drives seasonal CTAs. Switched from paying $200/mo for nothing.</div>
-          <a href="#" class="port-link">View Live Site &rarr;</a>
+          <div class="port-desc">Animated SVG thermometer pulling live Houston temp, summer/winter theme toggle, dual "Cool / Heat" CTAs.</div>
+          <span class="port-link">View Live Site &rarr;</span>
         </div>
-      </div>
+      </a>
 
-      <!-- LANDSCAPING: before/after slider -->
-      <div class="port-card reveal" style="transition-delay:0.2s">
+      <!-- LANDSCAPING -->
+      <a class="port-card reveal" href="sites/landscaper-greenedge.html" target="_blank" rel="noopener" style="transition-delay:0.2s">
         <div class="port-thumb">
-          <svg viewBox="0 0 360 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-            <defs>
-              <linearGradient id="p3bg" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#1a2e1a"/><stop offset="1" stop-color="#0a1808"/>
-              </linearGradient>
-              <linearGradient id="p3before" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#544833"/><stop offset="1" stop-color="#2d2617"/>
-              </linearGradient>
-              <linearGradient id="p3after" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#5fa35a"/><stop offset="1" stop-color="#2d5a30"/>
-              </linearGradient>
-            </defs>
-            <rect width="360" height="240" fill="url(#p3bg)"/>
-            <rect width="360" height="22" fill="#0a1808"/>
-            <rect x="14" y="7" width="70" height="8" rx="2" fill="#8bc68f"/>
-            <rect x="300" y="6" width="48" height="10" rx="3" fill="#5fa35a"/>
-            <!-- section heading -->
-            <text x="20" y="46" fill="#8bc68f" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" letter-spacing="2">OUR WORK</text>
-            <text x="20" y="68" fill="#fff" font-family="Fraunces,Georgia,serif" font-size="20" font-weight="500" letter-spacing="-0.5">See the difference.</text>
-            <!-- before/after slider -->
-            <rect x="20" y="84" width="320" height="108" rx="6" fill="url(#p3after)"/>
-            <!-- left half = before -->
-            <clipPath id="p3clip"><rect x="20" y="84" width="164" height="108"/></clipPath>
-            <rect x="20" y="84" width="164" height="108" fill="url(#p3before)" clip-path="url(#p3clip)"/>
-            <!-- before patchy grass texture -->
-            <g clip-path="url(#p3clip)" opacity="0.6">
-              <circle cx="50" cy="130" r="14" fill="#3d3420"/>
-              <circle cx="110" cy="160" r="18" fill="#3d3420"/>
-              <circle cx="150" cy="110" r="10" fill="#3d3420"/>
-              <circle cx="80" cy="175" r="9" fill="#3d3420"/>
-            </g>
-            <!-- after: tree silhouettes -->
-            <g opacity="0.45">
-              <circle cx="230" cy="140" r="20" fill="#2d5a30"/>
-              <rect x="228" y="155" width="4" height="24" fill="#1a2e1a"/>
-              <circle cx="290" cy="130" r="26" fill="#2d5a30"/>
-              <rect x="288" y="150" width="4" height="30" fill="#1a2e1a"/>
-              <rect x="20" y="176" width="320" height="16" fill="#2d5a30" opacity="0.5"/>
-            </g>
-            <!-- labels -->
-            <rect x="28" y="92" width="46" height="16" rx="3" fill="#000" fill-opacity="0.6"/>
-            <text x="51" y="103" fill="#fff" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="1">BEFORE</text>
-            <rect x="288" y="92" width="46" height="16" rx="3" fill="#000" fill-opacity="0.6"/>
-            <text x="311" y="103" fill="#fff" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="1">AFTER</text>
-            <!-- divider handle -->
-            <line x1="184" y1="84" x2="184" y2="192" stroke="#fff" stroke-width="2"/>
-            <circle cx="184" cy="138" r="12" fill="#fff"/>
-            <path d="M178 138 l-3 -3 M178 138 l-3 3 M190 138 l3 -3 M190 138 l3 3" stroke="#1a2e1a" stroke-width="1.5" fill="none"/>
-            <!-- booking row -->
-            <rect x="20" y="204" width="152" height="22" rx="4" fill="#5fa35a"/>
-            <text x="96" y="218" fill="#0a1808" font-family="DM Sans,sans-serif" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="1.5">BOOK FREE ESTIMATE</text>
-            <rect x="180" y="204" width="160" height="22" rx="4" fill="none" stroke="#fff" stroke-opacity="0.2"/>
-            <text x="260" y="218" fill="#fff" font-family="DM Sans,sans-serif" font-size="8" opacity="0.6" text-anchor="middle" letter-spacing="1">VIEW 40+ PROJECTS</text>
-          </svg>
-          <div class="port-thumb-overlay"><span class="port-overlay-btn">View Project</span></div>
+          <img src="sites/thumbnails/landscaper-greenedge.jpg" alt="Green Edge Lawn &amp; Landscape website preview" loading="lazy" width="1200" height="750"/>
+          <div class="port-thumb-overlay"><span class="port-overlay-btn">Visit Live Site &rarr;</span></div>
         </div>
         <div class="port-info">
           <div class="port-tag">Landscaping</div>
           <div class="port-name">Green Edge Lawn &amp; Landscape</div>
-          <div class="port-desc">Dragable before/after slider, full gallery, online estimate booking. Earthy palette.</div>
-          <a href="#" class="port-link">View Live Site &rarr;</a>
+          <div class="port-desc">Hand-drawn botanical illustrations, working draggable before/after slider, Polaroid-style gallery.</div>
+          <span class="port-link">View Live Site &rarr;</span>
         </div>
-      </div>
+      </a>
 
-      <!-- ROOFING: alternating service rows + insurance -->
-      <div class="port-card reveal" style="transition-delay:0.05s">
+      <!-- ROOFING -->
+      <a class="port-card reveal" href="sites/roofer-lonestar.html" target="_blank" rel="noopener" style="transition-delay:0.05s">
         <div class="port-thumb">
-          <svg viewBox="0 0 360 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-            <defs>
-              <linearGradient id="p4bg" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#1e0a0e"/><stop offset="1" stop-color="#0a0406"/>
-              </linearGradient>
-              <linearGradient id="p4red" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0" stop-color="#e04a3a"/><stop offset="1" stop-color="#b83020"/>
-              </linearGradient>
-            </defs>
-            <rect width="360" height="240" fill="url(#p4bg)"/>
-            <rect width="360" height="22" fill="#0a0406"/>
-            <rect x="14" y="7" width="70" height="8" rx="2" fill="#e04a3a"/>
-            <rect x="300" y="6" width="48" height="10" rx="3" fill="url(#p4red)"/>
-            <!-- split hero with shingle pattern -->
-            <rect x="0" y="22" width="360" height="96" fill="#1a0608"/>
-            <!-- shingle illustration right side -->
-            <g opacity="0.55">
-              <polygon points="200,22 360,22 360,118 200,118 220,100 260,100 280,82 320,82 340,60 360,60" fill="#3a1012"/>
-              <line x1="200" y1="118" x2="360" y2="118" stroke="#c94040" stroke-width="1" opacity="0.4"/>
-            </g>
-            <!-- insurance badge -->
-            <g transform="translate(280,38)">
-              <circle r="22" fill="none" stroke="#e04a3a" stroke-width="1.5" opacity="0.7"/>
-              <path d="M-10 -2 l6 6 l14 -12" stroke="#e04a3a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-              <text y="36" fill="#e04a3a" font-family="DM Sans,sans-serif" font-size="6" font-weight="700" text-anchor="middle" letter-spacing="1">INSURED</text>
-            </g>
-            <!-- headline -->
-            <text x="20" y="56" fill="#e04a3a" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" letter-spacing="2">FAMILY OWNED SINCE 1998</text>
-            <text x="20" y="84" fill="#fff" font-family="Fraunces,Georgia,serif" font-size="22" font-weight="500" letter-spacing="-0.5">Roofs done right.</text>
-            <text x="20" y="106" fill="#fff" opacity="0.5" font-family="DM Sans,sans-serif" font-size="10">Free inspection &middot; Insurance claims handled</text>
-            <!-- alternating service rows -->
-            <rect x="14" y="128" width="332" height="34" rx="4" fill="#1a0608" stroke="#2a0a0a"/>
-            <rect x="22" y="136" width="18" height="18" rx="3" fill="#e04a3a" opacity="0.2"/>
-            <text x="50" y="150" fill="#fff" font-family="DM Sans,sans-serif" font-size="10" font-weight="700">Residential Roof Replacement</text>
-            <text x="50" y="160" fill="#fff" font-family="DM Sans,sans-serif" font-size="7" opacity="0.5">Asphalt, metal, tile &middot; 20+ year warranty</text>
-            <rect x="295" y="138" width="44" height="14" rx="3" fill="none" stroke="#e04a3a" stroke-opacity="0.6"/>
-            <text x="317" y="148" fill="#e04a3a" font-family="DM Sans,sans-serif" font-size="7" font-weight="700" text-anchor="middle" letter-spacing="1">DETAILS</text>
-            <rect x="14" y="168" width="332" height="34" rx="4" fill="#0f0204" stroke="#2a0a0a"/>
-            <rect x="22" y="176" width="18" height="18" rx="3" fill="#e04a3a" opacity="0.2"/>
-            <text x="50" y="190" fill="#fff" font-family="DM Sans,sans-serif" font-size="10" font-weight="700">Storm Damage &amp; Insurance Claims</text>
-            <text x="50" y="200" fill="#fff" font-family="DM Sans,sans-serif" font-size="7" opacity="0.5">We work directly with your adjuster</text>
-            <rect x="295" y="178" width="44" height="14" rx="3" fill="none" stroke="#e04a3a" stroke-opacity="0.6"/>
-            <text x="317" y="188" fill="#e04a3a" font-family="DM Sans,sans-serif" font-size="7" font-weight="700" text-anchor="middle" letter-spacing="1">DETAILS</text>
-            <!-- cta -->
-            <rect x="14" y="210" width="332" height="22" rx="4" fill="url(#p4red)"/>
-            <text x="180" y="224" fill="#fff" font-family="DM Sans,sans-serif" font-size="10" font-weight="700" text-anchor="middle" letter-spacing="2">SCHEDULE FREE INSPECTION</text>
-          </svg>
-          <div class="port-thumb-overlay"><span class="port-overlay-btn">View Project</span></div>
+          <img src="sites/thumbnails/roofer-lonestar.jpg" alt="Lone Star Roofing Co. website preview" loading="lazy" width="1200" height="750"/>
+          <div class="port-thumb-overlay"><span class="port-overlay-btn">Visit Live Site &rarr;</span></div>
         </div>
         <div class="port-info">
           <div class="port-tag">Roofing</div>
           <div class="port-name">Lone Star Roofing Co.</div>
-          <div class="port-desc">Bold red &amp; charcoal. Insurance claims band, stacked service rows, free inspection CTA.</div>
-          <a href="#" class="port-link">View Live Site &rarr;</a>
+          <div class="port-desc">Vintage circular trade crest, Texas star motifs, heritage "Since 1998" metal plaque, worn-paper textures.</div>
+          <span class="port-link">View Live Site &rarr;</span>
         </div>
-      </div>
+      </a>
 
-      <!-- ELECTRICAL: voltage-yellow, 24/7 emergency -->
-      <div class="port-card reveal" style="transition-delay:0.15s">
+      <!-- ELECTRICAL -->
+      <a class="port-card reveal" href="sites/electrician-voltage.html" target="_blank" rel="noopener" style="transition-delay:0.15s">
         <div class="port-thumb">
-          <svg viewBox="0 0 360 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-            <defs>
-              <linearGradient id="p5bg" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#0a1020"/><stop offset="1" stop-color="#050810"/>
-              </linearGradient>
-              <linearGradient id="p5y" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0" stop-color="#ffd452"/><stop offset="1" stop-color="#e8b63a"/>
-              </linearGradient>
-            </defs>
-            <rect width="360" height="240" fill="url(#p5bg)"/>
-            <!-- emergency band top -->
-            <rect x="0" y="0" width="360" height="22" fill="url(#p5y)"/>
-            <g transform="translate(16,5)">
-              <path d="M6 0 L0 9 l5 0 l-3 8 L10 6 l-5 0 z" fill="#0a1020"/>
-            </g>
-            <text x="180" y="15" fill="#0a1020" font-family="DM Sans,sans-serif" font-size="9" font-weight="800" text-anchor="middle" letter-spacing="2">24/7 EMERGENCY ELECTRICAL &middot; CALL NOW</text>
-            <!-- nav -->
-            <rect x="0" y="22" width="360" height="26" fill="#0a1020"/>
-            <rect x="14" y="32" width="68" height="8" rx="2" fill="#ffd452"/>
-            <rect x="300" y="30" width="48" height="12" rx="3" fill="url(#p5y)"/>
-            <!-- photo strip hero (images represented as abstract gradients) -->
-            <rect x="0" y="48" width="360" height="100" fill="#0a1424"/>
-            <!-- circuit pattern -->
-            <g stroke="#ffd452" stroke-opacity="0.08" stroke-width="1" fill="none">
-              <path d="M0 80 h80 v20 h60 v-20 h80 v40 h140"/>
-              <path d="M20 128 h60 v-30 h80 v30 h120"/>
-              <circle cx="80" cy="80" r="3"/>
-              <circle cx="140" cy="100" r="3"/>
-              <circle cx="220" cy="60" r="3"/>
-              <circle cx="80" cy="98" r="3"/>
-            </g>
-            <text x="20" y="82" fill="#ffd452" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" letter-spacing="2">LICENSED &middot; BONDED &middot; INSURED</text>
-            <text x="20" y="112" fill="#fff" font-family="Fraunces,Georgia,serif" font-size="22" font-weight="500" letter-spacing="-0.5">Power you can</text>
-            <text x="20" y="134" fill="#ffd452" font-family="Instrument Serif,Georgia,serif" font-style="italic" font-size="22">count on.</text>
-            <!-- icon service grid -->
-            <rect x="14" y="160" width="80" height="70" rx="5" fill="#0a1424" stroke="#1a2438"/>
-            <rect x="100" y="160" width="80" height="70" rx="5" fill="#0a1424" stroke="#1a2438"/>
-            <rect x="186" y="160" width="80" height="70" rx="5" fill="#0a1424" stroke="#1a2438"/>
-            <rect x="272" y="160" width="74" height="70" rx="5" fill="#0a1424" stroke="#1a2438"/>
-            <!-- icons -->
-            <g transform="translate(44,176)" stroke="#ffd452" stroke-width="1.5" fill="none"><path d="M6 0 L0 9 l5 0 l-3 8 L10 6 l-5 0 z"/></g>
-            <rect x="132" y="174" width="16" height="20" rx="2" fill="none" stroke="#ffd452" stroke-width="1.5"/>
-            <g transform="translate(220,176)" stroke="#ffd452" stroke-width="1.5" fill="none"><circle cx="6" cy="6" r="6"/><line x1="6" y1="6" x2="6" y2="18"/></g>
-            <g transform="translate(302,176)" stroke="#ffd452" stroke-width="1.5" fill="none"><rect x="0" y="0" width="14" height="14"/><line x1="4" y1="4" x2="10" y2="4"/><line x1="4" y1="8" x2="10" y2="8"/></g>
-            <text x="54" y="210" fill="#fff" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" text-anchor="middle">Panel</text>
-            <text x="54" y="220" fill="#fff" font-family="DM Sans,sans-serif" font-size="6" opacity="0.5" text-anchor="middle">Upgrades</text>
-            <text x="140" y="210" fill="#fff" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" text-anchor="middle">EV</text>
-            <text x="140" y="220" fill="#fff" font-family="DM Sans,sans-serif" font-size="6" opacity="0.5" text-anchor="middle">Chargers</text>
-            <text x="226" y="210" fill="#fff" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" text-anchor="middle">Lighting</text>
-            <text x="226" y="220" fill="#fff" font-family="DM Sans,sans-serif" font-size="6" opacity="0.5" text-anchor="middle">Design</text>
-            <text x="309" y="210" fill="#fff" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" text-anchor="middle">Smart</text>
-            <text x="309" y="220" fill="#fff" font-family="DM Sans,sans-serif" font-size="6" opacity="0.5" text-anchor="middle">Home</text>
-          </svg>
-          <div class="port-thumb-overlay"><span class="port-overlay-btn">View Project</span></div>
+          <img src="sites/thumbnails/electrician-voltage.jpg" alt="Voltage Electric Co. website preview" loading="lazy" width="1200" height="750"/>
+          <div class="port-thumb-overlay"><span class="port-overlay-btn">Visit Live Site &rarr;</span></div>
         </div>
         <div class="port-info">
           <div class="port-tag">Electrical</div>
           <div class="port-name">Voltage Electric Co.</div>
-          <div class="port-desc">Dark navy &amp; electric yellow. 24/7 emergency band, circuit-pattern hero, 4-up service grid.</div>
-          <a href="#" class="port-link">View Live Site &rarr;</a>
+          <div class="port-desc">Flickering lightning SVG, animated voltage gauge, circuit-board backdrop, mono-font voltage readouts.</div>
+          <span class="port-link">View Live Site &rarr;</span>
         </div>
-      </div>
+      </a>
 
-      <!-- RESTAURANT: editorial menu -->
-      <div class="port-card reveal" style="transition-delay:0.25s">
+      <!-- RESTAURANT -->
+      <a class="port-card reveal" href="sites/restaurant-mesa.html" target="_blank" rel="noopener" style="transition-delay:0.25s">
         <div class="port-thumb">
-          <svg viewBox="0 0 360 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-            <defs>
-              <linearGradient id="p6bg" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#1a0f08"/><stop offset="1" stop-color="#0e0805"/>
-              </linearGradient>
-            </defs>
-            <rect width="360" height="240" fill="url(#p6bg)"/>
-            <!-- editorial nav centered -->
-            <rect width="360" height="36" fill="#0e0805"/>
-            <text x="180" y="22" fill="#f0dcc0" font-family="Fraunces,Georgia,serif" font-size="14" font-weight="500" text-anchor="middle" letter-spacing="2">MESA</text>
-            <line x1="144" y1="26" x2="216" y2="26" stroke="#b8804a" stroke-width="0.5" opacity="0.5"/>
-            <text x="180" y="32" fill="#b8804a" font-family="Instrument Serif,Georgia,serif" font-style="italic" font-size="7" text-anchor="middle" letter-spacing="3">kitchen &amp; bar</text>
-            <!-- hero dish illustration placeholder -->
-            <circle cx="88" cy="108" r="46" fill="#2a1810"/>
-            <circle cx="88" cy="108" r="36" fill="#4a2818" opacity="0.8"/>
-            <ellipse cx="88" cy="100" rx="18" ry="6" fill="#d4804a" opacity="0.6"/>
-            <ellipse cx="88" cy="110" rx="14" ry="4" fill="#f0a060" opacity="0.7"/>
-            <circle cx="74" cy="104" r="3" fill="#8bc267" opacity="0.8"/>
-            <circle cx="102" cy="114" r="3" fill="#8bc267" opacity="0.8"/>
-            <!-- editorial text -->
-            <text x="162" y="76" fill="#b8804a" font-family="DM Sans,sans-serif" font-size="7" font-weight="700" letter-spacing="3">TONIGHT'S MENU</text>
-            <text x="162" y="104" fill="#f0dcc0" font-family="Fraunces,Georgia,serif" font-size="20" font-weight="500" letter-spacing="-0.5">Seasonal cuts,</text>
-            <text x="162" y="126" fill="#b8804a" font-family="Instrument Serif,Georgia,serif" font-style="italic" font-size="20" letter-spacing="-0.5">local fire.</text>
-            <rect x="162" y="138" width="160" height="3" rx="1" fill="#f0dcc0" opacity="0.2"/>
-            <rect x="162" y="146" width="130" height="3" rx="1" fill="#f0dcc0" opacity="0.15"/>
-            <!-- menu tabs -->
-            <rect x="20" y="170" width="320" height="1" fill="#b8804a" opacity="0.3"/>
-            <text x="36" y="185" fill="#f0dcc0" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" letter-spacing="2">DINNER</text>
-            <line x1="22" y1="192" x2="72" y2="192" stroke="#b8804a" stroke-width="1.5"/>
-            <text x="104" y="185" fill="#f0dcc0" opacity="0.4" font-family="DM Sans,sans-serif" font-size="8" letter-spacing="2">BAR</text>
-            <text x="160" y="185" fill="#f0dcc0" opacity="0.4" font-family="DM Sans,sans-serif" font-size="8" letter-spacing="2">WINE</text>
-            <text x="218" y="185" fill="#f0dcc0" opacity="0.4" font-family="DM Sans,sans-serif" font-size="8" letter-spacing="2">DESSERT</text>
-            <!-- menu item row -->
-            <text x="20" y="210" fill="#f0dcc0" font-family="Fraunces,Georgia,serif" font-size="11" font-weight="500">Mesquite Ribeye</text>
-            <text x="340" y="210" fill="#b8804a" font-family="Fraunces,Georgia,serif" font-size="11" font-weight="500" text-anchor="end">48</text>
-            <text x="20" y="222" fill="#f0dcc0" opacity="0.55" font-family="DM Sans,sans-serif" font-size="7">14oz prime, chimichurri, smoked bone marrow</text>
-            <!-- reservations pill -->
-            <rect x="260" y="200" width="0" height="0" fill="none"/>
-          </svg>
-          <div class="port-thumb-overlay"><span class="port-overlay-btn">View Project</span></div>
+          <img src="sites/thumbnails/restaurant-mesa.jpg" alt="Mesa Kitchen &amp; Bar website preview" loading="lazy" width="1200" height="750"/>
+          <div class="port-thumb-overlay"><span class="port-overlay-btn">Visit Live Site &rarr;</span></div>
         </div>
         <div class="port-info">
           <div class="port-tag">Restaurant</div>
           <div class="port-name">Mesa Kitchen &amp; Bar</div>
-          <div class="port-desc">Warm cream &amp; terracotta, tabbed menu with pricing, OpenTable reservation integration.</div>
-          <a href="#" class="port-link">View Live Site &rarr;</a>
+          <div class="port-desc">Oversized italic Cormorant hero, chalkboard specials, printed-menu leader dots, editorial pull-quote.</div>
+          <span class="port-link">View Live Site &rarr;</span>
         </div>
-      </div>
+      </a>
 
     </div>
-  </div>
 </section>
 
 <!-- PRICING -->
