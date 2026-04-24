@@ -2,14 +2,6 @@ import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { ShieldCheck } from 'lucide-react';
 
-const BADGES = [
-  'U.S. Army Veteran',
-  'PMP Certified',
-  '12x Salesforce Certified',
-  'Serving Nationwide',
-  'SAFe Scrum Master',
-];
-
 export function About() {
   const sectionRef = useRef<HTMLElement>(null);
   const portraitRef = useRef<HTMLDivElement>(null);
@@ -242,36 +234,12 @@ export function About() {
               " No excuses. No delays. You get the keys and we move on.
             </motion.p>
 
-            {/* Badges */}
-            <motion.ul
-              initial="hidden"
-              animate={inView ? 'visible' : 'hidden'}
-              variants={{
-                hidden: {},
-                visible: { transition: { staggerChildren: 0.07, delayChildren: 0.6 } },
-              }}
-              className="mt-8 flex flex-wrap gap-2.5"
-            >
-              {BADGES.map((badge) => (
-                <motion.li
-                  key={badge}
-                  variants={{
-                    hidden: { opacity: 0, y: 10, scale: 0.96 },
-                    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5 } },
-                  }}
-                  className="glass rounded-full px-3.5 py-1.5 text-[0.72rem] text-[#c5beb1] hover:border-[#f5b84a]/40 hover:text-[#efeae0] transition-colors"
-                >
-                  {badge}
-                </motion.li>
-              ))}
-            </motion.ul>
-
             {/* Signature block */}
             <motion.div
               initial={{ opacity: 0, y: 14 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.9 }}
-              className="mt-10"
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="mt-12"
             >
               <div
                 aria-hidden
@@ -282,28 +250,30 @@ export function About() {
                 }}
               />
 
-              {/* SVG cursive signature */}
-              <svg
-                viewBox="0 0 340 80"
-                className="h-16 md:h-[72px] w-auto max-w-[320px]"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-label="Matt Butler signature"
+              {/* Signature — Mrs Saint Delafield is a formal signature script */}
+              <motion.div
+                initial={{ opacity: 0, y: 8, filter: 'blur(4px)' }}
+                animate={
+                  inView
+                    ? { opacity: 1, y: 0, filter: 'blur(0px)' }
+                    : { opacity: 0, y: 8, filter: 'blur(4px)' }
+                }
+                transition={{ duration: 1.4, delay: 0.85, ease: [0.22, 1, 0.36, 1] }}
+                className="gradient-warm select-none leading-none"
+                style={{
+                  fontFamily: "'Mrs Saint Delafield', 'Brush Script MT', cursive",
+                  fontSize: 'clamp(3.2rem, 6.4vw, 5rem)',
+                  letterSpacing: '-0.01em',
+                  filter: 'drop-shadow(0 4px 16px rgba(245,184,74,0.25))',
+                  lineHeight: '1',
+                  paddingBottom: '0.15em',
+                }}
+                aria-label="Matthew Butler — signature"
               >
-                <motion.path
-                  d="M6 54 C 12 32 20 18 26 34 C 30 46 34 56 40 42 C 44 32 50 18 56 32 C 60 42 64 54 70 44 C 74 36 78 28 82 46 C 84 56 88 62 94 50 M 100 30 C 104 24 108 24 110 34 C 112 46 114 56 118 50 C 122 46 124 40 126 46 M 136 18 C 136 30 134 46 136 54 C 138 60 142 56 146 48 M 154 30 C 158 24 164 26 164 38 C 164 50 160 56 156 52 C 152 48 152 40 158 38 M 176 14 C 176 28 174 46 176 56 C 178 62 182 58 186 48 C 190 38 192 28 198 34 C 202 38 202 48 206 52 C 210 56 214 48 216 40 M 228 30 C 224 36 224 52 230 54 C 238 58 240 44 240 36 C 240 28 236 24 234 32 M 254 14 C 252 28 250 46 254 56 C 258 62 262 54 264 46 M 274 36 C 272 44 272 54 278 54 C 286 54 288 40 286 34 C 284 28 280 28 278 36 M 298 34 C 294 40 294 54 300 54 C 308 54 308 40 304 36 C 300 32 296 34 294 40 M 318 20 C 320 30 320 50 322 56 C 324 62 328 58 332 50"
-                  fill="none"
-                  stroke="#f5b84a"
-                  strokeWidth={1.6}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  initial={{ pathLength: 0, opacity: 0 }}
-                  animate={inView ? { pathLength: 1, opacity: 1 } : {}}
-                  transition={{ duration: 2.2, delay: 1, ease: [0.22, 1, 0.36, 1] }}
-                  style={{ filter: 'drop-shadow(0 0 8px rgba(245,184,74,0.35))' }}
-                />
-              </svg>
+                Matthew Butler
+              </motion.div>
 
-              <div className="mt-2 font-mono text-[0.62rem] uppercase tracking-[0.32em] text-[#8a8376]">
+              <div className="mt-3 font-mono text-[0.62rem] uppercase tracking-[0.32em] text-[#8a8376]">
                 Founder · Houston, TX
               </div>
             </motion.div>
