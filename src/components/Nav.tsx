@@ -49,12 +49,6 @@ export function Nav() {
 
       <div className="flex items-center gap-3">
         <a
-          href="tel:2815550847"
-          className="hidden lg:inline-flex font-mono text-xs tracking-wider text-[#8a8376] hover:text-[#f5b84a] transition"
-        >
-          (281) 555-0847
-        </a>
-        <a
           href="#booking"
           className="btn-sweep group relative inline-flex items-center gap-2 rounded-full bg-[#ff3b2e] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_10px_30px_-8px_rgba(255,59,46,0.55)] hover:shadow-[0_14px_40px_-8px_rgba(255,59,46,0.8)] transition-all duration-300"
         >

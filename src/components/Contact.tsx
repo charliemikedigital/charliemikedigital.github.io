@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { Clock, MapPin, Phone, Send, ArrowRight } from 'lucide-react';
+import { Clock, MapPin, Send, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/cn';
 
 type FormFields = {
@@ -35,12 +35,6 @@ const DETAILS = [
     label: 'Service Area',
     value: 'Nationwide. Everything is done remotely.',
     href: null,
-  },
-  {
-    icon: Phone,
-    label: 'Phone',
-    value: '(281) 555-0847',
-    href: 'tel:+12815550847',
   },
 ];
 

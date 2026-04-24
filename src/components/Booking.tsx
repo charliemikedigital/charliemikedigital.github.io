@@ -121,8 +121,9 @@ export function Booking() {
             <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
             <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
             <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
-            <div className="ml-3 flex-1 rounded-md bg-black/30 px-3 py-1 text-[0.65rem] text-[#8a8376] font-mono truncate">
-              calendly.com/mbutler2498/30min
+            <div className="ml-3 flex-1 rounded-md bg-black/30 px-3 py-1 text-[0.65rem] text-[#8a8376] font-mono truncate flex items-center gap-1.5">
+              <span aria-hidden className="text-[#f5b84a]">&#x1F512;</span>
+              Book a time
             </div>
             <span className="hidden md:inline-flex items-center gap-1.5 font-mono text-[0.56rem] uppercase tracking-[0.25em] text-[#f5b84a]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#3fd687] pulse-slow" />

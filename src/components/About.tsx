@@ -259,14 +259,17 @@ export function About() {
                     : { opacity: 0, y: 8, filter: 'blur(4px)' }
                 }
                 transition={{ duration: 1.4, delay: 0.85, ease: [0.22, 1, 0.36, 1] }}
-                className="gradient-warm select-none leading-none"
+                className="gradient-warm select-none"
                 style={{
                   fontFamily: "'Mrs Saint Delafield', 'Brush Script MT', cursive",
                   fontSize: 'clamp(3.2rem, 6.4vw, 5rem)',
                   letterSpacing: '-0.01em',
                   filter: 'drop-shadow(0 4px 16px rgba(245,184,74,0.25))',
-                  lineHeight: '1',
-                  paddingBottom: '0.15em',
+                  /* Script fonts have huge ascenders/descenders — give them room */
+                  lineHeight: '1.35',
+                  paddingTop: '0.25em',
+                  paddingBottom: '0.25em',
+                  overflow: 'visible',
                 }}
                 aria-label="Matthew Butler — signature"
               >
