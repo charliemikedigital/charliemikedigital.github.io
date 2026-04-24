@@ -1,0 +1,227 @@
+@import "tailwindcss";
+
+/* =======================================================================
+   CHARLIE MIKE DIGITAL — Design System
+   Pattern: Hero-Centric · Style: Liquid Glass · Motion: Maximalist
+   ======================================================================= */
+
+@theme {
+  /* Core palette — warm ink & signal red with amber as brand continuity */
+  --color-ink: #08070a;
+  --color-ink-2: #0d0c10;
+  --color-surface: #141318;
+  --color-surface-2: #1c1a20;
+  --color-border: #2a2730;
+  --color-border-bright: #3a3540;
+
+  --color-paper: #efeae0;
+  --color-paper-mid: #c5beb1;
+  --color-paper-dim: #8a8376;
+  --color-paper-ghost: #54504a;
+
+  --color-signal: #ff3b2e;          /* action red — CTAs, emergency, pulse */
+  --color-signal-soft: #ff6a5f;
+  --color-signal-deep: #c01f16;
+
+  --color-amber: #f5b84a;             /* warm accent (brand continuity) */
+  --color-amber-soft: #ffd79a;
+  --color-amber-deep: #a67a20;
+
+  --color-ice: #7ad0ff;              /* cool accent for gradients */
+
+  /* Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 36px;
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* =========================================================== Base ==== */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-feature-settings: "ss01", "cv11";
+  overflow-x: hidden;
+  /* Ambient grain */
+  background-image:
+    radial-gradient(ellipse 60% 80% at 80% 0%, rgba(245, 184, 74, 0.06), transparent 60%),
+    radial-gradient(ellipse 50% 60% at 10% 100%, rgba(255, 59, 46, 0.04), transparent 65%);
+  background-attachment: fixed;
+}
+
+::selection {
+  background: var(--color-signal);
+  color: var(--color-ink);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--color-ink); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--color-surface-2), var(--color-surface));
+  border-radius: 8px;
+  border: 2px solid var(--color-ink);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-signal); }
+
+/* =========================================================== Utilities ==== */
+.font-serif { font-family: var(--font-serif); }
+.font-mono { font-family: var(--font-mono); }
+
+.serif-i {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.012em;
+}
+
+/* Gradient text helpers */
+.gradient-signal {
+  background: linear-gradient(120deg, var(--color-signal-soft), var(--color-signal), var(--color-amber));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.gradient-paper {
+  background: linear-gradient(180deg, var(--color-paper) 0%, var(--color-paper-mid) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.gradient-warm {
+  background: linear-gradient(120deg, #ffd79a, #f5b84a 40%, #ff6a5f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Liquid Glass surfaces */
+.glass {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.01));
+  backdrop-filter: blur(18px) saturate(130%);
+  -webkit-backdrop-filter: blur(18px) saturate(130%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-strong {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  backdrop-filter: blur(24px) saturate(140%);
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.card-warm {
+  background:
+    radial-gradient(circle at 80% 0%, rgba(245, 184, 74, 0.05), transparent 50%),
+    linear-gradient(180deg, var(--color-surface-2), var(--color-surface));
+  border: 1px solid var(--color-border);
+}
+
+/* Signal glow */
+.glow-signal {
+  box-shadow:
+    0 20px 60px -20px rgba(255, 59, 46, 0.45),
+    0 0 0 1px rgba(255, 59, 46, 0.18) inset;
+}
+.glow-amber {
+  box-shadow:
+    0 20px 60px -20px rgba(245, 184, 74, 0.35),
+    0 0 0 1px rgba(245, 184, 74, 0.18) inset;
+}
+
+/* Shimmer sweep for CTAs */
+.btn-sweep { position: relative; overflow: hidden; isolation: isolate; }
+.btn-sweep::before {
+  content: "";
+  position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(110deg, transparent 35%, rgba(255, 255, 255, 0.25) 50%, transparent 65%);
+  transform: translateX(-120%);
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.btn-sweep:hover::before { transform: translateX(120%); }
+
+/* Noise overlay */
+.noise {
+  position: relative;
+}
+.noise::after {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.4 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+/* Tabular digits for numeric readouts */
+.tabular { font-variant-numeric: tabular-nums; letter-spacing: 0.02em; }
+
+/* Divider */
+.hr-glow {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-border-bright) 20%, var(--color-border-bright) 80%, transparent);
+}
+
+/* Focus rings */
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================================================== Animations ==== */
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(3%, -2%) scale(1.05); }
+}
+.drift { animation: drift 18s ease-in-out infinite; }
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(0.85); }
+}
+.pulse-slow { animation: pulse-slow 1.8s ease-in-out infinite; }
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track { animation: marquee 42s linear infinite; }
+.marquee-track:hover { animation-play-state: paused; }
+
+@keyframes shine {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.animate-shine {
+  background-size: 200% 200%;
+  animation: shine 6s ease-in-out infinite;
+}
+
+/* Magnetic cursor hover — triggers subtle scale + signal glow */
+.magnet {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
