@@ -138,32 +138,6 @@ export function Hero() {
               </a>
             </motion.div>
 
-            {/* Proof row */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.9, delay: 1.25 }}
-              className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-3"
-            >
-              <div className="flex items-center gap-2">
-                <div className="flex -space-x-1.5">
-                  {['#f5b84a', '#ff6a5f', '#7ad0ff', '#3fd687'].map((c, i) => (
-                    <div key={i} className="h-6 w-6 rounded-full border-2 border-[#08070a]" style={{ background: c }} />
-                  ))}
-                </div>
-                <span className="text-[0.78rem] text-[#c5beb1]">
-                  <span className="font-semibold text-[#efeae0]">200+ businesses</span> live on sites I built
-                </span>
-              </div>
-              <div className="flex items-center gap-1.5 text-[0.78rem] text-[#c5beb1]">
-                <span className="gradient-warm font-semibold tabular">4.9 ★</span>
-                <span>avg Google rating</span>
-              </div>
-              <div className="flex items-center gap-1.5 text-[0.78rem] text-[#c5beb1]">
-                <span className="gradient-signal font-semibold">$0</span>
-                <span>hidden fees, ever</span>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* =========== Right: featured work 3D-tilt card =========== */}
