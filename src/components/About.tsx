@@ -55,9 +55,10 @@ export function About() {
               <img
                 src="/matt-headshot.jpg"
                 alt="Matthew Butler, founder of Charlie Mike Digital"
-                width={400}
-                height={400}
+                width={800}
+                height={800}
                 loading="eager"
+                decoding="async"
                 className="absolute inset-0 h-full w-full object-cover object-[center_25%]"
               />
 
