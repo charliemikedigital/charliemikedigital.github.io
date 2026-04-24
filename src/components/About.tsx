@@ -48,57 +48,30 @@ export function About() {
             className="relative mx-auto lg:mx-0 w-full max-w-[420px]"
           >
             <div
-              className="relative glass-strong rounded-2xl overflow-hidden glow-amber"
+              className="relative glass-strong rounded-2xl overflow-hidden glow-amber border border-[#f5b84a]/25"
               style={{ aspectRatio: '4 / 5' }}
             >
-              {/* Animated drifting gradient backdrop */}
-              <motion.div
-                aria-hidden
-                className="absolute inset-0"
-                animate={{
-                  background: [
-                    'radial-gradient(circle at 20% 20%, rgba(245,184,74,0.35), transparent 55%), radial-gradient(circle at 80% 80%, rgba(255,59,46,0.3), transparent 60%)',
-                    'radial-gradient(circle at 80% 30%, rgba(245,184,74,0.3), transparent 55%), radial-gradient(circle at 20% 80%, rgba(255,59,46,0.35), transparent 60%)',
-                    'radial-gradient(circle at 50% 50%, rgba(245,184,74,0.4), transparent 60%), radial-gradient(circle at 15% 15%, rgba(255,59,46,0.28), transparent 55%)',
-                    'radial-gradient(circle at 20% 20%, rgba(245,184,74,0.35), transparent 55%), radial-gradient(circle at 80% 80%, rgba(255,59,46,0.3), transparent 60%)',
-                  ],
-                }}
-                transition={{ duration: 16, ease: 'easeInOut', repeat: Infinity }}
+              {/* Headshot photo */}
+              <img
+                src="/matt-headshot.jpg"
+                alt="Matthew Butler, founder of Charlie Mike Digital"
+                width={400}
+                height={400}
+                loading="eager"
+                className="absolute inset-0 h-full w-full object-cover object-[center_25%]"
               />
 
-              {/* Subtle grid overlay */}
+              {/* Soft ink gradient at the bottom for text legibility on tags */}
               <div
                 aria-hidden
-                className="absolute inset-0 opacity-[0.12]"
+                className="absolute inset-x-0 bottom-0 h-[55%] pointer-events-none"
                 style={{
-                  backgroundImage:
-                    'linear-gradient(rgba(245,184,74,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(245,184,74,0.4) 1px, transparent 1px)',
-                  backgroundSize: '40px 40px',
-                  maskImage: 'radial-gradient(ellipse 70% 60% at 50% 50%, black, transparent)',
+                  background:
+                    'linear-gradient(180deg, transparent 0%, rgba(8,7,10,0.15) 45%, rgba(8,7,10,0.7) 100%)',
                 }}
               />
 
-              {/* Centered monogram */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <motion.span
-                  initial={{ opacity: 0, scale: 0.85 }}
-                  animate={inView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 1.1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                  className="gradient-warm"
-                  style={{
-                    fontFamily: "'Instrument Serif', serif",
-                    fontStyle: 'italic',
-                    fontSize: '8rem',
-                    lineHeight: 1,
-                    letterSpacing: '-0.04em',
-                    textShadow: '0 8px 40px rgba(245,184,74,0.25)',
-                  }}
-                >
-                  MB
-                </motion.span>
-              </div>
-
-              {/* Top-left tag */}
+              {/* Top-left veteran tag */}
               <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-[#08070a]/70 border border-[#f5b84a]/30 px-3 py-1.5 backdrop-blur">
                 <ShieldCheck size={11} className="text-[#f5b84a]" strokeWidth={2.4} />
                 <span className="font-mono text-[0.56rem] uppercase tracking-[0.25em] text-[#f5b84a]">
@@ -106,7 +79,7 @@ export function About() {
                 </span>
               </div>
 
-              {/* Bottom-right tag */}
+              {/* Bottom-right est tag */}
               <div className="absolute bottom-4 right-4 rounded-full bg-[#ff3b2e] px-3 py-1.5 shadow-lg">
                 <span className="font-mono text-[0.56rem] font-bold uppercase tracking-[0.25em] text-white">
                   Est. 2024
@@ -116,7 +89,7 @@ export function About() {
               {/* Corner accents */}
               <svg
                 aria-hidden
-                className="absolute top-0 left-0 h-8 w-8 text-[#f5b84a]/50"
+                className="absolute top-0 left-0 h-8 w-8 text-[#f5b84a]/55"
                 viewBox="0 0 32 32"
                 fill="none"
                 stroke="currentColor"
@@ -126,7 +99,7 @@ export function About() {
               </svg>
               <svg
                 aria-hidden
-                className="absolute bottom-0 right-0 h-8 w-8 text-[#f5b84a]/50"
+                className="absolute bottom-0 right-0 h-8 w-8 text-[#f5b84a]/55"
                 viewBox="0 0 32 32"
                 fill="none"
                 stroke="currentColor"
