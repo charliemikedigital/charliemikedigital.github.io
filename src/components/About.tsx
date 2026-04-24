@@ -225,7 +225,15 @@ export function About() {
               <em className="serif-i text-[#f5b84a]" style={{ fontFamily: "'Instrument Serif', serif", fontStyle: 'italic' }}>
                 Continue Mission.
               </em>
-              " That's how I approach every project. We get it done, I hand you the keys, and we move on.
+              " In the Army it means the plan changed, something went wrong, or it got harder than expected, but{' '}
+              <em className="serif-i text-[#f5b84a]" style={{ fontFamily: "'Instrument Serif', serif", fontStyle: 'italic' }}>
+                the mission doesn't stop
+              </em>
+              . That's how I run every project. The job isn't done when the site goes live. The job is done when{' '}
+              <em className="serif-i text-[#f5b84a]" style={{ fontFamily: "'Instrument Serif', serif", fontStyle: 'italic' }}>
+                your phone starts ringing
+              </em>
+              .
             </motion.p>
 
             {/* Signature block */}
