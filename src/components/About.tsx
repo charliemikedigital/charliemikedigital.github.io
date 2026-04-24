@@ -168,13 +168,14 @@ export function About() {
               className="text-[1.02rem] text-[#c5beb1]"
               style={{ lineHeight: 1.72 }}
             >
-              I'm a U.S. Army veteran. When I say I'll deliver in 72 hours, I{' '}
-              <em className="serif-i text-[#f5b84a] not-italic" style={{ fontFamily: "'Instrument Serif', serif", fontStyle: 'italic' }}>
-                mean it
+              I spent 10 years at firms like Accenture and ManTech building technology for the Air Force, the VA,
+              the Department of Labor, and the IRS. Enterprise systems, federal contracts, the kind of projects
+              where missing a deadline isn't an option. Before that I served in the U.S. Army, which is where I
+              learned that{' '}
+              <em className="serif-i text-[#f5b84a]" style={{ fontFamily: "'Instrument Serif', serif", fontStyle: 'italic' }}>
+                when you say you're going to do something, you do it
               </em>
-              . I didn't learn to miss deadlines in the Army. I've spent nearly a decade delivering complex technical
-              projects for the Air Force, the VA, and the Department of Labor. I know what execution looks like and I
-              bring that same standard to every site I build.
+              .
             </motion.p>
 
             <motion.p
@@ -184,16 +185,35 @@ export function About() {
               className="mt-5 text-[1.02rem] text-[#c5beb1]"
               style={{ lineHeight: 1.72 }}
             >
-              I started Charlie Mike Digital because too many good local businesses are invisible online. Plumbers,
-              roofers, electricians. People who do great work, charge fair prices, and show up when they say they
-              will, but they're losing jobs every day to competitors with a better website. That's a problem I can
-              fix fast.
+              When I started Charlie Mike Digital, I expected to keep working with big organizations. But what I
+              found instead was that the people who needed the most help were the ones getting{' '}
+              <em className="serif-i text-[#f5b84a]" style={{ fontFamily: "'Instrument Serif', serif", fontStyle: 'italic' }}>
+                ignored
+              </em>
+              . Small business owners. The plumber with 50 five star reviews and no website. The roofer whose
+              competitor is getting all the calls because he has a better online presence. These are people who
+              are great at what they do but never had someone in their corner when it comes to technology.
             </motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.5 }}
+              className="mt-5 text-[1.02rem] text-[#c5beb1]"
+              style={{ lineHeight: 1.72 }}
+            >
+              I get it. You didn't start your business to worry about websites and SEO and hosting. You started it
+              because you're good at your trade and you want to build something for yourself.{' '}
+              <em className="serif-i text-[#f5b84a]" style={{ fontFamily: "'Instrument Serif', serif", fontStyle: 'italic' }}>
+                That's exactly why I started mine
+              </em>
+              . The difference is my trade is building yours an online presence that actually works.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.6 }}
               className="mt-5 text-[1.02rem] text-[#c5beb1]"
               style={{ lineHeight: 1.72 }}
             >
@@ -205,14 +225,14 @@ export function About() {
               <em className="serif-i text-[#f5b84a]" style={{ fontFamily: "'Instrument Serif', serif", fontStyle: 'italic' }}>
                 Continue Mission.
               </em>
-              " No excuses. No delays. You get the keys and we move on.
+              " That's how I approach every project. We get it done, I hand you the keys, and we move on.
             </motion.p>
 
             {/* Signature block */}
             <motion.div
               initial={{ opacity: 0, y: 14 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 0.75 }}
               className="mt-12"
             >
               <div
