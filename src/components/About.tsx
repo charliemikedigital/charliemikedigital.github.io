@@ -211,7 +211,7 @@ export function About() {
               style={{ lineHeight: 1.72 }}
             >
               I started Charlie Mike Digital because too many good local businesses are invisible online. Plumbers,
-              roofers, electricians — people who do great work, charge fair prices, and show up when they say they
+              roofers, electricians. People who do great work, charge fair prices, and show up when they say they
               will, but they're losing jobs every day to competitors with a better website. That's a problem I can
               fix fast.
             </motion.p>
@@ -271,7 +271,7 @@ export function About() {
                   paddingBottom: '0.25em',
                   overflow: 'visible',
                 }}
-                aria-label="Matthew Butler — signature"
+                aria-label="Matthew Butler signature"
               >
                 Matthew Butler
               </motion.div>

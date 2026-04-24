@@ -29,7 +29,7 @@ export function Nav() {
           : 'bg-transparent border-b border-transparent'
       )}
     >
-      <a href="#top" aria-label="Charlie Mike Digital — home" className="relative z-10">
+      <a href="#top" aria-label="Charlie Mike Digital. Home" className="relative z-10">
         <LogoWordmark compact />
       </a>
 

@@ -26,7 +26,7 @@ const SERVICES: Service[] = [
   {
     icon: UtensilsCrossed,
     title: 'Restaurants & Hospitality',
-    desc: 'Full menus, online reservations, hours and location &mdash; everything a diner needs before they walk in.',
+    desc: 'Full menus, online reservations, hours and location. Everything a diner needs before they walk in.',
   },
   {
     icon: Building2,

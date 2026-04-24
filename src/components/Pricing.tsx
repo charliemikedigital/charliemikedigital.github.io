@@ -26,8 +26,8 @@ const TIERS: Tier[] = [
     name: 'Starter',
     label: 'Get Online',
     price: '$499',
-    period: 'one-time',
-    blurb: 'Single-page site, live in 72 hours.',
+    period: 'one time',
+    blurb: 'Single page site, live in 72 hours.',
     features: [
       'Single page landing site',
       'Mobile responsive',
@@ -44,15 +44,15 @@ const TIERS: Tier[] = [
     name: 'Standard',
     label: 'Built to Convert',
     price: '$799',
-    period: 'one-time',
-    blurb: 'The phone-ringing package most clients pick.',
+    period: 'one time',
+    blurb: 'The phone ringing package most clients pick.',
     features: [
       'Everything in Starter',
       'Online booking embed',
       'Google Business setup',
       'Animated stat counters',
       'Live Google Reviews widget',
-      'Industry-specific features',
+      'Industry specific features',
       'Photo sourcing & optimization',
       'Full SEO meta setup',
     ],
@@ -63,8 +63,8 @@ const TIERS: Tier[] = [
     name: 'Premium',
     label: 'Full Package',
     price: '$1,299',
-    period: 'one-time',
-    blurb: 'Copy, logo, AI chat — the whole kit.',
+    period: 'one time',
+    blurb: 'Copy, logo, AI chat. The whole kit.',
     features: [
       'Everything in Standard',
       'AI chat assistant',
@@ -75,7 +75,7 @@ const TIERS: Tier[] = [
       'Priority 24hr turnaround',
     ],
     cta: 'Go Premium',
-    priceNote: 'Includes $850+ in add-ons',
+    priceNote: 'Includes $850+ in add ons',
   },
 ];
 
@@ -133,7 +133,7 @@ type AddOn = {
 
 const ADDONS: AddOn[] = [
   { name: 'Online Booking', price: '+$100', description: 'Live scheduling, clients pick a time, you get notified.' },
-  { name: 'AI Chat Assistant', price: '+$300', description: 'Smart widget trained on your business, answers 24/7. (third-party API ~$10/mo)' },
+  { name: 'AI Chat Assistant', price: '+$300', description: 'Smart widget trained on your business, answers 24/7. (API subscription ~$10/mo)' },
   { name: 'Google Business Setup', price: '+$150', description: 'Full profile created & optimized for local search.' },
   { name: 'Logo Design', price: '+$200', description: 'Professional design, multiple concepts, all file formats.' },
   { name: 'Full Copywriting', price: '+$200', description: 'Every word on the site written for you.' },
@@ -145,10 +145,10 @@ const ADDONS: AddOn[] = [
   },
   { name: 'Live Weather Widget', price: '+$75', description: 'Local weather on your site (HVAC/outdoor).' },
   { name: 'Animated Counters', price: '+$75', description: 'Stats that count up on scroll.' },
-  { name: 'Social Feed Embed', price: '+$100', description: 'Latest posts displayed live (third-party feed ~$10/mo).' },
+  { name: 'Social Feed Embed', price: '+$100', description: 'Latest posts displayed live (feed subscription ~$10/mo).' },
   { name: 'Email List Signup', price: '+$150', description: 'Capture integrated with marketing platform.' },
-  { name: 'SMS Text Button', price: '+$75', description: 'One-tap text on mobile.' },
-  { name: '5 Additional Pages', price: '+$150', description: 'Service-area pages, team, FAQ, gallery.' },
+  { name: 'SMS Text Button', price: '+$75', description: 'One tap text on mobile.' },
+  { name: '5 Additional Pages', price: '+$150', description: 'Service area pages, team, FAQ, gallery.' },
 ];
 
 export function Pricing() {
@@ -212,7 +212,7 @@ export function Pricing() {
             pricing.
           </h2>
           <p className="mt-6 text-[1.02rem] leading-[1.65] text-[#c5beb1]">
-            One-time build fee. You own it forever. Optional monthly plans keep everything running smooth.
+            One time build fee. You own it forever. Optional monthly plans keep everything running smooth.
           </p>
         </motion.div>
 
@@ -243,7 +243,7 @@ export function Pricing() {
           </div>
 
           <p className="mt-8 max-w-[640px] text-[0.82rem] leading-[1.6] text-[#8a8376]">
-            All prices are one-time add-ons to a build. Third-party service fees (AI chat API, social feed provider)
+            All prices are one time add ons to a build. Outside service fees (AI chat API, social feed provider)
             are billed separately by the provider.
           </p>
         </div>
@@ -526,7 +526,7 @@ function AddOnsHeader() {
       <div className="inline-flex items-center gap-2.5 rounded-full glass px-3.5 py-1.5 mb-5">
         <span className="h-1.5 w-1.5 rounded-full bg-[#f5b84a]" />
         <span className="font-mono text-[0.62rem] uppercase tracking-[0.25em] text-[#c5beb1]">
-          Add-Ons
+          Add Ons
         </span>
       </div>
       <h3 className="font-semibold text-[clamp(1.75rem,3.6vw,2.6rem)] leading-[1.05] tracking-[-0.028em] text-[#efeae0]">

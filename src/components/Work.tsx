@@ -25,7 +25,7 @@ const CASES: CaseStudy[] = [
     industry: 'Restaurant',
     eyebrow: 'Restaurant · Featured',
     description:
-      "Editorial magazine layout with oversized italic Cormorant, chalkboard specials, printed-menu leader dots, and a live 'Available Tonight' reservation pill.",
+      "Editorial magazine layout with oversized italic serif headlines, chalkboard specials, printed menu leader dots, and a live 'Available Tonight' reservation pill.",
     featured: true,
   },
   {
@@ -34,7 +34,7 @@ const CASES: CaseStudy[] = [
     industry: 'Plumbing',
     eyebrow: 'Plumbing',
     description:
-      'Navy + brass editorial layout. Rotated 24/7 emergency stamp, live calls-answered ticker, circular licensed-bonded-insured crest, Houston service-area map with pulsing markers.',
+      'Navy + brass editorial layout. Rotated 24/7 emergency stamp, live calls answered ticker, circular licensed bonded insured crest, Houston service area map with pulsing markers.',
   },
   {
     slug: 'hvac-polarair',
@@ -42,7 +42,7 @@ const CASES: CaseStudy[] = [
     industry: 'HVAC',
     eyebrow: 'HVAC',
     description:
-      'Animated SVG thermometer pulling live Houston temp (Open-Meteo), summer/winter toggle that re-skins the whole site in real time, dual Cool/Heat CTAs.',
+      'Animated SVG thermometer pulling live Houston temp from a weather API, summer/winter toggle that restyles the whole site in real time, dual Cool/Heat CTAs.',
   },
   {
     slug: 'landscaper-greenedge',
@@ -50,7 +50,7 @@ const CASES: CaseStudy[] = [
     industry: 'Landscaping',
     eyebrow: 'Landscaping',
     description:
-      'Hand-drawn botanical SVGs, Polaroid-style gallery with handwritten Caveat captions, real photography throughout.',
+      'Hand drawn botanical SVGs, Polaroid style gallery with handwritten captions, real photography throughout.',
   },
   {
     slug: 'roofer-lonestar',
@@ -58,7 +58,7 @@ const CASES: CaseStudy[] = [
     industry: 'Roofing',
     eyebrow: 'Roofing',
     description:
-      "260px circular trade crest using SVG textPath, Texas star motifs, dark-metal 'Since 1998' plaque with JS-computed 28+ years, fractal-noise worn-paper overlays.",
+      "Circular trade crest using SVG textPath, Texas star motifs, dark metal 'Since 1998' plaque with live 28+ years count, fractal noise worn paper overlays.",
   },
   {
     slug: 'electrician-voltage',
@@ -66,7 +66,7 @@ const CASES: CaseStudy[] = [
     industry: 'Electrical',
     eyebrow: 'Electrical',
     description:
-      'Full-background flickering lightning SVG with power-surge keyframes, animated voltage gauge with settling needle, circuit-board pattern, JetBrains Mono readouts throughout.',
+      'Full background flickering lightning SVG with power surge keyframes, animated voltage gauge with settling needle, circuit board pattern, monospace readouts throughout.',
   },
 ];
 
@@ -238,7 +238,7 @@ function CaseCard({
           >
             <img
               src={`sites/thumbnails/${data.slug}.jpg`}
-              alt={`${data.business} — live site screenshot`}
+              alt={`${data.business} live site screenshot`}
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
               loading="lazy"
               width={1200}

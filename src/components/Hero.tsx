@@ -89,17 +89,17 @@ export function Hero() {
               </span>
               <span className="h-3 w-px bg-white/10" />
               <span className="text-[0.62rem] uppercase tracking-[0.22em] text-[#f5b84a] font-semibold">
-                Veteran-owned
+                Veteran owned
               </span>
             </motion.div>
 
             {/* Headline — word-stagger reveal */}
             <h1 className="font-semibold text-[clamp(3rem,7vw,5.75rem)] leading-[0.98] tracking-[-0.035em] text-[#efeae0]">
-              <Word delay={0.35}>Built in</Word>{' '}
-              <Word delay={0.45} className="serif-i gradient-warm">72 hours.</Word>
+              <Word delay={0.35}>Your competitors</Word>{' '}
+              <Word delay={0.45} className="serif-i gradient-warm">have a website.</Word>
               <br />
-              <Word delay={0.6}>Designed to</Word>{' '}
-              <Word delay={0.75} className="serif-i gradient-signal">convert.</Word>
+              <Word delay={0.6}>Now</Word>{' '}
+              <Word delay={0.75} className="serif-i gradient-signal">you will too.</Word>
             </h1>
 
             <motion.p
@@ -108,8 +108,8 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.95 }}
               className="mt-7 max-w-[520px] text-[1.05rem] leading-[1.65] text-[#c5beb1]"
             >
-              Premium websites for trades and small businesses &mdash; built from scratch for your industry, delivered in three days, and{' '}
-              <em className="serif-i text-[#f5b84a]">yours outright</em>. No lock-in. No recurring fees to exist online.
+              Premium websites for trades and small businesses. Built from scratch for your industry, delivered in three days, and{' '}
+              <em className="serif-i text-[#f5b84a]">yours outright</em>. No lock in. No recurring fees to exist online.
             </motion.p>
 
             <motion.div
@@ -203,7 +203,7 @@ export function Hero() {
                 </div>
                 <img
                   src="sites/thumbnails/restaurant-mesa.jpg"
-                  alt="Mesa Kitchen & Bar — editorial restaurant site"
+                  alt="Mesa Kitchen & Bar, editorial restaurant site"
                   className="block w-full h-auto rounded-lg"
                   loading="eager"
                   width={1200}
@@ -223,6 +223,20 @@ export function Hero() {
                   Restaurant · Mesa
                 </div>
               </motion.div>
+
+              {/* Testimonial under the Mesa featured card */}
+              <motion.figure
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.9, delay: 1.35 }}
+                className="mt-5 md:mt-6 pl-4 border-l border-[#3a3540] max-w-[92%]"
+              >
+                <blockquote className="serif-i text-[0.88rem] md:text-[0.95rem] leading-[1.5] text-[#c5beb1]">
+                  <span aria-hidden className="text-[#f5b84a] mr-1">&ldquo;</span>
+                  Online reservations went from zero to 15+ a week within the first month.
+                  <span aria-hidden className="text-[#f5b84a] ml-0.5">&rdquo;</span>
+                </blockquote>
+              </motion.figure>
             </a>
 
             {/* Floating stat chip */}

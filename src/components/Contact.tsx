@@ -15,12 +15,12 @@ type FormErrors = Partial<Record<keyof FormFields, string>>;
 
 const NEED_OPTIONS = [
   { value: '', label: 'Select an option…' },
-  { value: 'starter', label: 'New Website — Starter $499' },
-  { value: 'standard', label: 'New Website — Standard $799' },
-  { value: 'premium', label: 'New Website — Premium $1299' },
+  { value: 'starter', label: 'New Website, Starter $499' },
+  { value: 'standard', label: 'New Website, Standard $799' },
+  { value: 'premium', label: 'New Website, Premium $1299' },
   { value: 'maintenance', label: 'Monthly Maintenance Plan' },
-  { value: 'addons', label: 'Add-Ons to Existing Site' },
-  { value: 'not-sure', label: "Not Sure — Let's Talk" },
+  { value: 'addons', label: 'Add Ons to Existing Site' },
+  { value: 'not-sure', label: "Not Sure, Let's Talk" },
 ];
 
 const DETAILS = [

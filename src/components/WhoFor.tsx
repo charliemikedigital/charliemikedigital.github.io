@@ -24,17 +24,17 @@ const SMALL_CELLS: Industry[] = [
   {
     icon: HardHat,
     title: 'Roofers & Contractors',
-    desc: 'Insurance claims band, photo-forward portfolios, storm-damage intake.',
+    desc: 'Insurance claims band, photo forward portfolios, storm damage intake.',
   },
   {
     icon: Zap,
     title: 'Electricians',
-    desc: '24/7 emergency, licensed-bonded-insured trust row, fast call-now.',
+    desc: '24/7 emergency, licensed bonded insured trust row, fast call now.',
   },
   {
     icon: Sprout,
     title: 'Landscapers',
-    desc: 'Gallery-heavy, seasonal service grid, online estimates.',
+    desc: 'Gallery heavy, seasonal service grid, online estimates.',
   },
   {
     icon: UtensilsCrossed,
@@ -54,7 +54,7 @@ const SMALL_CELLS: Industry[] = [
   {
     icon: Dumbbell,
     title: 'Gyms & Trainers',
-    desc: 'Class schedules, intro-offer CTAs, membership signups.',
+    desc: 'Class schedules, intro offer CTAs, membership signups.',
   },
 ];
 
@@ -125,7 +125,7 @@ export function WhoFor(): ReactElement {
             <span className="serif-i gradient-warm">businesses</span> like yours.
           </h2>
           <p className="mt-5 max-w-[560px] text-[1.02rem] leading-[1.65] text-[#c5beb1]">
-            Trades, service businesses, restaurants &mdash; anywhere a clean, fast, conversion-shaped
+            Trades, service businesses, restaurants. Anywhere a clean, fast, conversion ready
             site beats a template. Every build is tuned to the patterns that actually move the needle
             in your industry.
           </p>
@@ -180,7 +180,7 @@ function FeaturedCell(): ReactElement {
             <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#f5b84a]" />
           </span>
           <span className="font-mono text-[0.62rem] uppercase tracking-[0.28em] text-[#ffd79a]">
-            Most-requested build
+            Most requested build
           </span>
         </div>
 
@@ -196,8 +196,8 @@ function FeaturedCell(): ReactElement {
         </h3>
 
         <p className="mt-5 max-w-[46ch] text-[1rem] leading-[1.65] text-[#c5beb1]">
-          Emergency-call sites with 24/7 CTAs, instant quote forms, and service-area SEO.{' '}
-          <em className="serif-i text-[#f5b84a]">Six calls from Google week one</em> isn&rsquo;t rare &mdash; it&rsquo;s the point.
+          Emergency call sites with 24/7 CTAs, instant quote forms, and service area SEO.{' '}
+          <em className="serif-i text-[#f5b84a]">Six calls from Google week one</em> isn&rsquo;t rare. It&rsquo;s the point.
         </p>
 
         {/* Spacer */}
@@ -208,7 +208,7 @@ function FeaturedCell(): ReactElement {
           {FEATURED_META.map((m) => (
             <li key={m} className="flex items-start gap-3 text-[0.82rem] text-[#c5beb1]">
               <span aria-hidden className="mt-[0.55em] font-mono text-[#a67a20]">
-                &mdash;
+                &middot;
               </span>
               <span>{m}</span>
             </li>

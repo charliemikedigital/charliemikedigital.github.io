@@ -232,7 +232,7 @@ export function Testimonials() {
                 paused ? 'bg-[#f5b84a]' : 'bg-[#3fd687]'
               )}
             />
-            {paused ? 'Paused on hover' : 'Auto-advancing'}
+            {paused ? 'Paused on hover' : 'Auto advancing'}
           </div>
         </div>
       </div>

@@ -107,8 +107,8 @@ export function Process(): ReactElement {
             <span className="serif-i gradient-warm">live</span> in 72 hours.
           </h2>
           <p className="mt-5 max-w-[560px] text-[1.02rem] leading-[1.65] text-[#c5beb1]">
-            A four-step process that moves as fast as you do. No endless discovery docs,
-            no drip-fed mockups &mdash; just a built, reviewed, and launched site in three days.
+            A four step process that moves as fast as you do. No endless discovery docs,
+            no drip fed mockups. Just a built, reviewed, and launched site in three days.
           </p>
         </motion.div>
 
@@ -297,11 +297,11 @@ function GuaranteeCard(): ReactElement {
             </span>
           </div>
           <h3 className="font-semibold leading-[1.08] tracking-[-0.025em] text-[#efeae0] text-[clamp(1.6rem,3vw,2.35rem)]">
-            72-hour delivery{' '}
+            72 hour delivery{' '}
             <span className="serif-i gradient-warm">guarantee</span>.
           </h3>
           <p className="mt-3 max-w-[60ch] text-[1rem] leading-[1.65] text-[#c5beb1]">
-            Your site goes live within 72 hours of our discovery call &mdash; or you get{' '}
+            Your site goes live within 72 hours of our discovery call, or you get{' '}
             <em className="serif-i text-[#f5b84a]">$100 off</em>. No exceptions.
           </p>
         </div>

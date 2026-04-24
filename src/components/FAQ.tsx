@@ -49,7 +49,7 @@ const FAQS: Faq[] = [
     q: 'What happens if I need edits later?',
     a: (
       <>
-        If you're on a care plan, edits are included depending on your tier. If you're not on a plan, I do one-off
+        If you're on a care plan, edits are included depending on your tier. If you're not on a plan, I do one off
         edits at an hourly rate. Or since you own the site, you can edit it yourself or hire anyone else. You're
         never stuck with me.
       </>
