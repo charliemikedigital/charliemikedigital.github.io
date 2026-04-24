@@ -10,9 +10,9 @@ const FAQS: Faq[] = [
     q: "Do I actually own the site when it's done?",
     a: (
       <>
-        Yes. 100%. The code, the design, the domain, the hosting account. All of it is yours. I hand you the keys
-        and you can do whatever you want with it. No lock-in, no proprietary platform, no monthly ransom to keep
-        your own site. If you want to walk away tomorrow, you take everything with you.
+        Yes. The code, the design, the domain. All of it is yours. I host it for you on my infrastructure at no
+        extra cost, but if you ever want to leave, I hand you every file and you can host it anywhere. No lock in,
+        no proprietary platform, no monthly ransom. You're never stuck with me.
       </>
     ),
   },

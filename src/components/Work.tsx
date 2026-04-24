@@ -50,7 +50,7 @@ const CASES: CaseStudy[] = [
     industry: 'Landscaping',
     eyebrow: 'Landscaping',
     description:
-      'Hand-drawn botanical SVGs, working draggable before/after slider using real photography, Polaroid-style gallery with handwritten Caveat captions.',
+      'Hand-drawn botanical SVGs, Polaroid-style gallery with handwritten Caveat captions, real photography throughout.',
   },
   {
     slug: 'roofer-lonestar',

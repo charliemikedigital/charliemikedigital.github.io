@@ -378,73 +378,6 @@ nav{
   display:inline-flex;align-items:center;gap:6px;
 }
 
-/* BEFORE / AFTER SLIDER */
-.ba-section{
-  background:var(--paper);
-  padding:7rem 1.75rem;
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-  position:relative;overflow:hidden;
-}
-.ba-ornament{
-  position:absolute;top:40px;right:-30px;width:220px;opacity:0.35;
-  pointer-events:none;transform:rotate(20deg);
-}
-.ba-head{
-  text-align:center;max-width:640px;margin:0 auto 3rem;position:relative;z-index:1;
-}
-.ba-head .sec-eyebrow{justify-content:center}
-.ba-head .sec-eyebrow::after{
-  content:"";display:block;width:32px;height:1px;background:var(--terracotta);
-}
-.ba-head .sec-sub{margin:1rem auto 0}
-.ba-wrap{
-  max-width:1100px;margin:0 auto;
-  position:relative;border-radius:var(--r-lg);overflow:hidden;
-  aspect-ratio:16/9;
-  box-shadow:0 40px 80px -30px rgba(26,48,41,0.4);
-  border:1px solid var(--line);
-  user-select:none;
-}
-.ba-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-.ba-after{z-index:1}
-.ba-before-wrap{
-  position:absolute;inset:0;z-index:2;
-  clip-path:inset(0 50% 0 0);
-  will-change:clip-path;
-}
-.ba-before-wrap .ba-img{width:100%}
-.ba-badge{
-  position:absolute;top:18px;
-  padding:6px 14px;border-radius:100px;
-  font-family:'Jost',sans-serif;font-weight:700;
-  font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;
-  z-index:4;backdrop-filter:blur(6px);
-}
-.ba-badge-before{left:18px;background:rgba(28,37,32,0.82);color:var(--cream)}
-.ba-badge-after{right:18px;background:var(--terracotta);color:var(--cream)}
-.ba-handle{
-  position:absolute;top:0;bottom:0;
-  left:50%;width:3px;background:var(--cream);
-  z-index:5;cursor:ew-resize;
-  box-shadow:0 0 0 1px rgba(26,48,41,0.25),0 10px 30px -5px rgba(26,48,41,0.3);
-  transform:translateX(-50%);
-}
-.ba-handle-knob{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:48px;height:48px;border-radius:50%;
-  background:var(--cream);
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 8px 24px -4px rgba(26,48,41,0.4);
-  color:var(--forest);
-  border:2px solid var(--terracotta);
-}
-.ba-hint{
-  text-align:center;margin-top:1.25rem;
-  font-family:'Caveat',cursive;font-size:1.2rem;color:var(--moss);
-  position:relative;z-index:1;
-}
-
 /* FEATURE / ABOUT */
 .feature{
   display:grid;grid-template-columns:1fr 1fr;
@@ -892,7 +825,6 @@ footer{
   </a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
-    <li><a href="#transform">Transformations</a></li>
     <li><a href="#seasons">Seasons</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#reviews">Reviews</a></li>
@@ -1162,50 +1094,6 @@ footer{
       </article>
     </div>
   </div>
-</section>
-
-<!-- BEFORE / AFTER -->
-<section class="ba-section" id="transform">
-  <svg class="ba-ornament" viewBox="0 0 300 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <g stroke="#1a3029" stroke-width="1.6" stroke-linecap="round" fill="none">
-      <path d="M280 20 Q220 50 170 85 Q120 120 70 160 Q40 190 10 220"/>
-      <path d="M225 45 Q218 24 240 20 Q260 24 252 48 Q242 54 225 45 Z" fill="#6b8e6e" fill-opacity="0.35"/>
-      <path d="M170 82 Q163 60 186 56 Q208 60 198 84 Q188 90 170 82 Z" fill="#6b8e6e" fill-opacity="0.35"/>
-      <path d="M115 118 Q108 96 131 92 Q153 96 143 120 Q133 126 115 118 Z" fill="#c67a4e" fill-opacity="0.22"/>
-      <path d="M60 155 Q53 133 76 129 Q98 133 88 157 Q78 163 60 155 Z" fill="#6b8e6e" fill-opacity="0.35"/>
-      <path d="M225 45 Q238 36 252 48"/>
-      <path d="M170 82 Q183 72 198 84"/>
-      <path d="M115 118 Q128 108 143 120"/>
-      <path d="M60 155 Q73 145 88 157"/>
-    </g>
-  </svg>
-  <div class="ba-head reveal">
-    <p class="sec-eyebrow">The transformation</p>
-    <h2 class="sec-h2">From patchy dirt<br/>to <em>picture-perfect</em>.</h2>
-    <p class="sec-sub">Drag the handle to see what a Green Edge full-service renovation looks like — typically completed in 2 to 3 visits.</p>
-  </div>
-  <div class="ba-wrap reveal" id="ba-wrap" role="region" aria-label="Before and after lawn comparison">
-    <!-- AFTER (real photo) -->
-    <img class="ba-img ba-after" src="https://images.pexels.com/photos/8469933/pexels-photo-8469933.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="After — a lush, freshly-mowed lawn in front of a modern home" loading="lazy"/>
-
-    <!-- BEFORE (real photo, clipped via clip-path) -->
-    <div class="ba-before-wrap" id="ba-before-wrap">
-      <img class="ba-img" src="https://images.pexels.com/photos/7912820/pexels-photo-7912820.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Before — an overgrown, unmaintained yard" loading="lazy"/>
-    </div>
-
-
-    <!-- badges -->
-    <div class="ba-badge ba-badge-before">Before</div>
-    <div class="ba-badge ba-badge-after">After</div>
-
-    <!-- handle -->
-    <div class="ba-handle" id="ba-handle" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0" aria-label="Before and after slider">
-      <div class="ba-handle-knob">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/><polyline points="9 18 15 12 9 6" transform="translate(1 0)"/></svg>
-      </div>
-    </div>
-  </div>
-  <p class="ba-hint">↔ drag to reveal the transformation</p>
 </section>
 
 <!-- FEATURE / ABOUT -->
@@ -1682,71 +1570,6 @@ footer{
 </footer>
 
 <script>
-/* BEFORE / AFTER SLIDER */
-(function(){
-  var wrap = document.getElementById('ba-wrap');
-  if(!wrap) return;
-  var beforeWrap = document.getElementById('ba-before-wrap');
-  var handle = document.getElementById('ba-handle');
-  var dragging = false;
-
-  function setPct(pct){
-    pct = Math.max(0, Math.min(100, pct));
-    beforeWrap.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
-    handle.style.left = pct + '%';
-    handle.setAttribute('aria-valuenow', Math.round(pct));
-  }
-
-  function clientXFromEvent(e){
-    if(e.touches && e.touches.length) return e.touches[0].clientX;
-    if(e.changedTouches && e.changedTouches.length) return e.changedTouches[0].clientX;
-    return e.clientX;
-  }
-
-  function updateFromEvent(e){
-    var rect = wrap.getBoundingClientRect();
-    var x = clientXFromEvent(e) - rect.left;
-    var pct = (x / rect.width) * 100;
-    setPct(pct);
-  }
-
-  function startDrag(e){
-    dragging = true;
-    wrap.style.cursor = 'ew-resize';
-    updateFromEvent(e);
-    e.preventDefault();
-  }
-  function moveDrag(e){
-    if(!dragging) return;
-    updateFromEvent(e);
-  }
-  function endDrag(){
-    dragging = false;
-    wrap.style.cursor = '';
-  }
-
-  handle.addEventListener('mousedown', startDrag);
-  wrap.addEventListener('mousedown', startDrag);
-  window.addEventListener('mousemove', moveDrag);
-  window.addEventListener('mouseup', endDrag);
-
-  handle.addEventListener('touchstart', startDrag, {passive:false});
-  wrap.addEventListener('touchstart', startDrag, {passive:false});
-  window.addEventListener('touchmove', moveDrag, {passive:false});
-  window.addEventListener('touchend', endDrag);
-
-  handle.addEventListener('keydown', function(e){
-    var cur = parseFloat(handle.getAttribute('aria-valuenow')) || 50;
-    if(e.key === 'ArrowLeft'){ setPct(cur - 3); e.preventDefault(); }
-    if(e.key === 'ArrowRight'){ setPct(cur + 3); e.preventDefault(); }
-    if(e.key === 'Home'){ setPct(0); e.preventDefault(); }
-    if(e.key === 'End'){ setPct(100); e.preventDefault(); }
-  });
-
-  // Initial position
-  setPct(50);
-})();
-
 /* REVEAL ON SCROLL */
 (function(){
   var els = document.querySelectorAll('.reveal');

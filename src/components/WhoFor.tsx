@@ -24,7 +24,7 @@ const SMALL_CELLS: Industry[] = [
   {
     icon: HardHat,
     title: 'Roofers & Contractors',
-    desc: 'Insurance claims band, before/after sliders, portfolio-first.',
+    desc: 'Insurance claims band, photo-forward portfolios, storm-damage intake.',
   },
   {
     icon: Zap,
@@ -34,7 +34,7 @@ const SMALL_CELLS: Industry[] = [
   {
     icon: Sprout,
     title: 'Landscapers',
-    desc: 'Before/after slider, gallery-heavy, online estimates.',
+    desc: 'Gallery-heavy, seasonal service grid, online estimates.',
   },
   {
     icon: UtensilsCrossed,

@@ -18,6 +18,7 @@ type Tier = {
   features: string[];
   cta: string;
   featured?: boolean;
+  priceNote?: string;
 };
 
 const TIERS: Tier[] = [
@@ -33,7 +34,7 @@ const TIERS: Tier[] = [
       'Contact form',
       'Google Maps embed',
       'Basic SEO setup',
-      'Netlify hosting',
+      'Free hosting setup',
       '2 rounds of revisions',
       'Delivered in 72 hours',
     ],
@@ -50,7 +51,7 @@ const TIERS: Tier[] = [
       'Online booking embed',
       'Google Business setup',
       'Animated stat counters',
-      'Customer review section',
+      'Live Google Reviews widget',
       'Industry-specific features',
       'Photo sourcing & optimization',
       'Full SEO meta setup',
@@ -68,13 +69,13 @@ const TIERS: Tier[] = [
       'Everything in Standard',
       'AI chat assistant',
       'Full page copywriting',
-      'Before/after image slider',
       'Logo design',
       'Email capture integration',
       'Custom contact page',
       'Priority 24hr turnaround',
     ],
     cta: 'Go Premium',
+    priceNote: 'Includes $850+ in add-ons',
   },
 ];
 
@@ -127,6 +128,7 @@ type AddOn = {
   name: string;
   price: string;
   description: string;
+  note?: string;
 };
 
 const ADDONS: AddOn[] = [
@@ -135,7 +137,12 @@ const ADDONS: AddOn[] = [
   { name: 'Google Business Setup', price: '+$150', description: 'Full profile created & optimized for local search.' },
   { name: 'Logo Design', price: '+$200', description: 'Professional design, multiple concepts, all file formats.' },
   { name: 'Full Copywriting', price: '+$200', description: 'Every word on the site written for you.' },
-  { name: 'Before & After Slider', price: '+$100', description: 'Interactive drag slider, perfect for roofers/landscapers.' },
+  {
+    name: 'Google Reviews Widget',
+    price: '+$100',
+    description: 'Your real Google reviews displayed directly on your site. Social proof that builds trust instantly.',
+    note: 'Included free in Standard & Premium',
+  },
   { name: 'Live Weather Widget', price: '+$75', description: 'Local weather on your site (HVAC/outdoor).' },
   { name: 'Animated Counters', price: '+$75', description: 'Stats that count up on scroll.' },
   { name: 'Social Feed Embed', price: '+$100', description: 'Latest posts displayed live (third-party feed ~$10/mo).' },
@@ -338,6 +345,13 @@ function TierCard({ tier, index }: { tier: Tier; index: number }) {
             {tier.period}
           </span>
         </div>
+
+        {tier.priceNote && (
+          <div className="mt-2 font-mono text-[0.68rem] uppercase tracking-[0.22em] text-[#f5b84a] flex items-center gap-1.5">
+            <Sparkles size={11} strokeWidth={2.2} />
+            {tier.priceNote}
+          </div>
+        )}
 
         <div className="hr-glow my-7" />
 
@@ -545,13 +559,21 @@ function AddOnCard({ addon, index }: { addon: AddOn; index: number }) {
         <h4 className="text-[0.95rem] font-semibold text-[#efeae0] leading-[1.25]">
           {addon.name}
         </h4>
-        <span className="shrink-0 font-mono text-[0.85rem] font-semibold text-[#f5b84a] tabular">
-          {addon.price}
-        </span>
+        <div className="shrink-0 flex flex-col items-end gap-0.5">
+          <span className="font-mono text-[0.85rem] font-semibold text-[#f5b84a] tabular">
+            {addon.price}
+          </span>
+        </div>
       </div>
       <p className="mt-2 text-[0.78rem] leading-[1.5] text-[#8a8376]">
         {addon.description}
       </p>
+      {addon.note && (
+        <div className="mt-2.5 flex items-center gap-1.5 font-mono text-[0.62rem] uppercase tracking-[0.18em] text-[#f5b84a]">
+          <Sparkles size={10} strokeWidth={2.2} />
+          {addon.note}
+        </div>
+      )}
     </motion.div>
   );
 }
