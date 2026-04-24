@@ -156,7 +156,13 @@ nav.scrolled{
 }
 .hero-card-label{font-size:0.62rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1rem;font-weight:600;display:flex;align-items:center;gap:8px}
 .hero-card-label::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,0.2),transparent)}
-.hero-browser{background:#0a0907;border:1px solid #221e1a;border-radius:10px;overflow:hidden;margin-bottom:1rem;box-shadow:0 20px 50px -20px rgba(0,0,0,0.6)}
+.hero-browser{background:#0a0907;border:1px solid #221e1a;border-radius:10px;overflow:hidden;margin-bottom:0.9rem;box-shadow:0 20px 50px -20px rgba(0,0,0,0.6);display:block;text-decoration:none;color:inherit;transition:transform 0.4s cubic-bezier(.22,1,.36,1),box-shadow 0.4s,border-color 0.3s}
+.hero-browser-link:hover{transform:translateY(-2px);border-color:rgba(201,168,76,0.3);box-shadow:0 28px 60px -20px rgba(0,0,0,0.75),0 0 0 1px rgba(201,168,76,0.08)}
+.hero-browser-link:focus-visible{outline:none;border-color:var(--gold-light);box-shadow:0 0 0 3px rgba(201,168,76,0.22)}
+.hero-browser-img{display:block;width:100%;height:auto;aspect-ratio:1200/750;object-fit:cover;object-position:center top;transition:transform 0.55s cubic-bezier(.22,1,.36,1)}
+.hero-browser-link:hover .hero-browser-img{transform:scale(1.03)}
+.hero-browser-ext{color:var(--gold-dim);display:inline-flex;align-items:center;margin-left:6px;opacity:0.75;transition:opacity 0.25s,color 0.25s}
+.hero-browser-link:hover .hero-browser-ext{opacity:1;color:var(--gold-light)}
 .hero-browser-bar{background:#151210;padding:8px 12px;display:flex;align-items:center;gap:6px;border-bottom:1px solid #221e1a}
 .hero-browser-bar .dot{width:9px;height:9px;border-radius:50%}
 .hero-browser-bar .dot-r{background:#d94a3a}
@@ -164,15 +170,10 @@ nav.scrolled{
 .hero-browser-bar .dot-g{background:#4a9a4a}
 .hero-browser-bar .url{flex:1;background:#0a0907;border-radius:4px;padding:3px 10px;font-size:0.65rem;color:var(--muted);font-family:"DM Sans",sans-serif;letter-spacing:0.3px;margin-left:8px;border:1px solid #1a1715;display:flex;align-items:center;gap:6px}
 .hero-browser-bar .url .lock{color:var(--gold-dim);font-size:0.7rem}
-.hero-proof{display:flex;align-items:center;gap:12px;padding:0.9rem 1rem;background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.15);border-radius:8px;margin-bottom:0.9rem}
+.hero-proof{display:flex;align-items:center;gap:12px;padding:0.9rem 1rem;background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.15);border-radius:8px;margin-bottom:0}
 .hero-proof-stars{color:var(--gold-light);font-size:0.9rem;letter-spacing:1px;line-height:1}
 .hero-proof-text{font-family:"Fraunces",serif;font-style:italic;font-weight:400;font-size:0.82rem;color:var(--white);line-height:1.45;flex:1}
 .hero-proof-author{font-size:0.64rem;color:var(--gold-dim);text-transform:uppercase;letter-spacing:1.5px;margin-top:3px;font-weight:600}
-.hero-countdown{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0.75rem 1rem;background:var(--ink);border:1px solid var(--border);border-radius:8px}
-.hero-countdown-label{font-size:0.6rem;color:var(--gold-dim);text-transform:uppercase;letter-spacing:2px;font-weight:600;line-height:1.3}
-.hero-countdown-label span{display:block;color:var(--mid);font-size:0.62rem;letter-spacing:0.5px;text-transform:none;font-weight:500;margin-top:1px}
-.hero-countdown-timer{font-family:"Bebas Neue",sans-serif;font-size:1.5rem;letter-spacing:2px;color:var(--gold-light);font-variant-numeric:tabular-nums;line-height:1}
-.hero-countdown-pulse{width:7px;height:7px;border-radius:50%;background:var(--gold-light);box-shadow:0 0 10px var(--gold-light);animation:live-pulse 1.6s ease-in-out infinite}
 @keyframes live-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.7)}}
 
 /* SECTION BASE */
@@ -633,88 +634,22 @@ footer .foot-logo em{font-family:"Instrument Serif",serif;font-style:italic;font
     </div>
     <div class="hero-right">
       <div class="hero-card">
-        <div class="hero-card-label">Recent Build &mdash; Plumbing</div>
-        <div class="hero-browser">
+        <div class="hero-card-label">Featured Build &mdash; Restaurant</div>
+        <a class="hero-browser hero-browser-link" href="sites/restaurant-mesa.html" target="_blank" rel="noopener" aria-label="View Mesa Kitchen &amp; Bar live demo site">
           <div class="hero-browser-bar">
             <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
-            <div class="url"><span class="lock">&#x1F512;</span>riveraplumbing.com</div>
+            <div class="url"><span class="lock">&#x1F512;</span>mesakitchenbar.com</div>
+            <span class="hero-browser-ext" aria-hidden="true">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </span>
           </div>
-          <svg width="100%" height="220" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" style="display:block">
-            <defs>
-              <linearGradient id="hb-hero" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#0a1830"/>
-                <stop offset="1" stop-color="#050a18"/>
-              </linearGradient>
-              <linearGradient id="hb-cta" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0" stop-color="#e0c478"/>
-                <stop offset="1" stop-color="#c9a84c"/>
-              </linearGradient>
-            </defs>
-            <!-- site nav strip -->
-            <rect x="0" y="0" width="400" height="26" fill="#061020"/>
-            <rect x="16" y="9" width="56" height="8" rx="2" fill="#e0c478" opacity="0.85"/>
-            <rect x="260" y="10" width="28" height="6" rx="2" fill="#fff" opacity="0.3"/>
-            <rect x="294" y="10" width="28" height="6" rx="2" fill="#fff" opacity="0.3"/>
-            <rect x="328" y="6" width="60" height="14" rx="3" fill="url(#hb-cta)"/>
-            <!-- hero bg -->
-            <rect x="0" y="26" width="400" height="140" fill="url(#hb-hero)"/>
-            <!-- emergency pill -->
-            <rect x="20" y="42" width="110" height="18" rx="9" fill="#d94a3a" opacity="0.15" stroke="#d94a3a" stroke-opacity="0.5" stroke-width="1"/>
-            <circle cx="32" cy="51" r="3" fill="#ff6050"/>
-            <text x="42" y="55" fill="#ff8070" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" letter-spacing="1">24/7 EMERGENCY</text>
-            <!-- heading -->
-            <text x="20" y="86" fill="#fff" font-family="Georgia,serif" font-size="22" font-weight="600" letter-spacing="-0.5">Houston's trusted</text>
-            <text x="20" y="108" fill="#e0c478" font-family="Georgia,serif" font-style="italic" font-size="22" font-weight="400" letter-spacing="-0.5">plumbing team.</text>
-            <rect x="20" y="120" width="220" height="4" rx="2" fill="#fff" opacity="0.25"/>
-            <rect x="20" y="130" width="180" height="4" rx="2" fill="#fff" opacity="0.15"/>
-            <!-- CTAs -->
-            <rect x="20" y="144" width="94" height="16" rx="3" fill="url(#hb-cta)"/>
-            <text x="67" y="155" fill="#181310" font-family="DM Sans,sans-serif" font-size="7" font-weight="700" text-anchor="middle" letter-spacing="1">CALL NOW</text>
-            <rect x="122" y="144" width="94" height="16" rx="3" fill="none" stroke="#fff" stroke-opacity="0.25"/>
-            <text x="169" y="155" fill="#fff" font-family="DM Sans,sans-serif" font-size="7" font-weight="600" text-anchor="middle" letter-spacing="1" opacity="0.8">GET QUOTE</text>
-            <!-- phone card (right) -->
-            <rect x="256" y="50" width="126" height="100" rx="8" fill="#081124" stroke="#e0c478" stroke-opacity="0.25"/>
-            <rect x="266" y="60" width="40" height="5" rx="2" fill="#e0c478" opacity="0.6"/>
-            <rect x="266" y="72" width="106" height="6" rx="2" fill="#fff" opacity="0.4"/>
-            <rect x="266" y="84" width="90" height="4" rx="2" fill="#fff" opacity="0.15"/>
-            <rect x="266" y="94" width="98" height="4" rx="2" fill="#fff" opacity="0.15"/>
-            <rect x="266" y="104" width="80" height="4" rx="2" fill="#fff" opacity="0.15"/>
-            <circle cx="276" cy="128" r="9" fill="#e0c478" opacity="0.15" stroke="#e0c478" stroke-opacity="0.5"/>
-            <path d="M272 128 l3 3 l6 -6" stroke="#e0c478" stroke-width="1.5" fill="none"/>
-            <rect x="292" y="124" width="70" height="4" rx="2" fill="#fff" opacity="0.3"/>
-            <rect x="292" y="132" width="50" height="3" rx="1" fill="#fff" opacity="0.15"/>
-            <!-- services row -->
-            <rect x="0" y="166" width="400" height="94" fill="#050811"/>
-            <rect x="16" y="178" width="118" height="70" rx="5" fill="#0a1422" stroke="#1a2638"/>
-            <rect x="140" y="178" width="118" height="70" rx="5" fill="#0a1422" stroke="#1a2638"/>
-            <rect x="264" y="178" width="118" height="70" rx="5" fill="#0a1422" stroke="#1a2638"/>
-            <!-- service icons -->
-            <rect x="28" y="190" width="20" height="20" rx="4" fill="#e0c478" opacity="0.12"/>
-            <rect x="152" y="190" width="20" height="20" rx="4" fill="#e0c478" opacity="0.12"/>
-            <rect x="276" y="190" width="20" height="20" rx="4" fill="#e0c478" opacity="0.12"/>
-            <rect x="28" y="218" width="70" height="5" rx="2" fill="#fff" opacity="0.55"/>
-            <rect x="152" y="218" width="62" height="5" rx="2" fill="#fff" opacity="0.55"/>
-            <rect x="276" y="218" width="68" height="5" rx="2" fill="#fff" opacity="0.55"/>
-            <rect x="28" y="229" width="90" height="3" rx="1" fill="#fff" opacity="0.2"/>
-            <rect x="28" y="235" width="82" height="3" rx="1" fill="#fff" opacity="0.2"/>
-            <rect x="152" y="229" width="90" height="3" rx="1" fill="#fff" opacity="0.2"/>
-            <rect x="152" y="235" width="82" height="3" rx="1" fill="#fff" opacity="0.2"/>
-            <rect x="276" y="229" width="90" height="3" rx="1" fill="#fff" opacity="0.2"/>
-            <rect x="276" y="235" width="82" height="3" rx="1" fill="#fff" opacity="0.2"/>
-          </svg>
-        </div>
+          <img class="hero-browser-img" src="sites/thumbnails/restaurant-mesa.jpg" alt="Mesa Kitchen &amp; Bar &mdash; editorial restaurant site with oversized italic Cormorant hero" loading="lazy" width="1200" height="750"/>
+        </a>
         <div class="hero-proof">
           <div>
             <div class="hero-proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <div class="hero-proof-text">"Two calls from Google my first week live."</div>
+            <div class="hero-proof-text">"6 calls from Google my first week live."</div>
             <div class="hero-proof-author">Carlos R. &mdash; Rivera Plumbing</div>
-          </div>
-        </div>
-        <div class="hero-countdown">
-          <div class="hero-countdown-label">72-Hour Build<span>Next slot opens in</span></div>
-          <div style="display:flex;align-items:center;gap:8px">
-            <span class="hero-countdown-pulse"></span>
-            <span class="hero-countdown-timer" id="heroCountdown">71:59:42</span>
           </div>
         </div>
       </div>
@@ -742,7 +677,7 @@ footer .foot-logo em{font-family:"Instrument Serif",serif;font-style:italic;font
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
         </div>
         <h3 class="bento-feature-h">Plumbers, HVAC &amp; Trades</h3>
-        <p class="bento-feature-p">Emergency-call sites with 24/7 CTAs, instant quote forms, and service-area SEO. Two calls from Google in the first week isn't rare &mdash; it's the point.</p>
+        <p class="bento-feature-p">Emergency-call sites with 24/7 CTAs, instant quote forms, and service-area SEO. Six calls from Google in the first week isn't rare &mdash; it's the point.</p>
         <div class="bento-feature-meta">
           <span><strong>&mdash;</strong> Average build: 48hrs</span>
           <span><strong>&mdash;</strong> Emergency pill, call tracking, quote form</span>
@@ -799,7 +734,7 @@ footer .foot-logo em{font-family:"Instrument Serif",serif;font-style:italic;font
   <!-- Full-bleed editorial marquee -->
   <div class="reviews-marquee reveal">
     <div class="marquee-track">
-      <span>Two calls</span>
+      <span>6 calls</span>
       <span class="marquee-dot">&bull;</span>
       <span class="marquee-italic"><em>from Google</em></span>
       <span class="marquee-dot">&bull;</span>
@@ -809,7 +744,7 @@ footer .foot-logo em{font-family:"Instrument Serif",serif;font-style:italic;font
       <span class="marquee-dot">&bull;</span>
       <span>in 30 days.</span>
       <span class="marquee-dot">&bull;</span>
-      <span>Two calls</span>
+      <span>6 calls</span>
       <span class="marquee-dot">&bull;</span>
       <span class="marquee-italic"><em>from Google</em></span>
       <span class="marquee-dot">&bull;</span>
@@ -1421,35 +1356,6 @@ footer .foot-logo em{font-family:"Instrument Serif",serif;font-style:italic;font
 // Cursor position tracked for particle attraction only (no visible glow)
 let mx = -1000, my = -1000;
 document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; }, {passive:true});
-
-// ---- HERO COUNTDOWN ----
-(function(){
-  const el = document.getElementById('heroCountdown');
-  if(!el) return;
-  // Target: next Monday 9AM local, rolling
-  function nextSlot(){
-    const now = new Date();
-    const d = new Date(now);
-    d.setHours(9,0,0,0);
-    const day = d.getDay();
-    // target = next Monday (1). If today is Monday before 9, same day.
-    let diff = (1 - day + 7) % 7;
-    if(diff === 0 && now.getHours() >= 9) diff = 7;
-    d.setDate(d.getDate() + diff);
-    return d;
-  }
-  let target = nextSlot();
-  function tick(){
-    let ms = target - new Date();
-    if(ms <= 0){ target = nextSlot(); ms = target - new Date(); }
-    const h = Math.floor(ms / 3600000);
-    const m = Math.floor((ms % 3600000) / 60000);
-    const s = Math.floor((ms % 60000) / 1000);
-    el.textContent = String(h).padStart(2,'0') + ':' + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
-  }
-  tick();
-  setInterval(tick, 1000);
-})();
 
 // ---- NAV SCROLL TRANSITION ----
 const nav = document.querySelector('nav');
