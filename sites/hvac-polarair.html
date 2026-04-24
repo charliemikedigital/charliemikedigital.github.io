@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>PolarAir HVAC | Heating & Cooling You Can Count On | Houston, TX</title>
+<meta name="description" content="Friendly, licensed HVAC service in Houston TX. AC repair, installation & heating. Same-day service available. Call (713) 555-0192."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,700&family=Nunito+Sans:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  /* COOL palette — ice */
+  --ice-50:#f3faff;
+  --ice-100:#e6f4fc;
+  --ice-200:#cfe8f7;
+  --ice-300:#a9d5ef;
+  --ice-400:#5ab0e8;
+  --ice-500:#4a90d9;
+  --ice-600:#2f6fbf;
+  --ice-700:#1f4f94;
+  --ice-900:#0b2b52;
+
+  /* WARM palette — sun */
+  --sun-300:#ffb37a;
+  --sun-400:#ff8844;
+  --sun-500:#f26a22;
+  --sun-600:#c94d14;
+  --sun-50:#fff5ec;
+
+  /* surfaces */
+  --paper:#fafcff;
+  --snow:#ffffff;
+  --frost:#eef6fc;
+  --ink:#0f1c2e;
+  --text:#1a2b40;
+  --mid:#516278;
+  --muted:#8497ab;
+  --line:rgba(15,40,70,0.08);
+  --line-2:rgba(15,40,70,0.12);
+
+  /* dynamic primary (toggled by JS between ice-400 and sun-400) */
+  --primary:var(--ice-400);
+  --primary-2:var(--ice-500);
+  --primary-dark:var(--ice-700);
+  --primary-glow:rgba(90,176,232,0.35);
+  --primary-soft:rgba(90,176,232,0.10);
+
+  --r:14px;
+  --r-sm:8px;
+  --r-pill:100px;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Nunito Sans',sans-serif;color:var(--text);background:var(--paper);
+  overflow-x:hidden;font-size:16px;line-height:1.7;
+  transition:background 0.5s ease;
+}
+body.season-winter{background:linear-gradient(180deg,#fff9f3 0%,#fafcff 600px)}
+body.season-winter{
+  --primary:var(--sun-400);
+  --primary-2:var(--sun-500);
+  --primary-dark:var(--sun-600);
+  --primary-glow:rgba(255,136,68,0.35);
+  --primary-soft:rgba(255,136,68,0.10);
+}
+h1,h2,h3,h4{font-family:'Nunito',sans-serif;line-height:1.15}
+a{text-decoration:none;color:inherit}
+em,.i{font-family:'Nunito',sans-serif;font-style:italic;font-weight:500}
+
+/* utility */
+.tabular{font-variant-numeric:tabular-nums}
+.display{font-family:'Space Grotesk',sans-serif;letter-spacing:-0.02em}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(250,252,255,0.82);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+  padding:0 2rem;height:72px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;
+}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-bubble{
+  width:42px;height:42px;
+  background:linear-gradient(135deg,var(--ice-400),var(--ice-600));
+  border-radius:13px;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 18px rgba(74,144,217,0.35),inset 0 1px 0 rgba(255,255,255,0.4);
+  position:relative;overflow:hidden;
+}
+.logo-bubble::after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.5),transparent 60%);
+}
+.logo-name{font-family:'Nunito',sans-serif;font-size:1.2rem;font-weight:900;color:var(--ink);letter-spacing:-0.01em}
+.logo-name span{color:var(--ice-500);font-style:italic;font-weight:700}
+.nav-center{display:flex;gap:0.1rem;list-style:none}
+.nav-center a{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:0.85rem;font-weight:500;color:var(--mid);
+  padding:0.5rem 0.95rem;border-radius:var(--r-pill);
+  transition:all 0.2s;letter-spacing:0.2px;
+}
+.nav-center a:hover{color:var(--ice-700);background:var(--ice-100)}
+
+.season-toggle{
+  display:inline-flex;align-items:center;padding:3px;
+  background:var(--snow);border:1px solid var(--line-2);
+  border-radius:var(--r-pill);
+  box-shadow:inset 0 1px 2px rgba(15,40,70,0.04);
+  gap:2px;
+}
+.season-toggle button{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:0.7rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
+  padding:0.38rem 0.8rem;border:none;background:transparent;
+  color:var(--muted);cursor:pointer;border-radius:var(--r-pill);
+  display:inline-flex;align-items:center;gap:5px;
+  transition:all 0.25s;
+}
+.season-toggle button.active.cool{background:linear-gradient(135deg,var(--ice-400),var(--ice-500));color:#fff;box-shadow:0 4px 12px rgba(74,144,217,0.3)}
+.season-toggle button.active.warm{background:linear-gradient(135deg,var(--sun-300),var(--sun-500));color:#fff;box-shadow:0 4px 12px rgba(255,136,68,0.35)}
+
+.nav-phone{
+  background:var(--ink);color:#fff;
+  padding:0.65rem 1.2rem;border-radius:var(--r-pill);
+  font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.85rem;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:all 0.2s;letter-spacing:0.2px;
+  position:relative;overflow:hidden;
+}
+.nav-phone:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(15,28,46,0.25)}
+@media(max-width:900px){.nav-center{display:none}}
+@media(max-width:640px){.season-toggle{display:none}nav{padding:0 1rem;gap:0.5rem}}
+
+/* ── HERO ── */
+.hero{
+  position:relative;overflow:hidden;
+  padding:4.5rem 1.5rem 4rem;
+  background:
+    radial-gradient(1100px 600px at 85% -10%,rgba(90,176,232,0.18),transparent 60%),
+    radial-gradient(700px 500px at 8% 100%,rgba(255,136,68,0.08),transparent 60%),
+    linear-gradient(180deg,var(--ice-50) 0%,var(--paper) 80%);
+  transition:background 0.6s;
+}
+body.season-winter .hero{
+  background:
+    radial-gradient(1100px 600px at 85% -10%,rgba(255,136,68,0.22),transparent 60%),
+    radial-gradient(700px 500px at 8% 100%,rgba(90,176,232,0.08),transparent 60%),
+    linear-gradient(180deg,var(--sun-50) 0%,var(--paper) 80%);
+}
+
+/* decorative SVG flakes/heat */
+.hero-decor{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.flake{position:absolute;opacity:0.55;animation:float-flake 14s ease-in-out infinite}
+.flake:nth-child(1){top:8%;left:6%;width:22px;animation-delay:0s}
+.flake:nth-child(2){top:18%;right:14%;width:14px;animation-delay:-3s}
+.flake:nth-child(3){top:62%;left:10%;width:18px;animation-delay:-6s}
+.flake:nth-child(4){top:75%;right:8%;width:12px;animation-delay:-9s}
+.flake:nth-child(5){top:38%;left:48%;width:10px;animation-delay:-2s;opacity:0.35}
+@keyframes float-flake{
+  0%,100%{transform:translateY(0) rotate(0)}
+  50%{transform:translateY(-14px) rotate(180deg)}
+}
+body.season-winter .flake{opacity:0}
+.heatwave{position:absolute;inset:0;opacity:0;transition:opacity 0.6s}
+body.season-winter .heatwave{opacity:0.5}
+
+.hero-inner{
+  max-width:1140px;margin:0 auto;position:relative;z-index:2;
+  display:grid;grid-template-columns:1.15fr 1fr;gap:4rem;align-items:center;
+}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:3rem}}
+
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--snow);border:1px solid var(--line-2);
+  border-radius:var(--r-pill);padding:0.35rem 0.95rem 0.35rem 0.4rem;
+  font-family:'Space Grotesk',sans-serif;font-size:0.72rem;font-weight:600;
+  color:var(--ice-700);margin-bottom:1.75rem;
+  letter-spacing:1.5px;text-transform:uppercase;
+  box-shadow:0 2px 10px rgba(15,40,70,0.06);
+}
+.hero-eyebrow-dot{
+  width:22px;height:22px;border-radius:50%;
+  background:linear-gradient(135deg,var(--ice-400),var(--ice-600));
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 6px rgba(74,144,217,0.4);
+}
+body.season-winter .hero-eyebrow{color:var(--sun-600)}
+body.season-winter .hero-eyebrow-dot{background:linear-gradient(135deg,var(--sun-300),var(--sun-500));box-shadow:0 2px 6px rgba(255,136,68,0.4)}
+
+.hero h1{
+  font-family:'Nunito',sans-serif;
+  font-size:clamp(2.6rem,5.6vw,4.3rem);
+  font-weight:900;color:var(--ink);
+  letter-spacing:-0.025em;line-height:1.02;
+  margin-bottom:1.4rem;
+}
+.hero h1 em{
+  font-family:'Nunito',sans-serif;font-style:italic;font-weight:500;
+  background:linear-gradient(135deg,var(--ice-400),var(--ice-700));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  transition:all 0.4s;
+}
+body.season-winter .hero h1 em{
+  background:linear-gradient(135deg,var(--sun-400),var(--sun-600));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-sub{
+  color:var(--mid);font-size:1.08rem;line-height:1.65;
+  max-width:480px;margin-bottom:2.2rem;
+}
+
+/* DUAL CTA */
+.dual-cta{
+  display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;
+  max-width:520px;margin-bottom:1.75rem;
+}
+@media(max-width:520px){.dual-cta{grid-template-columns:1fr}}
+.cta-big{
+  position:relative;overflow:hidden;isolation:isolate;
+  padding:1.1rem 1.25rem;border-radius:16px;
+  display:flex;align-items:center;gap:12px;
+  font-family:'Nunito',sans-serif;font-weight:800;font-size:0.98rem;
+  color:#fff;border:1px solid transparent;
+  box-shadow:0 10px 28px -10px var(--shadow-col,rgba(74,144,217,0.5)),inset 0 1px 0 rgba(255,255,255,0.25);
+  transition:transform 0.25s,box-shadow 0.25s;
+  cursor:pointer;
+}
+.cta-big:hover{transform:translateY(-2px)}
+.cta-big::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,0.4) 50%,transparent 65%);
+  transform:translateX(-120%);transition:transform 0.7s cubic-bezier(.22,1,.36,1);
+}
+.cta-big:hover::before{transform:translateX(120%)}
+.cta-cool{
+  background:linear-gradient(135deg,var(--ice-400) 0%,var(--ice-600) 100%);
+  --shadow-col:rgba(74,144,217,0.55);
+}
+.cta-warm{
+  background:linear-gradient(135deg,var(--sun-300) 0%,var(--sun-500) 100%);
+  --shadow-col:rgba(255,136,68,0.5);
+}
+.cta-big .cta-icon{
+  width:36px;height:36px;border-radius:10px;
+  background:rgba(255,255,255,0.2);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  backdrop-filter:blur(4px);
+}
+.cta-big .cta-label{display:flex;flex-direction:column;align-items:flex-start;line-height:1.1;gap:2px}
+.cta-big .cta-sub{font-size:0.68rem;font-weight:600;opacity:0.85;letter-spacing:1px;text-transform:uppercase;font-family:'Space Grotesk',sans-serif}
+
+.hero-meta{
+  display:flex;flex-wrap:wrap;gap:0.5rem 1.5rem;
+  font-family:'Space Grotesk',sans-serif;font-size:0.78rem;font-weight:500;
+  color:var(--mid);
+}
+.hero-meta .dot{color:var(--ice-400)}
+
+/* THERMOMETER */
+.thermo-wrap{position:relative;display:flex;justify-content:center;align-items:center}
+.thermo-card{
+  position:relative;
+  background:linear-gradient(180deg,#ffffff 0%,#f4faff 100%);
+  border:1px solid var(--line);border-radius:28px;
+  padding:2rem 2rem 1.75rem;
+  box-shadow:
+    0 30px 80px -30px rgba(15,40,70,0.25),
+    0 0 0 1px rgba(255,255,255,0.6) inset;
+  display:grid;grid-template-columns:auto 1fr;gap:1.75rem;align-items:center;
+  max-width:480px;width:100%;
+  overflow:hidden;
+}
+body.season-winter .thermo-card{background:linear-gradient(180deg,#ffffff 0%,#fff5ec 100%)}
+.thermo-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--ice-400),var(--sun-400));
+  opacity:0.7;
+}
+.thermo-svg{width:72px;height:200px;flex-shrink:0}
+.thermo-info{display:flex;flex-direction:column;gap:0.4rem}
+.thermo-label{
+  font-family:'Space Grotesk',sans-serif;font-size:0.68rem;font-weight:600;
+  color:var(--muted);text-transform:uppercase;letter-spacing:2px;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.thermo-label .live{
+  display:inline-flex;align-items:center;gap:5px;
+  background:var(--ice-100);color:var(--ice-700);
+  padding:2px 9px;border-radius:100px;font-size:0.6rem;font-weight:700;letter-spacing:1.5px;
+}
+.thermo-label .live::before{content:"";width:6px;height:6px;border-radius:50%;background:#3ecf8e;box-shadow:0 0 8px #3ecf8e;animation:live-pulse 1.6s ease-in-out infinite}
+@keyframes live-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.75)}}
+
+.thermo-temp{
+  font-family:'Space Grotesk',sans-serif;font-weight:700;
+  font-size:4.2rem;color:var(--ink);line-height:0.95;letter-spacing:-0.04em;
+  display:flex;align-items:flex-start;gap:4px;
+}
+.thermo-temp .deg{font-size:2.2rem;color:var(--ice-500);font-weight:500}
+.thermo-feels{font-size:0.82rem;color:var(--mid);font-family:'Space Grotesk',sans-serif;font-weight:500}
+.thermo-feels em{font-family:'Nunito',sans-serif;font-style:italic;font-weight:500;color:var(--ice-700)}
+body.season-winter .thermo-feels em{color:var(--sun-600)}
+.thermo-desc{
+  font-family:'Nunito',sans-serif;font-style:italic;font-weight:500;
+  font-size:0.95rem;color:var(--text);margin-top:2px;
+}
+.thermo-stats{
+  margin-top:1rem;padding-top:1rem;
+  border-top:1px dashed var(--line-2);
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem;
+  grid-column:1 / -1;
+}
+.mini{text-align:center}
+.mini-n{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--ink);letter-spacing:-0.02em}
+.mini-l{font-family:'Space Grotesk',sans-serif;font-size:0.62rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-top:1px}
+
+@media(max-width:520px){
+  .thermo-card{grid-template-columns:1fr;justify-items:center;padding:1.75rem 1.5rem}
+  .thermo-svg{height:180px}
+  .thermo-info{align-items:center;text-align:center}
+}
+
+/* CERT ROW */
+.certs{
+  max-width:1140px;margin:0 auto;padding:1.25rem 1.5rem 1.75rem;
+  display:flex;flex-wrap:wrap;justify-content:center;gap:0.6rem;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:var(--snow);
+}
+.cert-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  background:linear-gradient(180deg,#ffffff,var(--frost));
+  border:1px solid var(--line-2);border-radius:var(--r-pill);
+  padding:0.4rem 0.95rem 0.4rem 0.45rem;
+  font-family:'Space Grotesk',sans-serif;font-size:0.72rem;font-weight:600;
+  color:var(--ink);letter-spacing:0.5px;
+  box-shadow:0 1px 3px rgba(15,40,70,0.04);
+  transition:all 0.2s;
+}
+.cert-pill:hover{transform:translateY(-1px);border-color:var(--ice-300)}
+.cert-ico{
+  width:24px;height:24px;border-radius:50%;
+  background:linear-gradient(135deg,var(--ice-100),var(--ice-200));
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  color:var(--ice-700);
+}
+.cert-ico.gold{background:linear-gradient(135deg,#fff3d6,#ffe09c);color:#9a7c1e}
+.cert-ico.green{background:linear-gradient(135deg,#d9f5e3,#aee8c4);color:#1a7a46}
+.cert-ico.warm{background:linear-gradient(135deg,#ffe0cc,#ffc59e);color:var(--sun-600)}
+
+/* ── SECTION BASE ── */
+.section{position:relative;padding:6rem 1.5rem}
+.sec-inner{max-width:1140px;margin:0 auto;position:relative}
+.sec-numeral{
+  position:absolute;top:-24px;right:-12px;
+  font-family:'Nunito',sans-serif;font-style:italic;font-weight:500;
+  font-size:clamp(6rem,11vw,10rem);color:var(--ice-400);
+  opacity:0.09;line-height:1;letter-spacing:-0.04em;
+  pointer-events:none;user-select:none;
+}
+body.season-winter .sec-numeral{color:var(--sun-400)}
+.sec-eyebrow{
+  font-family:'Space Grotesk',sans-serif;font-size:0.72rem;font-weight:600;
+  letter-spacing:3px;text-transform:uppercase;color:var(--ice-600);
+  margin-bottom:0.85rem;display:inline-flex;align-items:center;gap:10px;
+}
+.sec-eyebrow::before{content:"";width:32px;height:1px;background:linear-gradient(90deg,transparent,var(--ice-500))}
+body.season-winter .sec-eyebrow{color:var(--sun-600)}
+body.season-winter .sec-eyebrow::before{background:linear-gradient(90deg,transparent,var(--sun-500))}
+
+.sec-title{
+  font-family:'Nunito',sans-serif;font-weight:900;
+  font-size:clamp(2rem,4vw,3.2rem);color:var(--ink);
+  margin-bottom:0.9rem;letter-spacing:-0.025em;line-height:1.05;
+  max-width:780px;
+}
+.sec-title em{
+  font-family:'Nunito',sans-serif;font-style:italic;font-weight:500;
+  color:var(--ice-500);
+}
+body.season-winter .sec-title em{color:var(--sun-500)}
+.sec-sub{color:var(--mid);font-size:1rem;max-width:560px;line-height:1.7}
+
+/* ── SERVICES (bento-ish) ── */
+.services{background:var(--paper)}
+.svc-grid{
+  display:grid;grid-template-columns:repeat(6,1fr);
+  gap:1rem;margin-top:3rem;
+}
+@media(max-width:900px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.svc-grid{grid-template-columns:1fr}}
+.svc-card{
+  grid-column:span 2;
+  position:relative;overflow:hidden;
+  background:linear-gradient(180deg,#ffffff 0%,var(--frost) 100%);
+  border:1px solid var(--line);border-radius:18px;
+  padding:1.75rem 1.65rem;
+  transition:transform 0.3s cubic-bezier(.22,1,.36,1),border-color 0.3s,box-shadow 0.3s;
+}
+.svc-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--ice-400),transparent);
+  opacity:0;transition:opacity 0.3s;
+}
+.svc-card:hover{transform:translateY(-4px);border-color:var(--ice-300);box-shadow:0 16px 40px -14px rgba(74,144,217,0.25)}
+.svc-card:hover::before{opacity:1}
+.svc-card.feat{
+  grid-column:span 3;
+  background:linear-gradient(135deg,var(--ice-500) 0%,var(--ice-700) 100%);
+  color:#fff;border-color:transparent;
+}
+.svc-card.feat .svc-icon{background:rgba(255,255,255,0.15);color:#fff}
+.svc-card.feat h3{color:#fff}
+.svc-card.feat p{color:rgba(255,255,255,0.82)}
+.svc-card.feat::after{
+  content:"";position:absolute;bottom:-60px;right:-60px;
+  width:220px;height:220px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,0.14),transparent 60%);
+  pointer-events:none;
+}
+.svc-card.warm-feat{
+  grid-column:span 3;
+  background:linear-gradient(135deg,var(--sun-300) 0%,var(--sun-600) 100%);
+  color:#fff;border-color:transparent;
+}
+.svc-card.warm-feat .svc-icon{background:rgba(255,255,255,0.18);color:#fff}
+.svc-card.warm-feat h3{color:#fff}
+.svc-card.warm-feat p{color:rgba(255,255,255,0.85)}
+.svc-card.warm-feat::after{
+  content:"";position:absolute;bottom:-60px;right:-60px;
+  width:220px;height:220px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,0.18),transparent 60%);
+  pointer-events:none;
+}
+.svc-icon{
+  width:52px;height:52px;border-radius:14px;
+  background:linear-gradient(135deg,var(--ice-100),var(--ice-200));
+  color:var(--ice-700);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1.25rem;
+  transition:transform 0.35s cubic-bezier(.22,1,.36,1);
+}
+.svc-card:hover .svc-icon{transform:rotate(-6deg) scale(1.06)}
+.svc-card h3{
+  font-family:'Nunito',sans-serif;font-weight:800;font-size:1.1rem;
+  color:var(--ink);margin-bottom:0.45rem;letter-spacing:-0.01em;
+}
+.svc-card h3 em{color:var(--ice-500)}
+.svc-card.feat h3 em,.svc-card.warm-feat h3 em{color:#fff}
+.svc-card p{font-size:0.88rem;color:var(--mid);line-height:1.6}
+.svc-tag{
+  display:inline-flex;align-items:center;gap:6px;margin-bottom:0.9rem;
+  font-family:'Space Grotesk',sans-serif;font-size:0.62rem;font-weight:600;
+  letter-spacing:1.5px;text-transform:uppercase;
+  padding:3px 9px;border-radius:100px;
+  background:rgba(255,255,255,0.18);color:rgba(255,255,255,0.9);
+  align-self:flex-start;width:fit-content;
+}
+@media(max-width:900px){.svc-card,.svc-card.feat,.svc-card.warm-feat{grid-column:span 2}}
+@media(max-width:520px){.svc-card,.svc-card.feat,.svc-card.warm-feat{grid-column:span 1}}
+
+/* ── MARQUEE ── */
+.marquee{
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:var(--ink);color:#fff;
+  padding:1.6rem 0;overflow:hidden;position:relative;
+}
+.marquee::before,.marquee::after{
+  content:"";position:absolute;top:0;bottom:0;width:100px;z-index:2;
+  pointer-events:none;
+}
+.marquee::before{left:0;background:linear-gradient(90deg,var(--ink),transparent)}
+.marquee::after{right:0;background:linear-gradient(-90deg,var(--ink),transparent)}
+.marquee-track{
+  display:flex;gap:3rem;align-items:center;
+  animation:marquee 34s linear infinite;width:max-content;
+}
+.marquee-item{
+  font-family:'Nunito',sans-serif;font-weight:500;font-style:italic;
+  font-size:1.8rem;letter-spacing:-0.02em;color:rgba(255,255,255,0.92);
+  display:flex;align-items:center;gap:1.5rem;white-space:nowrap;
+}
+.marquee-item .dot{color:var(--ice-400);font-style:normal}
+body.season-winter .marquee-item .dot{color:var(--sun-400)}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── WHY ── */
+.why{
+  background:
+    radial-gradient(800px 500px at 85% 20%,rgba(90,176,232,0.09),transparent 60%),
+    var(--paper);
+}
+body.season-winter .why{background:radial-gradient(800px 500px at 85% 20%,rgba(255,136,68,0.09),transparent 60%),var(--paper)}
+.why-inner{
+  display:grid;grid-template-columns:1fr 1.15fr;gap:5rem;align-items:center;
+}
+@media(max-width:900px){.why-inner{grid-template-columns:1fr;gap:3rem}}
+.why-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:520px){.why-cards{grid-template-columns:1fr}}
+.why-card{
+  position:relative;overflow:hidden;
+  background:linear-gradient(180deg,#ffffff,var(--frost));
+  border:1px solid var(--line);border-radius:16px;
+  padding:1.4rem 1.3rem;
+  transition:border-color 0.3s,transform 0.3s;
+}
+.why-card:hover{border-color:var(--ice-300);transform:translateY(-2px)}
+.why-card-icon{
+  width:40px;height:40px;border-radius:11px;
+  background:linear-gradient(135deg,var(--ice-100),var(--ice-200));
+  color:var(--ice-700);
+  display:flex;align-items:center;justify-content:center;margin-bottom:0.8rem;
+}
+.why-card h4{
+  font-family:'Nunito',sans-serif;font-weight:800;font-size:0.98rem;
+  color:var(--ink);margin-bottom:0.3rem;letter-spacing:-0.01em;
+}
+.why-card p{font-size:0.82rem;color:var(--mid);line-height:1.55}
+.why-cta{
+  display:inline-flex;align-items:center;gap:9px;margin-top:1.75rem;
+  background:var(--ink);color:#fff;
+  padding:0.9rem 1.6rem;border-radius:var(--r-pill);
+  font-family:'Nunito',sans-serif;font-weight:800;font-size:0.92rem;letter-spacing:-0.01em;
+  position:relative;overflow:hidden;isolation:isolate;
+  box-shadow:0 10px 28px -10px rgba(15,28,46,0.45);
+  transition:transform 0.2s,box-shadow 0.2s;
+}
+.why-cta::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,0.2) 50%,transparent 65%);
+  transform:translateX(-120%);transition:transform 0.7s cubic-bezier(.22,1,.36,1);
+}
+.why-cta:hover{transform:translateY(-2px)}
+.why-cta:hover::before{transform:translateX(120%)}
+
+/* ── STATS BAND (big numbers) ── */
+.stats-band{
+  background:linear-gradient(135deg,var(--ice-700) 0%,var(--ice-900) 100%);
+  color:#fff;padding:4rem 1.5rem;position:relative;overflow:hidden;
+}
+body.season-winter .stats-band{background:linear-gradient(135deg,var(--sun-600) 0%,#6b2a07 100%)}
+.stats-band::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(600px 400px at 15% 20%,rgba(255,255,255,0.06),transparent 60%),
+    radial-gradient(500px 300px at 85% 80%,rgba(255,255,255,0.04),transparent 60%);
+  pointer-events:none;
+}
+.stats-inner{
+  max-width:1140px;margin:0 auto;position:relative;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center;
+}
+@media(max-width:720px){.stats-inner{grid-template-columns:repeat(2,1fr);gap:2.5rem 1rem}}
+.stat-n{
+  font-family:'Space Grotesk',sans-serif;font-weight:700;
+  font-size:clamp(2.8rem,5vw,4rem);letter-spacing:-0.03em;line-height:1;
+  background:linear-gradient(180deg,#fff,rgba(255,255,255,0.7));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.stat-l{
+  font-family:'Space Grotesk',sans-serif;font-size:0.72rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:2.5px;
+  color:rgba(255,255,255,0.7);margin-top:0.6rem;
+}
+.stat-i{
+  font-family:'Nunito',sans-serif;font-style:italic;font-weight:500;
+  font-size:0.95rem;color:rgba(255,255,255,0.85);margin-top:0.25rem;
+}
+
+/* ── REVIEWS ── */
+.reviews{background:var(--paper)}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem}
+@media(max-width:820px){.reviews-grid{grid-template-columns:1fr}}
+.review-card{
+  position:relative;
+  background:linear-gradient(180deg,#ffffff,var(--frost));
+  border:1px solid var(--line);border-radius:20px;
+  padding:1.85rem 1.75rem;
+  transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s;
+}
+.review-card:hover{transform:translateY(-3px);border-color:var(--ice-300);box-shadow:0 16px 40px -14px rgba(74,144,217,0.2)}
+.review-quote{
+  position:absolute;top:18px;right:20px;
+  font-family:'Nunito',sans-serif;font-style:italic;font-weight:500;
+  font-size:3.5rem;color:var(--ice-200);line-height:0.8;
+  pointer-events:none;user-select:none;
+}
+.review-stars{display:flex;gap:3px;margin-bottom:0.9rem;color:#f4a823}
+.review-body{
+  font-family:'Nunito',sans-serif;font-style:italic;font-weight:500;
+  font-size:0.95rem;color:var(--text);line-height:1.65;margin-bottom:1.25rem;
+}
+.reviewer{display:flex;align-items:center;gap:11px;padding-top:1rem;border-top:1px dashed var(--line-2)}
+.rev-av{
+  width:40px;height:40px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.82rem;color:#fff;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.25);
+}
+.rev-name{font-family:'Nunito',sans-serif;font-weight:800;font-size:0.9rem;color:var(--ink)}
+.rev-loc{font-family:'Space Grotesk',sans-serif;font-size:0.72rem;color:var(--muted);font-weight:500}
+
+/* ── CONTACT ── */
+.contact{
+  background:
+    radial-gradient(600px 400px at 15% 100%,rgba(90,176,232,0.1),transparent 60%),
+    var(--paper);
+}
+body.season-winter .contact{background:radial-gradient(600px 400px at 15% 100%,rgba(255,136,68,0.1),transparent 60%),var(--paper)}
+.contact-inner{
+  display:grid;grid-template-columns:1fr 1.25fr;gap:3.5rem;align-items:start;
+}
+@media(max-width:820px){.contact-inner{grid-template-columns:1fr}}
+.contact-left h2{
+  font-family:'Nunito',sans-serif;font-weight:900;
+  font-size:clamp(1.9rem,3.5vw,2.6rem);color:var(--ink);
+  letter-spacing:-0.025em;line-height:1.1;margin-bottom:0.75rem;
+}
+.contact-left h2 em{font-style:italic;font-weight:500;color:var(--ice-500)}
+body.season-winter .contact-left h2 em{color:var(--sun-500)}
+.contact-left .lead{color:var(--mid);font-size:1rem;margin-bottom:2rem;line-height:1.65}
+.c-detail{display:flex;align-items:flex-start;gap:13px;margin-bottom:1.4rem}
+.c-icon{
+  width:46px;height:46px;border-radius:12px;
+  background:linear-gradient(135deg,var(--ice-100),var(--ice-200));
+  color:var(--ice-700);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.c-label{
+  font-family:'Space Grotesk',sans-serif;font-size:0.68rem;font-weight:600;
+  color:var(--ice-600);text-transform:uppercase;letter-spacing:2px;margin-bottom:0.2rem;
+}
+body.season-winter .c-label{color:var(--sun-600)}
+.c-val{font-size:0.92rem;color:var(--text);font-weight:500}
+.contact-form{
+  background:#ffffff;border:1px solid var(--line);
+  border-radius:24px;padding:2.25rem;
+  box-shadow:0 20px 60px -20px rgba(15,40,70,0.18);
+}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:480px){.f-row{grid-template-columns:1fr}}
+.f-group{display:flex;flex-direction:column;gap:6px;margin-bottom:1rem}
+.f-label{
+  font-family:'Space Grotesk',sans-serif;font-size:0.72rem;font-weight:600;
+  color:var(--mid);text-transform:uppercase;letter-spacing:1.5px;
+}
+.f-input{
+  border:1.5px solid var(--line-2);border-radius:12px;
+  padding:0.85rem 1rem;font-family:'Nunito Sans',sans-serif;
+  font-size:0.95rem;color:var(--text);background:var(--paper);
+  width:100%;outline:none;transition:border-color 0.2s,box-shadow 0.2s,background 0.2s;
+  -webkit-appearance:none;
+}
+.f-input:focus{
+  border-color:var(--primary);background:#fff;
+  box-shadow:0 0 0 4px var(--primary-soft),0 0 0 1px var(--primary);
+}
+textarea.f-input{min-height:120px;resize:vertical;font-family:'Nunito Sans',sans-serif;line-height:1.5}
+.f-submit{
+  width:100%;background:linear-gradient(135deg,var(--primary),var(--primary-2));
+  color:#fff;border:none;border-radius:14px;padding:1.05rem;
+  font-family:'Nunito',sans-serif;font-size:1rem;font-weight:800;letter-spacing:-0.01em;
+  cursor:pointer;margin-top:0.5rem;
+  position:relative;overflow:hidden;isolation:isolate;
+  box-shadow:0 10px 28px -10px var(--primary-glow),inset 0 1px 0 rgba(255,255,255,0.25);
+  transition:transform 0.2s,box-shadow 0.2s;
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+}
+.f-submit::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,0.35) 50%,transparent 65%);
+  transform:translateX(-120%);transition:transform 0.7s cubic-bezier(.22,1,.36,1);
+}
+.f-submit:hover{transform:translateY(-2px)}
+.f-submit:hover::before{transform:translateX(120%)}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--ink);color:rgba(255,255,255,0.6);
+  padding:2.5rem 1.5rem;
+  display:flex;flex-wrap:wrap;justify-content:space-between;
+  align-items:center;gap:1rem;font-family:'Space Grotesk',sans-serif;
+  font-size:0.82rem;
+}
+footer .brand-mini{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.85)}
+footer .brand-mini .logo-bubble{width:32px;height:32px;border-radius:10px}
+footer a{color:var(--ice-400);font-weight:500}
+footer a:hover{color:#fff}
+footer .license{font-size:0.72rem;color:rgba(255,255,255,0.4);letter-spacing:1px}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-bubble">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/><line x1="4.93" y1="19.07" x2="19.07" y2="4.93"/></svg>
+    </div>
+    <div class="logo-name">Polar<span>Air</span></div>
+  </a>
+  <ul class="nav-center">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <div class="season-toggle" id="seasonToggle" aria-label="Season toggle">
+    <button type="button" class="cool active" data-season="cool" aria-pressed="true">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/><line x1="4.93" y1="19.07" x2="19.07" y2="4.93"/></svg>
+      Summer
+    </button>
+    <button type="button" class="warm" data-season="warm" aria-pressed="false">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg>
+      Winter
+    </button>
+  </div>
+
+  <a href="tel:7135550192" class="nav-phone">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l1.87-1.87a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    (713) 555-0192
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <!-- Decorative ice flakes -->
+  <div class="hero-decor" aria-hidden="true">
+    <svg class="flake" viewBox="0 0 100 100"><g stroke="#5ab0e8" stroke-width="3" stroke-linecap="round" fill="none"><line x1="50" y1="8" x2="50" y2="92"/><line x1="8" y1="50" x2="92" y2="50"/><line x1="18" y1="18" x2="82" y2="82"/><line x1="82" y1="18" x2="18" y2="82"/><polyline points="40 15,50 8,60 15"/><polyline points="40 85,50 92,60 85"/><polyline points="15 40,8 50,15 60"/><polyline points="85 40,92 50,85 60"/></g></svg>
+    <svg class="flake" viewBox="0 0 100 100"><g stroke="#4a90d9" stroke-width="3" stroke-linecap="round" fill="none"><line x1="50" y1="8" x2="50" y2="92"/><line x1="8" y1="50" x2="92" y2="50"/><line x1="18" y1="18" x2="82" y2="82"/><line x1="82" y1="18" x2="18" y2="82"/></g></svg>
+    <svg class="flake" viewBox="0 0 100 100"><g stroke="#5ab0e8" stroke-width="3" stroke-linecap="round" fill="none"><line x1="50" y1="8" x2="50" y2="92"/><line x1="8" y1="50" x2="92" y2="50"/><polyline points="40 15,50 8,60 15"/><polyline points="40 85,50 92,60 85"/></g></svg>
+    <svg class="flake" viewBox="0 0 100 100"><g stroke="#a9d5ef" stroke-width="3" stroke-linecap="round" fill="none"><line x1="50" y1="8" x2="50" y2="92"/><line x1="18" y1="18" x2="82" y2="82"/><line x1="82" y1="18" x2="18" y2="82"/></g></svg>
+    <svg class="flake" viewBox="0 0 100 100"><g stroke="#a9d5ef" stroke-width="3" stroke-linecap="round" fill="none"><line x1="50" y1="8" x2="50" y2="92"/><line x1="8" y1="50" x2="92" y2="50"/></g></svg>
+
+    <svg class="heatwave" width="100%" height="100%" viewBox="0 0 1200 800" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="wavegrad" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" stop-color="#ff8844" stop-opacity="0.22"/>
+          <stop offset="100%" stop-color="#ff8844" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path d="M0,500 Q150,470 300,500 T600,500 T900,500 T1200,500 L1200,800 L0,800 Z" fill="url(#wavegrad)"/>
+      <path d="M0,580 Q150,550 300,580 T600,580 T900,580 T1200,580 L1200,800 L0,800 Z" fill="url(#wavegrad)" opacity="0.6"/>
+    </svg>
+  </div>
+
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-dot">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="#fff"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </span>
+        Houston's Friendliest HVAC Team
+      </div>
+      <h1>Keeping Houston<br><em>cool homes</em> and<br><em>warm hearts</em></h1>
+      <p class="hero-sub">We're the HVAC company your neighbors recommend. Fast, honest service with a smile — because your comfort is personal to us.</p>
+
+      <div class="dual-cta">
+        <a href="#contact" class="cta-big cta-cool">
+          <span class="cta-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/><line x1="4.93" y1="19.07" x2="19.07" y2="4.93"/></svg>
+          </span>
+          <span class="cta-label">
+            <span class="cta-sub">Summer</span>
+            <span>Cool My Home</span>
+          </span>
+        </a>
+        <a href="#contact" class="cta-big cta-warm">
+          <span class="cta-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.22" y1="4.22" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/><line x1="4.22" y1="19.78" x2="6.34" y2="17.66"/><line x1="17.66" y1="6.34" x2="19.78" y2="4.22"/></svg>
+          </span>
+          <span class="cta-label">
+            <span class="cta-sub">Winter</span>
+            <span>Heat My Home</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="hero-meta">
+        <span><span class="dot">●</span> Licensed &amp; Insured</span>
+        <span><span class="dot">●</span> Same-Day Service</span>
+        <span><span class="dot">●</span> 2-Year Warranty</span>
+      </div>
+    </div>
+
+    <!-- THERMOMETER CARD -->
+    <div class="thermo-wrap">
+      <div class="thermo-card" id="thermoCard">
+        <svg class="thermo-svg" viewBox="0 0 80 220" aria-hidden="true">
+          <defs>
+            <linearGradient id="mercuryGrad" x1="0" x2="0" y1="1" y2="0">
+              <stop offset="0%" stop-color="#4a90d9"/>
+              <stop offset="55%" stop-color="#5ab0e8"/>
+              <stop offset="100%" stop-color="#ff8844"/>
+            </linearGradient>
+            <linearGradient id="tubeGlass" x1="0" x2="1" y1="0" y2="0">
+              <stop offset="0%" stop-color="rgba(255,255,255,0.65)"/>
+              <stop offset="50%" stop-color="rgba(255,255,255,0)"/>
+              <stop offset="100%" stop-color="rgba(15,40,70,0.1)"/>
+            </linearGradient>
+            <clipPath id="tubeClip">
+              <rect x="32" y="12" width="16" height="160" rx="8"/>
+              <circle cx="40" cy="186" r="22"/>
+            </clipPath>
+          </defs>
+          <!-- bulb background -->
+          <circle cx="40" cy="186" r="22" fill="#eef6fc" stroke="#cfe8f7" stroke-width="1.5"/>
+          <!-- tube background -->
+          <rect x="32" y="12" width="16" height="160" rx="8" fill="#eef6fc" stroke="#cfe8f7" stroke-width="1.5"/>
+          <!-- mercury (animated height via JS) -->
+          <g clip-path="url(#tubeClip)">
+            <rect id="mercury" x="28" y="210" width="24" height="0" fill="url(#mercuryGrad)">
+              <animate id="mercAnim" attributeName="y" from="210" to="60" dur="1.8s" fill="freeze" begin="0.3s" keySplines="0.22 1 0.36 1" calcMode="spline" keyTimes="0;1"/>
+              <animate attributeName="height" from="0" to="150" dur="1.8s" fill="freeze" begin="0.3s" keySplines="0.22 1 0.36 1" calcMode="spline" keyTimes="0;1"/>
+            </rect>
+          </g>
+          <!-- bulb core -->
+          <circle cx="40" cy="186" r="14" fill="url(#mercuryGrad)" opacity="0.9"/>
+          <!-- tick marks -->
+          <g stroke="#8497ab" stroke-width="1" stroke-linecap="round">
+            <line x1="22" y1="30" x2="28" y2="30"/>
+            <line x1="22" y1="60" x2="26" y2="60"/>
+            <line x1="22" y1="90" x2="28" y2="90"/>
+            <line x1="22" y1="120" x2="26" y2="120"/>
+            <line x1="22" y1="150" x2="28" y2="150"/>
+          </g>
+          <!-- glass highlight -->
+          <rect x="32" y="12" width="16" height="160" rx="8" fill="url(#tubeGlass)" pointer-events="none"/>
+          <!-- bulb highlight -->
+          <ellipse cx="34" cy="180" rx="4" ry="8" fill="rgba(255,255,255,0.55)"/>
+        </svg>
+        <div class="thermo-info">
+          <div class="thermo-label">
+            <span>Houston · Live</span>
+            <span class="live">LIVE</span>
+          </div>
+          <div class="thermo-temp tabular display" id="thermoTemp">
+            <span id="thermoNum">—</span><span class="deg">°F</span>
+          </div>
+          <div class="thermo-feels" id="thermoFeels">Fetching <em>feels-like</em> conditions...</div>
+          <div class="thermo-desc" id="thermoDesc">Reading Houston's sky...</div>
+        </div>
+        <div class="thermo-stats">
+          <div class="mini"><div class="mini-n tabular">76</div><div class="mini-l">Reviews</div></div>
+          <div class="mini"><div class="mini-n tabular" style="display:inline-flex;align-items:center;gap:3px">4<span style="color:var(--ice-500)">.</span>9<svg width="14" height="14" viewBox="0 0 24 24" fill="#f4a823" style="margin-left:2px"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div class="mini-l">Rating</div></div>
+          <div class="mini"><div class="mini-n tabular">4<span style="font-size:0.75rem;color:var(--mid)">yr</span></div><div class="mini-l">In Business</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTS -->
+<div class="certs">
+  <div class="cert-pill">
+    <span class="cert-ico">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+    </span>
+    Licensed &amp; Insured
+  </div>
+  <div class="cert-pill">
+    <span class="cert-ico green">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg>
+    </span>
+    NATE Certified
+  </div>
+  <div class="cert-pill">
+    <span class="cert-ico gold">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89l1.515 8.526a.5.5 0 0 1-.81.47L12 18.5l-4.182 3.386a.5.5 0 0 1-.81-.47l1.515-8.526"/></svg>
+    </span>
+    BBB A+ Rated
+  </div>
+  <div class="cert-pill">
+    <span class="cert-ico warm">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-4V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2H4a1 1 0 0 0-1 1v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8a1 1 0 0 0-1-1z"/><path d="M9 7V5h6v2"/></svg>
+    </span>
+    EPA 608 Certified
+  </div>
+  <div class="cert-pill">
+    <span class="cert-ico">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    </span>
+    24/7 Emergency
+  </div>
+  <div class="cert-pill">
+    <span class="cert-ico green">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+    </span>
+    Upfront Flat-Rate Pricing
+  </div>
+  <div class="cert-pill">
+    <span class="cert-ico">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </span>
+    0% Financing
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section services" id="services">
+  <div class="sec-inner">
+    <div class="sec-numeral">01</div>
+    <p class="sec-eyebrow">What We Do</p>
+    <h2 class="sec-title">Everything HVAC, done with <em>genuine care</em></h2>
+    <p class="sec-sub">From a quick repair to a full system install — we treat every job like it's our own home. Cool summers, warm winters, year-round peace of mind.</p>
+
+    <div class="svc-grid">
+      <div class="svc-card feat">
+        <span class="svc-tag">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="12" r="6"/></svg>
+          Most Popular
+        </span>
+        <div class="svc-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/><line x1="4.93" y1="19.07" x2="19.07" y2="4.93"/></svg>
+        </div>
+        <h3>AC Repair — <em>same day, every time</em></h3>
+        <p>Same-day diagnosis and repair on all makes and models. Most fixes completed in one visit. No overtime charges — ever.</p>
+      </div>
+      <div class="svc-card warm-feat">
+        <span class="svc-tag">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="12" r="6"/></svg>
+          Winter-Ready
+        </span>
+        <div class="svc-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><polyline points="8 17 12 21 16 17"/><line x1="12" y1="12" x2="12" y2="21"/></svg>
+        </div>
+        <h3>Heating Systems — <em>warm when it counts</em></h3>
+        <p>Furnace repair, heat pump installation, and emergency winter calls. Keeping your family toasty through every Houston cold snap.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><line x1="8" y1="22" x2="16" y2="22"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="6" y1="10" x2="18" y2="10"/></svg>
+        </div>
+        <h3>AC Installation</h3>
+        <p>New energy-efficient systems from top brands, installed right with full warranty coverage.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.91 8.84L8.56 2.23a1.93 1.93 0 0 0-1.81 0L3.1 4.13a2.12 2.12 0 0 0-.05 3.69l12.22 6.93a2 2 0 0 0 1.94 0L21 12.51a2.12 2.12 0 0 0-.09-3.67z"/><path d="M3.09 8.84v7.3a2.13 2.13 0 0 0 1.09 1.86l6.7 3.71a2.1 2.1 0 0 0 2.04 0"/><path d="M20.91 8.84v7.3a2.13 2.13 0 0 1-1.09 1.86l-6.7 3.71a2.1 2.1 0 0 1-2.04 0"/></svg>
+        </div>
+        <h3>Maintenance Plans</h3>
+        <p>Seasonal tune-ups that keep your system running smoothly and your bills lower.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg>
+        </div>
+        <h3>Indoor Air Quality</h3>
+        <p>Air purifiers, UV systems, and duct cleaning for a healthier home environment.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3>Emergency Calls</h3>
+        <p>AC out at midnight? We answer. No overtime charges, no matter the hour or day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">Cool homes <span class="dot">✦</span></span>
+    <span class="marquee-item">Warm service <span class="dot">✦</span></span>
+    <span class="marquee-item">Honest pricing <span class="dot">✦</span></span>
+    <span class="marquee-item">Same-day repairs <span class="dot">✦</span></span>
+    <span class="marquee-item">Houston born &amp; raised <span class="dot">✦</span></span>
+    <span class="marquee-item">Cool homes <span class="dot">✦</span></span>
+    <span class="marquee-item">Warm service <span class="dot">✦</span></span>
+    <span class="marquee-item">Honest pricing <span class="dot">✦</span></span>
+    <span class="marquee-item">Same-day repairs <span class="dot">✦</span></span>
+    <span class="marquee-item">Houston born &amp; raised <span class="dot">✦</span></span>
+  </div>
+</div>
+
+<!-- WHY -->
+<section class="section why" id="about">
+  <div class="sec-inner">
+    <div class="sec-numeral">02</div>
+    <div class="why-inner">
+      <div class="why-left">
+        <p class="sec-eyebrow">Why Families Choose Us</p>
+        <h2 class="sec-title">We're your <em>neighbors</em>,<br>not just your HVAC guys</h2>
+        <p class="sec-sub">PolarAir started 4 years ago with one goal — to be the kind of HVAC company that actually deserves your trust. No pushy upsells, no surprise charges, and techs who show up on time and treat your home with respect.</p>
+        <a href="tel:7135550192" class="why-cta">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l1.87-1.87a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call (713) 555-0192
+        </a>
+      </div>
+      <div class="why-cards">
+        <div class="why-card">
+          <div class="why-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h4>We Show Up On Time</h4>
+          <p>We text when we're on the way and respect your schedule every time.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h4>Price You See, Price You Pay</h4>
+          <p>Flat price before anything starts. No surprise charges on the final bill.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h4>2-Year Labor Warranty</h4>
+          <p>We stand behind every job with a full 2-year parts and labor guarantee.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h4>No Commission Upselling</h4>
+          <p>Techs paid hourly — never on commission. They recommend only what you need.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<section class="stats-band">
+  <div class="stats-inner">
+    <div>
+      <div class="stat-n tabular">76</div>
+      <div class="stat-l">5-Star Reviews</div>
+      <div class="stat-i">real <em>Houston</em> neighbors</div>
+    </div>
+    <div>
+      <div class="stat-n tabular" style="display:inline-flex;align-items:baseline;gap:4px">4.9<svg width="22" height="22" viewBox="0 0 24 24" fill="#f4a823" style="align-self:center"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+      <div class="stat-l">Average Rating</div>
+      <div class="stat-i">across <em>every</em> platform</div>
+    </div>
+    <div>
+      <div class="stat-n tabular">&lt;2<span style="font-size:0.4em;letter-spacing:0">hr</span></div>
+      <div class="stat-l">Avg Response</div>
+      <div class="stat-i">on <em>same-day</em> calls</div>
+    </div>
+    <div>
+      <div class="stat-n tabular">0<span style="font-size:0.4em">$</span></div>
+      <div class="stat-l">Overtime Charges</div>
+      <div class="stat-i">nights, weekends, <em>ever</em></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews" id="reviews">
+  <div class="sec-inner">
+    <div class="sec-numeral">03</div>
+    <p class="sec-eyebrow">Happy Customers</p>
+    <h2 class="sec-title">76 reviews. <em>4.9 stars.</em> Real people.</h2>
+    <p class="sec-sub">The neighbors who trust us with their homes — the only marketing we really need.</p>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <div class="review-stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-body">"AC went out on a Saturday night. PolarAir was at my door in under 2 hours and fixed it the same night. Friendly tech, fair price. Won't call anyone else."</p>
+        <div class="reviewer">
+          <div class="rev-av" style="background:linear-gradient(135deg,#5ab0e8,#1f4f94)">KW</div>
+          <div><div class="rev-name">Karen W.</div><div class="rev-loc">Houston, TX · 2 weeks ago</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <div class="review-stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-body">"New HVAC system installed in one day, crew was clean and professional. Price was exactly the quote — no surprise charges. So glad I found these guys."</p>
+        <div class="reviewer">
+          <div class="rev-av" style="background:linear-gradient(135deg,#ffb37a,#c94d14)">DM</div>
+          <div><div class="rev-name">David M.</div><div class="rev-loc">Katy, TX · 1 month ago</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <div class="review-stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-body">"Been with PolarAir since they opened. They're the most honest HVAC company I've ever dealt with. Never tried to sell me something I didn't need."</p>
+        <div class="reviewer">
+          <div class="rev-av" style="background:linear-gradient(135deg,#2f6fbf,#0b2b52)">RL</div>
+          <div><div class="rev-name">Rosa L.</div><div class="rev-loc">Sugar Land, TX · 2 months ago</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <div class="sec-inner">
+    <div class="sec-numeral">04</div>
+    <div class="contact-inner">
+      <div class="contact-left">
+        <p class="sec-eyebrow">Book Your Service</p>
+        <h2>Let's get your home <em>comfortable</em></h2>
+        <p class="lead">Fill out the form and we'll get back to you within the hour. Rather just call? We love that too.</p>
+        <div class="c-detail">
+          <div class="c-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l1.87-1.87a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div><div class="c-label">Phone</div><div class="c-val">(713) 555-0192 — Available 24/7</div></div>
+        </div>
+        <div class="c-detail">
+          <div class="c-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div><div class="c-label">Hours</div><div class="c-val">Mon–Sat 7am–8pm · Emergencies 24/7</div></div>
+        </div>
+        <div class="c-detail">
+          <div class="c-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div><div class="c-label">Service Area</div><div class="c-val">Houston, Katy, Sugar Land, Pearland, The Woodlands</div></div>
+        </div>
+      </div>
+      <form class="contact-form" action="https://formspree.io/f/YOUR_ID" method="POST">
+        <div class="f-row">
+          <div class="f-group"><label class="f-label">Your Name</label><input class="f-input" type="text" name="name" placeholder="Jane Smith" required/></div>
+          <div class="f-group"><label class="f-label">Phone Number</label><input class="f-input" type="tel" name="phone" placeholder="(713) 000-0000" required/></div>
+        </div>
+        <div class="f-group">
+          <label class="f-label">What Do You Need?</label>
+          <select class="f-input" name="service">
+            <option value="">Select a service...</option>
+            <option>AC Repair</option>
+            <option>AC Installation</option>
+            <option>Heating Service</option>
+            <option>Maintenance Tune-Up</option>
+            <option>Emergency Call</option>
+            <option>Other / Not Sure</option>
+          </select>
+        </div>
+        <div class="f-group"><label class="f-label">Tell Us More</label><textarea class="f-input" name="message" placeholder="What's going on? Any details help us prepare..."></textarea></div>
+        <button type="submit" class="f-submit">
+          Send Message &mdash; We'll Call You Back Soon
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand-mini">
+    <div class="logo-bubble">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/><line x1="4.93" y1="19.07" x2="19.07" y2="4.93"/></svg>
+    </div>
+    <div>
+      <div style="font-family:'Nunito',sans-serif;font-weight:900;color:#fff">PolarAir HVAC</div>
+      <div class="license">© 2025 · License #TACLB012345C · Houston, TX</div>
+    </div>
+  </div>
+  <p>Website by <a href="https://charliemikedigital.com">Charlie Mike Digital</a></p>
+</footer>
+
+<script>
+/* ── SEASON TOGGLE ── */
+const seasonToggle = document.getElementById('seasonToggle');
+if (seasonToggle) {
+  seasonToggle.addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-season]');
+    if (!btn) return;
+    const season = btn.dataset.season;
+    const isWinter = season === 'warm';
+    document.body.classList.toggle('season-winter', isWinter);
+    seasonToggle.querySelectorAll('button').forEach(b => {
+      b.classList.toggle('active', b === btn);
+      b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+    });
+  });
+}
+
+/* ── THERMOMETER / WEATHER ── */
+async function loadWeather() {
+  const numEl = document.getElementById('thermoNum');
+  const feelsEl = document.getElementById('thermoFeels');
+  const descEl = document.getElementById('thermoDesc');
+  const mercury = document.getElementById('mercury');
+
+  try {
+    const res = await fetch('https://api.open-meteo.com/v1/forecast?latitude=29.7604&longitude=-95.3698&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m,relative_humidity_2m&temperature_unit=fahrenheit&wind_speed_unit=mph&forecast_days=1');
+    const data = await res.json();
+    const c = data.current;
+    const temp = Math.round(c.temperature_2m);
+    const feels = Math.round(c.apparent_temperature);
+    const wind = Math.round(c.wind_speed_10m);
+    const humidity = Math.round(c.relative_humidity_2m);
+    const code = c.weather_code;
+    const descs = {0:'Clear skies over Houston',1:'Mostly clear',2:'Partly cloudy',3:'Overcast',45:'Foggy',48:'Foggy',51:'Light drizzle',53:'Drizzle',55:'Heavy drizzle',61:'Light rain',63:'Rain',65:'Heavy rain',80:'Showers',81:'Heavy showers',82:'Violent showers',95:'Thunderstorms',96:'Thunderstorms',99:'Thunderstorms'};
+
+    numEl.textContent = temp;
+    feelsEl.innerHTML = `<em>feels like</em> ${feels}° · ${humidity}% humidity · ${wind} mph wind`;
+    descEl.textContent = descs[code] || 'Current conditions';
+
+    /* Animate mercury height based on temp (range 20°-110°F mapped to tube) */
+    if (mercury) {
+      const tubeTop = 12, tubeBottom = 172; // y-coords in SVG
+      const minT = 20, maxT = 110;
+      const clamped = Math.max(minT, Math.min(maxT, temp));
+      const pct = (clamped - minT) / (maxT - minT);
+      const targetY = tubeBottom - pct * (tubeBottom - tubeTop);
+      const targetH = tubeBottom + 20 - targetY;
+
+      /* Update animations on SVG element to go to the real value */
+      const yAnim = mercury.querySelector('animate[attributeName="y"]');
+      const hAnim = mercury.querySelector('animate[attributeName="height"]');
+      if (yAnim && hAnim) {
+        yAnim.setAttribute('to', targetY);
+        hAnim.setAttribute('to', targetH);
+        /* Restart animations */
+        mercury.setAttribute('y', 210);
+        mercury.setAttribute('height', 0);
+        try {
+          yAnim.beginElement();
+          hAnim.beginElement();
+        } catch(e){ /* SMIL may not be supported — fall back */
+          mercury.setAttribute('y', targetY);
+          mercury.setAttribute('height', targetH);
+        }
+      } else {
+        mercury.setAttribute('y', targetY);
+        mercury.setAttribute('height', targetH);
+      }
+    }
+  } catch(e) {
+    numEl.textContent = '82';
+    feelsEl.innerHTML = `<em>feels like</em> 88° · typical Houston afternoon`;
+    descEl.textContent = 'Warm and humid';
+  }
+}
+loadWeather();
+</script>
+</body>
+</html>

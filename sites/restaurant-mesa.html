@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mesa Kitchen & Bar | Seasonal American Cuisine | Houston, TX</title>
+<meta name="description" content="Seasonal American cuisine in the heart of Houston. Fresh ingredients, handcrafted cocktails, and a warm atmosphere. Reserve your table today."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Jost:wght@300;400;500;600&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --wine:#4a1618;
+  --wine-deep:#3a1012;
+  --wine-soft:#6b2426;
+  --terra:#c67a4e;
+  --terra-deep:#a85c32;
+  --cream:#f5efe4;
+  --cream-warm:#ebe3d2;
+  --cream-deep:#ded4be;
+  --ink:#1a0f0a;
+  --ink-soft:#2d1f16;
+  --mid:#6b4c35;
+  --muted:#9c8872;
+  --paper:#faf6ec;
+  --chalk-bg:#1e2422;
+  --chalk:#f5efe4;
+  --chalk-dim:rgba(245,239,228,0.72);
+  --rule:rgba(26,15,10,0.12);
+  --r:2px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;color:var(--ink);background:var(--cream);overflow-x:hidden;font-size:16px;line-height:1.75;font-weight:400;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;line-height:1.08;font-weight:500;letter-spacing:-0.01em}
+a{text-decoration:none;color:inherit}
+em{font-style:italic}
+
+/* Selection */
+::selection{background:var(--wine);color:var(--cream)}
+
+/* Focus ring bump */
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px;border-radius:2px}
+
+/* Eyebrow */
+.eyebrow{font-family:'Jost',sans-serif;font-size:0.7rem;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:0.7rem}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--terra)}
+.eyebrow.light{color:var(--terra)}
+.eyebrow.center{justify-content:center}
+.eyebrow.center::before{content:"";width:26px;height:1px;background:var(--terra)}
+.eyebrow.center::after{content:"";width:26px;height:1px;background:var(--terra)}
+
+/* Ornament */
+.ornament{display:flex;align-items:center;justify-content:center;gap:1rem;color:var(--terra);margin:1rem 0}
+.ornament .line{width:60px;height:1px;background:currentColor;opacity:0.45}
+.ornament svg{display:block}
+
+/* NAV */
+nav{
+  position:absolute;top:0;left:0;right:0;z-index:100;
+  padding:1.75rem 3rem;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:500;color:var(--cream);letter-spacing:0.5px;display:flex;align-items:baseline;gap:0.5rem}
+.logo .amp{font-style:italic;color:var(--terra);font-weight:400}
+.logo .sub{font-style:italic;font-weight:400;color:rgba(245,239,228,0.72);font-size:1.15rem}
+.nav-links{display:flex;gap:2.25rem;list-style:none;align-items:center}
+.nav-links a{color:rgba(245,239,228,0.82);font-size:0.78rem;font-weight:400;letter-spacing:2px;text-transform:uppercase;transition:color 0.25s}
+.nav-links a:hover{color:var(--terra)}
+.nav-reserve{
+  background:transparent;color:var(--cream)!important;
+  padding:0.7rem 1.4rem;border:1px solid rgba(245,239,228,0.4);
+  font-weight:500;font-size:0.72rem!important;letter-spacing:2px!important;
+  position:relative;overflow:hidden;transition:all 0.3s;
+}
+.nav-reserve::before{content:"";position:absolute;inset:0;background:var(--terra);transform:translateY(101%);transition:transform 0.35s ease}
+.nav-reserve span{position:relative;z-index:1}
+.nav-reserve:hover{border-color:var(--terra);color:var(--cream)!important}
+.nav-reserve:hover::before{transform:translateY(0)}
+@media(max-width:820px){.nav-links li:not(:last-child){display:none}nav{padding:1.25rem 1.5rem}}
+
+/* HERO - magazine cover */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--ink)}
+.hero-img{position:absolute;inset:0}
+.hero-img img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(0.85) contrast(1.05)}
+.hero-overlay{position:absolute;inset:0;background:
+  radial-gradient(ellipse at center, rgba(26,15,10,0.55) 0%, rgba(26,15,10,0.82) 100%),
+  linear-gradient(to bottom, rgba(74,22,24,0.35) 0%, rgba(26,15,10,0.4) 100%)}
+.hero-content{position:relative;z-index:1;padding:7rem 2rem 5rem;max-width:1100px;text-align:center;width:100%}
+.hero-top{display:flex;align-items:center;justify-content:center;gap:1.25rem;margin-bottom:2.5rem;color:rgba(245,239,228,0.6)}
+.hero-top .dot{width:4px;height:4px;border-radius:50%;background:var(--terra)}
+.hero-top .meta{font-size:0.7rem;letter-spacing:4px;text-transform:uppercase;font-weight:400}
+.hero h1{font-size:clamp(3.5rem,10vw,9rem);color:var(--cream);font-weight:400;letter-spacing:-0.025em;line-height:0.95;margin:0 auto 2rem;max-width:14ch}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--cream);display:block}
+.hero h1 .amp{color:var(--terra);font-style:italic;font-weight:400;display:inline;font-size:0.9em;padding:0 0.1em}
+.hero-sub{font-size:0.78rem;letter-spacing:5px;text-transform:uppercase;color:rgba(245,239,228,0.72);font-weight:500;margin-bottom:0.6rem}
+.hero-tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:rgba(245,239,228,0.58);max-width:36ch;margin:0 auto 3rem;line-height:1.6}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.btn-primary{
+  background:var(--terra);color:var(--cream);
+  padding:1.1rem 2.4rem;
+  font-family:'Jost',sans-serif;font-weight:500;font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;
+  position:relative;overflow:hidden;transition:color 0.3s;display:inline-flex;align-items:center;gap:10px;
+  border:none;cursor:pointer;
+}
+.btn-primary::before{content:"";position:absolute;inset:0;background:var(--wine);transform:translateX(-101%);transition:transform 0.4s cubic-bezier(0.65,0,0.35,1)}
+.btn-primary::after{
+  content:"";position:absolute;top:0;left:-75%;width:50%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,0.2),transparent);
+  transform:skewX(-20deg);transition:left 0.7s ease;
+}
+.btn-primary:hover::before{transform:translateX(0)}
+.btn-primary:hover::after{left:125%}
+.btn-primary span{position:relative;z-index:1;display:inline-flex;align-items:center;gap:10px}
+.btn-ghost{
+  background:transparent;color:var(--cream);
+  padding:1.1rem 2.4rem;
+  border:1px solid rgba(245,239,228,0.35);
+  font-weight:500;font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;
+  transition:all 0.3s;display:inline-flex;align-items:center;gap:10px;
+}
+.btn-ghost:hover{border-color:var(--terra);color:var(--terra)}
+
+.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);color:rgba(245,239,228,0.5);font-size:0.6rem;letter-spacing:3px;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:0.6rem;z-index:1}
+.hero-scroll .line{width:1px;height:36px;background:rgba(245,239,228,0.35);animation:scrollLine 2s ease-in-out infinite}
+@keyframes scrollLine{0%,100%{transform:scaleY(1);transform-origin:top}50%{transform:scaleY(0.4);transform-origin:top}}
+
+/* INFO STRIP - parchment */
+.info-strip{
+  background:var(--ink);color:var(--cream);
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid rgba(198,122,78,0.2);
+  border-bottom:1px solid rgba(198,122,78,0.2);
+}
+@media(max-width:700px){.info-strip{grid-template-columns:1fr 1fr}}
+.info-item{padding:1.8rem 1.25rem;text-align:center;border-right:1px solid rgba(245,239,228,0.08);position:relative}
+.info-item:last-child{border-right:none}
+@media(max-width:700px){.info-item:nth-child(2){border-right:none}.info-item:nth-child(-n+2){border-bottom:1px solid rgba(245,239,228,0.08)}}
+.info-label{font-size:0.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--terra);font-weight:500;margin-bottom:0.5rem}
+.info-val{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;color:rgba(245,239,228,0.92);font-style:italic}
+
+/* SECTION NUMBERING */
+.sec-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:clamp(6rem,12vw,11rem);color:rgba(74,22,24,0.06);line-height:1;position:absolute;pointer-events:none;user-select:none}
+
+/* ABOUT */
+.about{position:relative;background:var(--cream);padding:8rem 2rem;overflow:hidden}
+.about-inner{max-width:1200px;margin:0 auto;position:relative}
+.about .sec-num{top:2rem;right:2rem}
+.about-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:5rem;align-items:center;position:relative;z-index:1}
+@media(max-width:820px){.about-grid{grid-template-columns:1fr;gap:3rem}}
+.about-img{position:relative}
+.about-img .frame{position:relative;aspect-ratio:4/5;overflow:hidden}
+.about-img .frame img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(0.9)}
+.about-img .caption{position:absolute;bottom:-1.25rem;left:-1.25rem;background:var(--wine);color:var(--cream);padding:1rem 1.4rem;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;max-width:220px;line-height:1.45}
+.about-img .stamp{position:absolute;top:1.25rem;right:1.25rem;width:90px;height:90px;border:1px solid rgba(245,239,228,0.65);border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--cream);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.75rem;letter-spacing:1px;line-height:1.2;backdrop-filter:blur(4px);background:rgba(26,15,10,0.28)}
+.about-img .stamp strong{display:block;font-style:normal;font-size:1.3rem;font-weight:400;letter-spacing:0.05em;margin:0.1rem 0}
+.about-text h2{font-size:clamp(2.4rem,5vw,4rem);color:var(--ink);margin-bottom:1.5rem;font-weight:400}
+.about-text h2 em{color:var(--wine);font-weight:400}
+.about-text .lede{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.35rem;color:var(--wine);line-height:1.5;margin-bottom:1.75rem;font-weight:400;padding-left:1.25rem;border-left:2px solid var(--terra)}
+.about-text p{color:var(--ink-soft);font-size:1rem;line-height:1.8;margin-bottom:1.25rem;max-width:54ch}
+.chef-sig{margin-top:2.25rem;padding-top:1.75rem;border-top:1px solid var(--rule);display:flex;align-items:center;gap:1.25rem}
+.chef-sig .sig-mark{font-family:'Caveat',cursive;font-size:2.6rem;color:var(--wine);line-height:0.9;font-weight:500;transform:rotate(-3deg);letter-spacing:-0.02em}
+.chef-sig .sig-meta{font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--mid);line-height:1.6;font-weight:500}
+.chef-sig .sig-meta em{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--ink);text-transform:none;letter-spacing:0;font-weight:500;display:block;margin-bottom:0.15rem}
+
+/* CHALKBOARD - Tonight's Specials */
+.chalkboard-section{background:var(--cream-warm);padding:6rem 2rem;position:relative}
+.chalkboard{
+  max-width:1100px;margin:0 auto;
+  background:linear-gradient(135deg,#1e2422 0%,#2a302e 50%,#1a1f1d 100%);
+  padding:4rem 3.5rem;position:relative;
+  box-shadow:
+    0 25px 60px -20px rgba(26,15,10,0.5),
+    inset 0 0 80px rgba(0,0,0,0.35),
+    inset 0 0 0 12px #3a2817,
+    inset 0 0 0 13px rgba(198,122,78,0.3);
+  border-radius:4px;
+  overflow:hidden;
+}
+.chalkboard::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(245,239,228,0.015) 0%, transparent 40%),
+    radial-gradient(circle at 75% 70%, rgba(245,239,228,0.01) 0%, transparent 50%);
+  pointer-events:none;
+}
+.chalkboard::after{
+  content:"";position:absolute;inset:12px;
+  background-image:
+    repeating-linear-gradient(92deg, transparent 0 20px, rgba(245,239,228,0.006) 20px 21px),
+    repeating-linear-gradient(178deg, transparent 0 30px, rgba(245,239,228,0.004) 30px 31px);
+  pointer-events:none;
+}
+.chalk-header{text-align:center;margin-bottom:3rem;position:relative;z-index:1}
+.chalk-date{font-family:'Caveat',cursive;font-size:1.3rem;color:var(--terra);margin-bottom:0.4rem;font-weight:500;transform:rotate(-1deg);display:inline-block}
+.chalk-title{font-family:'Caveat',cursive;font-size:clamp(3rem,6vw,4.5rem);color:var(--chalk);font-weight:700;line-height:1;margin-bottom:0.4rem;letter-spacing:-0.01em;transform:rotate(-0.5deg)}
+.chalk-title em{color:var(--terra);font-style:italic}
+.chalk-sub{font-family:'Caveat',cursive;font-size:1.15rem;color:var(--chalk-dim);font-weight:400}
+.chalk-list{position:relative;z-index:1;max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:1.5rem}
+.chalk-item{display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:1rem;padding:0.25rem 0;color:var(--chalk)}
+.chalk-num{font-family:'Caveat',cursive;font-size:1.4rem;color:var(--terra);font-weight:500;min-width:2ch}
+.chalk-item .name{font-family:'Caveat',cursive;font-size:1.9rem;color:var(--chalk);font-weight:500;line-height:1.1;letter-spacing:0.01em}
+.chalk-item .desc{font-family:'Caveat',cursive;font-size:1.05rem;color:var(--chalk-dim);display:block;margin-top:0.15rem;line-height:1.3;font-weight:400}
+.chalk-price{font-family:'Caveat',cursive;font-size:2rem;color:var(--terra);font-weight:600}
+.chalk-sig{text-align:right;margin-top:2.5rem;position:relative;z-index:1;padding-right:1rem}
+.chalk-sig-line{font-family:'Caveat',cursive;font-size:1rem;color:var(--chalk-dim);font-weight:400;margin-bottom:0.2rem}
+.chalk-sig-name{font-family:'Caveat',cursive;font-size:2.4rem;color:var(--chalk);font-weight:600;line-height:1;transform:rotate(-2deg);display:inline-block;letter-spacing:-0.02em}
+@media(max-width:620px){
+  .chalkboard{padding:2.5rem 1.5rem}
+  .chalk-item{grid-template-columns:auto 1fr;gap:0.6rem}
+  .chalk-price{grid-column:2;text-align:right;margin-top:-0.5rem}
+  .chalk-item .name{font-size:1.6rem}
+}
+
+/* MENU SECTION - printed menu card */
+.menu-section{padding:8rem 2rem;background:var(--cream);position:relative}
+.menu-section .sec-num{top:2rem;left:2rem}
+.menu-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.menu-header{text-align:center;margin-bottom:4rem}
+.menu-header h2{font-size:clamp(2.6rem,5.5vw,4.25rem);color:var(--ink);margin:1rem 0;font-weight:400}
+.menu-header h2 em{color:var(--wine)}
+.menu-header .dek{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--mid);font-size:1.15rem;max-width:42ch;margin:0 auto;line-height:1.6}
+
+.menu-card{
+  background:var(--paper);
+  padding:4rem 3.5rem;
+  border:1px solid var(--rule);
+  position:relative;
+  box-shadow:0 30px 60px -30px rgba(26,15,10,0.2), 0 1px 0 rgba(255,255,255,0.8) inset;
+}
+.menu-card::before,.menu-card::after{
+  content:"";position:absolute;pointer-events:none;
+}
+.menu-card::before{top:10px;left:10px;right:10px;bottom:10px;border:1px solid rgba(74,22,24,0.1)}
+
+/* TAB NAV */
+.menu-tabs-nav{display:flex;gap:0;justify-content:center;border-bottom:1px solid var(--rule);margin-bottom:3.5rem;overflow-x:auto;position:relative;z-index:1}
+.tab-btn{padding:1rem 2rem;font-family:'Jost',sans-serif;font-size:0.7rem;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--muted);background:none;border:none;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all 0.25s;position:relative}
+.tab-btn:hover{color:var(--wine)}
+.tab-btn.active{color:var(--wine);border-bottom-color:var(--wine)}
+.tab-btn .ital{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.95rem;letter-spacing:0;text-transform:none;font-weight:500}
+.tab-panel{display:none}
+.tab-panel.active{display:block;animation:fadeIn 0.4s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+.menu-cols{display:grid;grid-template-columns:repeat(2,1fr);gap:4rem 5rem}
+@media(max-width:760px){.menu-cols{grid-template-columns:1fr;gap:3rem}}
+.menu-cols-2{display:grid;grid-template-columns:1fr 1fr;gap:4rem 5rem}
+@media(max-width:640px){.menu-cols-2{grid-template-columns:1fr;gap:3rem}}
+
+.menu-category h3{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:1.8rem;font-weight:500;color:var(--wine);
+  text-align:center;margin-bottom:1.75rem;
+  position:relative;padding-bottom:1rem;
+}
+.menu-category h3::after{content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:40px;height:1px;background:var(--terra)}
+
+/* LEADER DOT MENU */
+.menu-item{
+  display:flex;align-items:baseline;gap:0.5rem;
+  padding:0.85rem 0;
+  border-bottom:1px solid transparent;
+  transition:border-color 0.3s;
+  position:relative;
+}
+.menu-item:not(:last-child){border-bottom-color:rgba(26,15,10,0.06)}
+.menu-item .menu-name-wrap{flex-shrink:0;min-width:0;max-width:68%}
+.menu-item .menu-leader{
+  flex:1;align-self:flex-end;
+  border-bottom:1px dotted rgba(74,22,24,0.35);
+  margin:0 0.35rem;
+  min-width:1.5rem;position:relative;top:-4px;
+  transition:border-color 0.3s;
+}
+.menu-item .menu-price{
+  flex-shrink:0;
+  font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;color:var(--wine);white-space:nowrap;
+  transition:transform 0.3s cubic-bezier(0.65,0,0.35,1);
+  font-variant-numeric:tabular-nums;
+}
+.menu-item:hover .menu-price{transform:translateX(-6px);color:var(--terra)}
+.menu-item:hover .menu-leader{border-bottom-color:var(--terra)}
+.menu-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;color:var(--ink);line-height:1.25;letter-spacing:0.005em}
+.menu-name .veg{font-style:italic;color:var(--terra);font-size:0.85rem;margin-left:0.35rem;font-weight:400}
+.menu-desc{font-family:'Jost',sans-serif;font-size:0.82rem;color:var(--mid);margin-top:0.25rem;line-height:1.55;font-weight:400}
+
+.happy-note{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--wine);font-size:1.15rem;margin-bottom:2.5rem;padding:1rem 1.5rem;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);max-width:600px;margin-left:auto;margin-right:auto}
+
+@media(max-width:620px){.menu-card{padding:2.5rem 1.5rem}.menu-card::before{top:6px;left:6px;right:6px;bottom:6px}}
+
+/* PULL QUOTE - full bleed editorial */
+.pullquote{
+  background:var(--wine);color:var(--cream);
+  padding:8rem 2rem;position:relative;overflow:hidden;
+  text-align:center;
+}
+.pullquote::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at top, rgba(198,122,78,0.2) 0%, transparent 60%),
+    linear-gradient(180deg, transparent 0%, rgba(26,15,10,0.25) 100%);
+  pointer-events:none;
+}
+.pullquote-inner{max-width:1000px;margin:0 auto;position:relative;z-index:1}
+.pullquote .flourish{color:var(--terra);margin:0 auto 2rem;display:block}
+.pullquote .flourish.bottom{margin:2rem auto 0}
+.pullquote q{
+  display:block;
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+  font-size:clamp(1.9rem,4.5vw,3.4rem);
+  line-height:1.25;letter-spacing:-0.01em;
+  quotes:"\201C" "\201D";
+  color:var(--cream);
+}
+.pullquote q::before{content:open-quote;color:var(--terra);font-size:1.3em;line-height:0;position:relative;top:0.18em;margin-right:0.1em}
+.pullquote q::after{content:close-quote;color:var(--terra);font-size:1.3em;line-height:0;position:relative;top:0.18em;margin-left:0.1em}
+.pullquote cite{
+  display:block;margin-top:2rem;
+  font-family:'Jost',sans-serif;font-style:normal;
+  font-size:0.72rem;letter-spacing:4px;text-transform:uppercase;
+  color:rgba(245,239,228,0.72);font-weight:500;
+}
+.pullquote cite em{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--terra);text-transform:none;letter-spacing:0;font-size:1.1rem;font-weight:500;display:block;margin-bottom:0.35rem}
+
+/* PHOTO TRIO */
+.photo-trio{display:grid;grid-template-columns:1.4fr 1fr 1fr;height:480px;gap:2px;background:var(--ink)}
+@media(max-width:700px){.photo-trio{grid-template-columns:1fr;height:auto}}
+.photo-trio-item{overflow:hidden;position:relative}
+.photo-trio-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94);filter:saturate(0.92)}
+.photo-trio-item:hover img{transform:scale(1.06)}
+.photo-trio-item::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(26,15,10,0.55) 100%);pointer-events:none}
+.photo-trio-item .cap{position:absolute;bottom:1.25rem;left:1.25rem;color:var(--cream);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;z-index:1;letter-spacing:0.01em}
+.photo-trio-item .cap::before{content:"";display:block;width:24px;height:1px;background:var(--terra);margin-bottom:0.4rem}
+@media(max-width:700px){.photo-trio-item{min-height:260px}}
+
+/* EXPERIENCE */
+.experience{padding:7rem 2rem;background:var(--cream-warm);position:relative;overflow:hidden}
+.exp-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;position:relative;z-index:1}
+@media(max-width:820px){.exp-inner{grid-template-columns:1fr;gap:3rem}}
+.exp-text h2{font-size:clamp(2.2rem,4.5vw,3.5rem);color:var(--ink);margin:1rem 0 1.5rem;font-weight:400}
+.exp-text h2 em{color:var(--wine)}
+.exp-text p{color:var(--ink-soft);font-size:1rem;line-height:1.8;margin-bottom:1.25rem;max-width:50ch}
+.exp-tag{display:inline-block;margin-top:0.5rem;padding:0.45rem 1rem;border:1px solid var(--terra);color:var(--wine);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.95rem;margin-right:0.5rem;margin-bottom:0.5rem}
+.exp-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.exp-stat{
+  background:linear-gradient(145deg, var(--paper) 0%, var(--cream) 100%);
+  padding:2.5rem 1.5rem;text-align:center;
+  transition:transform 0.3s;
+}
+.exp-stat:hover{background:linear-gradient(145deg, var(--paper) 0%, var(--cream-deep) 100%)}
+.exp-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:3.5rem;font-weight:400;color:var(--wine);line-height:1}
+.exp-num .acc{color:var(--terra);font-style:normal;font-size:0.7em;margin-left:0.1em}
+.exp-lbl{font-size:0.66rem;color:var(--mid);text-transform:uppercase;letter-spacing:2.5px;margin-top:0.65rem;font-weight:500}
+
+/* REVIEWS */
+.reviews{padding:7rem 2rem;background:var(--ink);color:var(--cream);position:relative;overflow:hidden}
+.reviews::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(circle at 20% 0%, rgba(74,22,24,0.45) 0%, transparent 50%),
+  radial-gradient(circle at 80% 100%, rgba(198,122,78,0.12) 0%, transparent 55%);pointer-events:none}
+.reviews-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.reviews-head{text-align:center;margin-bottom:4rem}
+.reviews-head h2{font-size:clamp(2.4rem,5vw,3.75rem);color:var(--cream);margin:1rem 0;font-weight:400}
+.reviews-head h2 em{color:var(--terra)}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+@media(max-width:820px){.reviews-grid{grid-template-columns:1fr}}
+.review-card{
+  background:linear-gradient(160deg, rgba(245,239,228,0.04) 0%, rgba(245,239,228,0.01) 100%);
+  border:1px solid rgba(245,239,228,0.09);
+  padding:2.25rem 2rem;
+  position:relative;
+  transition:border-color 0.3s, transform 0.3s;
+}
+.review-card:hover{border-color:rgba(198,122,78,0.4);transform:translateY(-2px)}
+.review-stars{display:flex;gap:3px;margin-bottom:1.25rem;color:var(--terra)}
+.review-stars svg{width:14px;height:14px;fill:currentColor}
+.review-text{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:rgba(245,239,228,0.88);line-height:1.55;margin-bottom:1.75rem;font-weight:400;letter-spacing:0.005em}
+.reviewer{display:flex;align-items:center;gap:12px;padding-top:1.25rem;border-top:1px solid rgba(245,239,228,0.08)}
+.rev-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(145deg, var(--terra) 0%, var(--wine) 100%);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:500;font-style:italic;font-size:0.95rem;color:var(--cream);flex-shrink:0}
+.rev-name{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1rem;color:var(--cream);letter-spacing:0.01em}
+.rev-info{font-size:0.7rem;color:rgba(245,239,228,0.5);letter-spacing:1px;margin-top:0.1rem;text-transform:uppercase}
+
+/* RESERVE */
+.reserve{padding:7rem 2rem;background:var(--cream);position:relative;overflow:hidden}
+.reserve .sec-num{top:2rem;right:3rem}
+.reserve-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:0.95fr 1.15fr;gap:5rem;align-items:start;position:relative;z-index:1}
+@media(max-width:820px){.reserve-inner{grid-template-columns:1fr;gap:3rem}}
+.reserve-info h2{font-size:clamp(2.4rem,4.5vw,3.5rem);color:var(--ink);margin:1rem 0 1.25rem;font-weight:400}
+.reserve-info h2 em{color:var(--wine)}
+.reserve-info .lede{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--wine);font-size:1.2rem;line-height:1.6;margin-bottom:2rem}
+
+/* Available tonight pill */
+.avail-pill{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:0.6rem 1.15rem;
+  background:linear-gradient(145deg, var(--paper) 0%, var(--cream-warm) 100%);
+  border:1px solid rgba(26,15,10,0.08);
+  font-size:0.66rem;letter-spacing:3px;text-transform:uppercase;font-weight:600;
+  color:var(--ink);
+  margin-bottom:1.25rem;
+}
+.avail-pill .live-dot{
+  width:8px;height:8px;border-radius:50%;background:#2f9e44;
+  position:relative;
+  box-shadow:0 0 0 0 rgba(47,158,68,0.6);
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(47,158,68,0.55)}
+  70%{box-shadow:0 0 0 8px rgba(47,158,68,0)}
+  100%{box-shadow:0 0 0 0 rgba(47,158,68,0)}
+}
+
+.timeslots{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:2rem}
+.timeslot{
+  background:var(--paper);
+  border:1px solid var(--rule);
+  padding:0.75rem 1.25rem;
+  font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;
+  color:var(--wine);cursor:pointer;
+  transition:all 0.25s;
+  position:relative;overflow:hidden;
+  letter-spacing:0.02em;
+}
+.timeslot:hover{border-color:var(--terra);color:var(--terra-deep);transform:translateY(-1px)}
+.timeslot.primary{background:var(--wine);color:var(--cream);border-color:var(--wine)}
+.timeslot.primary:hover{background:var(--terra);border-color:var(--terra);color:var(--cream)}
+
+.r-detail{display:flex;align-items:flex-start;gap:14px;margin-bottom:1.25rem}
+.r-icon{width:40px;height:40px;background:linear-gradient(145deg, var(--cream-warm) 0%, var(--cream-deep) 100%);border:1px solid var(--rule);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--wine)}
+.r-label{font-size:0.65rem;font-weight:500;color:var(--terra);text-transform:uppercase;letter-spacing:2.5px;margin-bottom:0.25rem}
+.r-val{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--ink);line-height:1.5;font-weight:500}
+.r-val em{font-style:italic;color:var(--mid);font-size:0.95rem;display:block}
+
+.reserve-form{
+  background:linear-gradient(160deg, var(--paper) 0%, var(--cream) 100%);
+  padding:2.75rem;
+  border:1px solid var(--rule);
+  position:relative;
+  box-shadow:0 20px 50px -25px rgba(26,15,10,0.2);
+}
+.reserve-form::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg, var(--wine) 0%, var(--terra) 100%)}
+.form-head{margin-bottom:1.75rem;padding-bottom:1.25rem;border-bottom:1px solid var(--rule)}
+.form-head h3{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.6rem;color:var(--wine);font-weight:500}
+.form-head p{font-size:0.8rem;color:var(--mid);margin-top:0.25rem;letter-spacing:0.5px}
+.f-group{display:flex;flex-direction:column;gap:6px;margin-bottom:1.1rem}
+.f-label{font-size:0.65rem;font-weight:600;color:var(--wine);text-transform:uppercase;letter-spacing:2px}
+.f-input{
+  border:none;border-bottom:1px solid rgba(26,15,10,0.18);
+  padding:0.7rem 0.1rem;
+  font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--ink);
+  background:transparent;width:100%;outline:none;transition:all 0.25s;
+  -webkit-appearance:none;border-radius:0;
+}
+.f-input::placeholder{color:var(--muted);font-style:italic}
+.f-input:focus{border-bottom-color:var(--wine);border-bottom-width:2px;padding-bottom:calc(0.7rem - 1px)}
+select.f-input{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%234a1618' fill='none' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 0.2rem center;padding-right:1.5rem}
+textarea.f-input{min-height:80px;resize:vertical;border:1px solid rgba(26,15,10,0.18);padding:0.75rem;font-size:1rem}
+textarea.f-input:focus{border-color:var(--wine);padding:calc(0.75rem - 1px);border-width:2px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+@media(max-width:520px){.f-row{grid-template-columns:1fr;gap:0}}
+.f-submit{
+  width:100%;background:var(--wine);color:var(--cream);
+  border:none;padding:1.15rem;font-family:'Jost',sans-serif;font-size:0.72rem;
+  font-weight:500;letter-spacing:3.5px;text-transform:uppercase;cursor:pointer;
+  margin-top:1rem;position:relative;overflow:hidden;
+  transition:all 0.3s;
+}
+.f-submit::before{content:"";position:absolute;inset:0;background:var(--terra);transform:translateY(101%);transition:transform 0.4s cubic-bezier(0.65,0,0.35,1)}
+.f-submit::after{
+  content:"";position:absolute;top:0;left:-75%;width:50%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,0.25),transparent);
+  transform:skewX(-20deg);transition:left 0.7s ease;
+}
+.f-submit:hover::before{transform:translateY(0)}
+.f-submit:hover::after{left:125%}
+.f-submit span{position:relative;z-index:1}
+
+/* FOOTER */
+footer{background:var(--ink);padding:4rem 2rem 2rem;text-align:center;color:var(--cream);position:relative;overflow:hidden}
+footer::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:1px;background:var(--terra)}
+.footer-mark{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:2rem;color:var(--cream);margin-bottom:0.5rem;font-weight:500;letter-spacing:0.01em}
+.footer-mark .amp{color:var(--terra);font-style:italic}
+.footer-tag{font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(245,239,228,0.52);margin-bottom:2rem;font-size:1rem}
+.footer-info{font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:rgba(245,239,228,0.42);line-height:1.9}
+.footer-info span{color:var(--terra);margin:0 0.75rem}
+.footer-sig{margin-top:2rem;padding-top:1.75rem;border-top:1px solid rgba(245,239,228,0.08);font-size:0.7rem;letter-spacing:1.5px;text-transform:uppercase;color:rgba(245,239,228,0.28)}
+.footer-sig a{color:var(--terra)}
+.footer-sig a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Mesa <span class="amp">&</span><span class="sub">Kitchen Bar</span></div>
+  <ul class="nav-links">
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#about">Our Story</a></li>
+    <li><a href="#reviews">Press</a></li>
+    <li><a href="#reserve" class="nav-reserve"><span>Reserve</span></a></li>
+  </ul>
+</nav>
+
+<!-- HERO - magazine cover -->
+<section class="hero">
+  <div class="hero-img">
+    <img src="https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Elegant restaurant interior" loading="eager"/>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-top">
+      <span class="meta">Vol. VI</span><span class="dot"></span>
+      <span class="meta">Est. 2018</span><span class="dot"></span>
+      <span class="meta">Houston · Texas</span>
+    </div>
+    <h1><em>Seasonal cuts,</em><em>local fire<span class="amp">.</span></em></h1>
+    <div class="hero-sub">Mesa Kitchen &amp; Bar</div>
+    <p class="hero-tag">An unhurried American table in the heart of Midtown — where the menu follows the market and the room feels like home.</p>
+    <div class="hero-btns">
+      <a href="#reserve" class="btn-primary"><span>Reserve a Table
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span></a>
+      <a href="#menu" class="btn-ghost">View the Menu</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <span class="line"></span>
+  </div>
+</section>
+
+<!-- INFO STRIP -->
+<div class="info-strip">
+  <div class="info-item"><div class="info-label">Dinner</div><div class="info-val">Tue–Sun · 5–10</div></div>
+  <div class="info-item"><div class="info-label">Brunch</div><div class="info-val">Sat & Sun · 10–3</div></div>
+  <div class="info-item"><div class="info-label">Happy Hour</div><div class="info-val">Tue–Fri · 4–6</div></div>
+  <div class="info-item"><div class="info-label">Location</div><div class="info-val">Midtown, Houston</div></div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <span class="sec-num">i.</span>
+    <div class="about-grid">
+      <div class="about-img">
+        <div class="frame">
+          <img src="https://images.pexels.com/photos/1397514/pexels-photo-1397514.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Chef cooking in kitchen" loading="lazy"/>
+          <div class="stamp">est.<strong>2018</strong>Houston</div>
+        </div>
+        <div class="caption">A seven-course love letter to Texas produce.</div>
+      </div>
+      <div class="about-text">
+        <span class="eyebrow">Our Story</span>
+        <h2>Rooted in Houston.<br><em>Inspired by season.</em></h2>
+        <p class="lede">Mesa opened in 2018 with one simple idea — use the best local ingredients we can find, treat every guest like family, and never stop trying to get better.</p>
+        <p>Our menu changes with the seasons. Our relationships with our farmers and ranchers don't. Every dish tells you where it came from because we think that matters — the Gulf shrimp, the grass-fed ribeye, the heirloom tomatoes in August.</p>
+        <p>Come hungry. Stay a while. The best meals are the ones you don't want to end.</p>
+        <div class="chef-sig">
+          <div class="sig-mark">Daniel Reyes</div>
+          <div class="sig-meta">
+            <em>— Chef Daniel Reyes</em>
+            Executive Chef &amp; Owner · Since 2018
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHALKBOARD - Tonight's Specials -->
+<section class="chalkboard-section">
+  <div class="chalkboard">
+    <div class="chalk-header">
+      <div class="chalk-date">Thursday, April 24th</div>
+      <div class="chalk-title">Tonight's <em>Specials</em></div>
+      <div class="chalk-sub">~ straight from the market this morning ~</div>
+    </div>
+    <div class="chalk-list">
+      <div class="chalk-item">
+        <span class="chalk-num">01.</span>
+        <div>
+          <span class="name">Wood-Grilled Gulf Snapper</span>
+          <span class="desc">whole fish, charred lemon, salsa verde, blistered shishitos</span>
+        </div>
+        <span class="chalk-price">$42</span>
+      </div>
+      <div class="chalk-item">
+        <span class="chalk-num">02.</span>
+        <div>
+          <span class="name">Dry-Aged Tomahawk for Two</span>
+          <span class="desc">32oz bone-in, truffle bearnaise, rosemary potatoes, watercress</span>
+        </div>
+        <span class="chalk-price">$128</span>
+      </div>
+      <div class="chalk-item">
+        <span class="chalk-num">03.</span>
+        <div>
+          <span class="name">Spring Morel Risotto</span>
+          <span class="desc">fresh morels, english peas, aged parmesan, chive oil</span>
+        </div>
+        <span class="chalk-price">$36</span>
+      </div>
+    </div>
+    <div class="chalk-sig">
+      <div class="chalk-sig-line">~ written this morning by ~</div>
+      <div class="chalk-sig-name">Chef Daniel</div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU - printed card -->
+<section class="menu-section" id="menu">
+  <span class="sec-num">ii.</span>
+  <div class="menu-inner">
+    <div class="menu-header">
+      <span class="eyebrow center">The Menu</span>
+      <h2>Seasonal <em>American</em> cuisine</h2>
+      <p class="dek">Our menu changes with the season. Fresh ingredients, honest cooking, and a room that rewards lingering.</p>
+      <div class="ornament" aria-hidden="true">
+        <span class="line"></span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 2l2 6 6 1-4.5 4 1 6-4.5-3-4.5 3 1-6L4 9l6-1z"/></svg>
+        <span class="line"></span>
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <!-- TAB NAV -->
+      <div class="menu-tabs-nav" role="tablist">
+        <button class="tab-btn active" onclick="showTab('brunch',this)"><span class="ital">Brunch</span></button>
+        <button class="tab-btn" onclick="showTab('dinner',this)"><span class="ital">Dinner</span></button>
+        <button class="tab-btn" onclick="showTab('happyhour',this)"><span class="ital">Happy Hour</span></button>
+        <button class="tab-btn" onclick="showTab('drinks',this)"><span class="ital">Drinks</span></button>
+      </div>
+
+      <!-- BRUNCH -->
+      <div class="tab-panel active" id="tab-brunch">
+        <div class="menu-cols">
+          <div class="menu-category">
+            <h3>Eggs &amp; Benedicts</h3>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Classic Eggs Benedict</div><div class="menu-desc">Canadian bacon, poached eggs, hollandaise, English muffin</div></div><span class="menu-leader"></span><div class="menu-price">18</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Gulf Shrimp Benedict</div><div class="menu-desc">Sautéed Gulf shrimp, Cajun hollandaise, grits cake</div></div><span class="menu-leader"></span><div class="menu-price">22</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Smoked Salmon Benny</div><div class="menu-desc">House-smoked salmon, caper cream cheese, everything bagel</div></div><span class="menu-leader"></span><div class="menu-price">21</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Veggie Benedict<span class="veg">v</span></div><div class="menu-desc">Roasted tomato, spinach, avocado, lemon hollandaise</div></div><span class="menu-leader"></span><div class="menu-price">17</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Steak &amp; Eggs</div><div class="menu-desc">6oz flat iron, two eggs your way, breakfast potatoes</div></div><span class="menu-leader"></span><div class="menu-price">28</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">The Mesa Scramble</div><div class="menu-desc">Three eggs, chorizo, peppers, cotija, flour tortilla</div></div><span class="menu-leader"></span><div class="menu-price">16</div></div>
+          </div>
+          <div class="menu-category">
+            <h3>Pancakes &amp; French Toast</h3>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Buttermilk Stack</div><div class="menu-desc">Three fluffy buttermilk pancakes, real maple syrup, butter</div></div><span class="menu-leader"></span><div class="menu-price">14</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Lemon Ricotta Pancakes</div><div class="menu-desc">Fresh berries, powdered sugar, lemon curd</div></div><span class="menu-leader"></span><div class="menu-price">16</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Bananas Foster French Toast</div><div class="menu-desc">Brioche, caramelized bananas, rum glaze, whipped cream</div></div><span class="menu-leader"></span><div class="menu-price">17</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Stuffed French Toast</div><div class="menu-desc">Cream cheese, strawberry jam, powdered sugar</div></div><span class="menu-leader"></span><div class="menu-price">15</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Pecan Waffle</div><div class="menu-desc">Belgian waffle, candied pecans, bourbon maple syrup</div></div><span class="menu-leader"></span><div class="menu-price">15</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Granola &amp; Yogurt Bowl<span class="veg">v</span></div><div class="menu-desc">House granola, Greek yogurt, seasonal fruit, honey</div></div><span class="menu-leader"></span><div class="menu-price">12</div></div>
+          </div>
+          <div class="menu-category">
+            <h3>Brunch Mains</h3>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Avocado Toast</div><div class="menu-desc">Sourdough, smashed avocado, poached egg, chili flake, microgreens</div></div><span class="menu-leader"></span><div class="menu-price">16</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Chicken &amp; Waffles</div><div class="menu-desc">Crispy fried chicken thigh, Belgian waffle, hot honey, pickles</div></div><span class="menu-leader"></span><div class="menu-price">22</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Brunch Burger</div><div class="menu-desc">8oz smash, fried egg, cheddar, bacon, brioche, fries</div></div><span class="menu-leader"></span><div class="menu-price">20</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Huevos Rancheros</div><div class="menu-desc">Crispy tortillas, black beans, ranchero sauce, two eggs, crema</div></div><span class="menu-leader"></span><div class="menu-price">17</div></div>
+          </div>
+          <div class="menu-category">
+            <h3>Brunch Sides</h3>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Breakfast Potatoes</div><div class="menu-desc">Crispy smashed potatoes, herbs, garlic aioli</div></div><span class="menu-leader"></span><div class="menu-price">6</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Applewood Bacon</div><div class="menu-desc">Three strips, thick-cut, house-cured</div></div><span class="menu-leader"></span><div class="menu-price">6</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">House Sausage</div><div class="menu-desc">Two links, fennel, sage, cracked pepper</div></div><span class="menu-leader"></span><div class="menu-price">6</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Seasonal Fruit</div><div class="menu-desc">Whatever's best at the market today</div></div><span class="menu-leader"></span><div class="menu-price">7</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DINNER -->
+      <div class="tab-panel" id="tab-dinner">
+        <div class="menu-cols">
+          <div class="menu-category">
+            <h3>Starters</h3>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Burrata &amp; Heirloom Tomato</div><div class="menu-desc">Basil oil, fleur de sel, grilled sourdough</div></div><span class="menu-leader"></span><div class="menu-price">16</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Gulf Shrimp Ceviche</div><div class="menu-desc">Mango, avocado, serrano, tortilla chips</div></div><span class="menu-leader"></span><div class="menu-price">18</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Charcuterie Board</div><div class="menu-desc">Chef's selection of cured meats &amp; artisan cheeses, honey, mustard</div></div><span class="menu-leader"></span><div class="menu-price">24</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">French Onion Soup</div><div class="menu-desc">Gruyère, thyme, house-made bone broth</div></div><span class="menu-leader"></span><div class="menu-price">14</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Tuna Tartare</div><div class="menu-desc">Soy-sesame, avocado, wonton crisps, sriracha aioli</div></div><span class="menu-leader"></span><div class="menu-price">22</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Crispy Brussels Sprouts<span class="veg">v</span></div><div class="menu-desc">Fish sauce vinaigrette, crispy shallots, pickled chili</div></div><span class="menu-leader"></span><div class="menu-price">13</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Shrimp Cocktail</div><div class="menu-desc">Six Gulf shrimp, house cocktail sauce, lemon</div></div><span class="menu-leader"></span><div class="menu-price">19</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Whipped Ricotta Crostini<span class="veg">v</span></div><div class="menu-desc">Roasted grapes, pistachios, honey, fresh herbs</div></div><span class="menu-leader"></span><div class="menu-price">14</div></div>
+          </div>
+          <div class="menu-category">
+            <h3>Soups &amp; Salads</h3>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Mesa House Salad<span class="veg">v</span></div><div class="menu-desc">Mixed greens, cherry tomato, cucumber, sherry vinaigrette</div></div><span class="menu-leader"></span><div class="menu-price">12</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Caesar Salad</div><div class="menu-desc">Romaine, house Caesar dressing, parmesan, anchovy, focaccia croutons</div></div><span class="menu-leader"></span><div class="menu-price">14</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Roasted Beet &amp; Arugula<span class="veg">v</span></div><div class="menu-desc">Goat cheese, candied walnuts, champagne vinaigrette</div></div><span class="menu-leader"></span><div class="menu-price">15</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Wedge Salad</div><div class="menu-desc">Iceberg, blue cheese dressing, bacon, tomato, chives</div></div><span class="menu-leader"></span><div class="menu-price">14</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Lobster Bisque</div><div class="menu-desc">Cream, sherry, tarragon, claw meat</div></div><span class="menu-leader"></span><div class="menu-price">16</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Add Protein</div><div class="menu-desc">Grilled chicken +$8 · Seared salmon +$12 · Gulf shrimp +$10</div></div><span class="menu-leader"></span><div class="menu-price">+8</div></div>
+          </div>
+          <div class="menu-category">
+            <h3>From the Grill</h3>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Dry-Aged Ribeye</div><div class="menu-desc">14oz, truffle butter, crispy potatoes, watercress</div></div><span class="menu-leader"></span><div class="menu-price">58</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">NY Strip</div><div class="menu-desc">12oz, roasted garlic compound butter, broccolini</div></div><span class="menu-leader"></span><div class="menu-price">52</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Grilled Pork Chop</div><div class="menu-desc">12oz bone-in, apple-mustard glaze, roasted sweet potato</div></div><span class="menu-leader"></span><div class="menu-price">36</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Braised Short Rib</div><div class="menu-desc">Red wine reduction, celery root purée, gremolata</div></div><span class="menu-leader"></span><div class="menu-price">46</div></div>
+          </div>
+          <div class="menu-category">
+            <h3>Sea &amp; Land</h3>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Pan-Seared Salmon</div><div class="menu-desc">Lemon beurre blanc, asparagus, wild rice pilaf</div></div><span class="menu-leader"></span><div class="menu-price">38</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Seared Sea Scallops</div><div class="menu-desc">Cauliflower purée, peas, brown butter, micro herbs</div></div><span class="menu-leader"></span><div class="menu-price">44</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Roasted Half Chicken</div><div class="menu-desc">Herb jus, roasted garlic mashed, broccolini</div></div><span class="menu-leader"></span><div class="menu-price">34</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Wild Mushroom Risotto<span class="veg">v</span></div><div class="menu-desc">Aged parmesan, truffle oil, herbs, pea shoots</div></div><span class="menu-leader"></span><div class="menu-price">28</div></div>
+          </div>
+        </div>
+
+        <div style="margin-top:3rem">
+          <div class="menu-cols-2">
+            <div class="menu-category">
+              <h3>Desserts</h3>
+              <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Warm Chocolate Lava Cake</div><div class="menu-desc">Vanilla bean ice cream, raspberry coulis</div></div><span class="menu-leader"></span><div class="menu-price">13</div></div>
+              <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Crème Brûlée</div><div class="menu-desc">Classic vanilla custard, caramelized sugar crust, seasonal berries</div></div><span class="menu-leader"></span><div class="menu-price">12</div></div>
+              <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Seasonal Cheesecake</div><div class="menu-desc">Ask your server for today's preparation</div></div><span class="menu-leader"></span><div class="menu-price">12</div></div>
+              <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Bananas Foster</div><div class="menu-desc">Tableside preparation, rum caramel, vanilla ice cream</div></div><span class="menu-leader"></span><div class="menu-price">14</div></div>
+            </div>
+            <div class="menu-category">
+              <h3>Sides</h3>
+              <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Truffle Parmesan Fries</div><div class="menu-desc">Truffle oil, grana padano, fresh herbs</div></div><span class="menu-leader"></span><div class="menu-price">10</div></div>
+              <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Roasted Garlic Mashed Potato</div><div class="menu-desc">Yukon gold, butter, cream, roasted garlic</div></div><span class="menu-leader"></span><div class="menu-price">8</div></div>
+              <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Grilled Broccolini</div><div class="menu-desc">Lemon, garlic, chili flake, shaved parmesan</div></div><span class="menu-leader"></span><div class="menu-price">8</div></div>
+              <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Creamed Spinach</div><div class="menu-desc">Nutmeg, gruyère, crispy shallots</div></div><span class="menu-leader"></span><div class="menu-price">8</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HAPPY HOUR -->
+      <div class="tab-panel" id="tab-happyhour">
+        <p class="happy-note">Tuesday – Friday · 4:00 to 6:00 PM · Bar seating and lounge only</p>
+        <div class="menu-cols-2">
+          <div class="menu-category">
+            <h3>Small Plates — all $8</h3>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Truffle Fries</div><div class="menu-desc">Truffle oil, parmesan, fresh herbs</div></div><span class="menu-leader"></span><div class="menu-price">8</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Shishito Peppers</div><div class="menu-desc">Blistered, flaky sea salt, yuzu aioli</div></div><span class="menu-leader"></span><div class="menu-price">8</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Chicken Sliders</div><div class="menu-desc">Two crispy chicken sliders, pickles, house sauce</div></div><span class="menu-leader"></span><div class="menu-price">8</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Wagyu Beef Sliders</div><div class="menu-desc">Two smash sliders, American cheese, caramelized onion</div></div><span class="menu-leader"></span><div class="menu-price">8</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Spinach Artichoke Dip</div><div class="menu-desc">Warm dip, grilled pita, tortilla chips</div></div><span class="menu-leader"></span><div class="menu-price">8</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Crispy Calamari</div><div class="menu-desc">Lemon, marinara, pepperoncini</div></div><span class="menu-leader"></span><div class="menu-price">8</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Queso Fundido</div><div class="menu-desc">Oaxacan cheese, chorizo, roasted peppers, tortillas</div></div><span class="menu-leader"></span><div class="menu-price">8</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Bruschetta Trio</div><div class="menu-desc">Three preparations on grilled sourdough</div></div><span class="menu-leader"></span><div class="menu-price">8</div></div>
+          </div>
+          <div class="menu-category">
+            <h3>Happy Hour Bar</h3>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Draft Beer</div><div class="menu-desc">Rotating local selection</div></div><span class="menu-leader"></span><div class="menu-price">4</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">House Wine</div><div class="menu-desc">Red, white, or rosé by the glass</div></div><span class="menu-leader"></span><div class="menu-price">6</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Well Cocktails</div><div class="menu-desc">Your classic spirit + mixer</div></div><span class="menu-leader"></span><div class="menu-price">7</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Mesa Mule</div><div class="menu-desc">Tito's, ginger beer, lime, jalapeño</div></div><span class="menu-leader"></span><div class="menu-price">9</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Margarita</div><div class="menu-desc">Espolòn Blanco, Cointreau, fresh lime, salt rim</div></div><span class="menu-leader"></span><div class="menu-price">9</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Aperol Spritz</div><div class="menu-desc">Aperol, prosecco, soda, orange slice</div></div><span class="menu-leader"></span><div class="menu-price">9</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Domestic Bottles</div><div class="menu-desc">Bud Light, Coors Light, Miller Lite</div></div><span class="menu-leader"></span><div class="menu-price">3</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Topo Chico</div><div class="menu-desc">Still or sparkling</div></div><span class="menu-leader"></span><div class="menu-price">3</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DRINKS -->
+      <div class="tab-panel" id="tab-drinks">
+        <div class="menu-cols">
+          <div class="menu-category">
+            <h3>Cocktails</h3>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Mesa Mule</div><div class="menu-desc">Tito's, ginger beer, lime, jalapeño</div></div><span class="menu-leader"></span><div class="menu-price">14</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Smoked Old Fashioned</div><div class="menu-desc">Bulleit Rye, cherry bitters, orange peel</div></div><span class="menu-leader"></span><div class="menu-price">16</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Hibiscus Spritz</div><div class="menu-desc">Aperol, hibiscus syrup, prosecco, soda</div></div><span class="menu-leader"></span><div class="menu-price">13</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Classic Negroni</div><div class="menu-desc">Gin, Campari, sweet vermouth</div></div><span class="menu-leader"></span><div class="menu-price">15</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Watermelon Margarita</div><div class="menu-desc">Espolòn Blanco, fresh watermelon, lime, Tajín rim</div></div><span class="menu-leader"></span><div class="menu-price">14</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Espresso Martini</div><div class="menu-desc">Tito's, Kahlúa, fresh espresso, coffee liqueur</div></div><span class="menu-leader"></span><div class="menu-price">16</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">French 75</div><div class="menu-desc">Hendrick's Gin, lemon, simple syrup, champagne</div></div><span class="menu-leader"></span><div class="menu-price">15</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Paloma</div><div class="menu-desc">Casamigos Blanco, grapefruit, lime, salt, soda</div></div><span class="menu-leader"></span><div class="menu-price">14</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Dark &amp; Stormy</div><div class="menu-desc">Gosling's Dark Rum, ginger beer, lime</div></div><span class="menu-leader"></span><div class="menu-price">13</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Paper Plane</div><div class="menu-desc">Bourbon, Aperol, Amaro Nonino, lemon — equal parts</div></div><span class="menu-leader"></span><div class="menu-price">16</div></div>
+          </div>
+          <div class="menu-category">
+            <h3>Wine <em style="font-size:0.8rem;font-style:italic;color:var(--muted)">· glass / bottle</em></h3>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Sauvignon Blanc</div><div class="menu-desc">Cloudy Bay · Marlborough, NZ</div></div><span class="menu-leader"></span><div class="menu-price">14 / 52</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Chardonnay</div><div class="menu-desc">Rombauer · Carneros, CA — unoaked, bright, clean</div></div><span class="menu-leader"></span><div class="menu-price">16 / 58</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Pinot Grigio</div><div class="menu-desc">Santa Margherita · Alto Adige, Italy</div></div><span class="menu-leader"></span><div class="menu-price">13 / 48</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Rosé</div><div class="menu-desc">Whispering Angel · Provence, France</div></div><span class="menu-leader"></span><div class="menu-price">15 / 54</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Cabernet Sauvignon</div><div class="menu-desc">Jordan · Alexander Valley, CA</div></div><span class="menu-leader"></span><div class="menu-price">17 / 64</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Pinot Noir</div><div class="menu-desc">Meiomi · California</div></div><span class="menu-leader"></span><div class="menu-price">14 / 52</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Malbec</div><div class="menu-desc">Zuccardi Valle · Mendoza, Argentina</div></div><span class="menu-leader"></span><div class="menu-price">13 / 48</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Prosecco</div><div class="menu-desc">La Marca · Italy · glass only</div></div><span class="menu-leader"></span><div class="menu-price">12</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Champagne</div><div class="menu-desc">Veuve Clicquot Yellow Label · Brut NV</div></div><span class="menu-leader"></span><div class="menu-price">22 / 95</div></div>
+          </div>
+          <div class="menu-category">
+            <h3>Beer &amp; Non-Alcoholic</h3>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Draft Beer</div><div class="menu-desc">Rotating Houston craft selection — ask your server</div></div><span class="menu-leader"></span><div class="menu-price">7</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Saint Arnold Amber</div><div class="menu-desc">Houston's oldest craft brewery · bottle</div></div><span class="menu-leader"></span><div class="menu-price">6</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Karbach Love Street</div><div class="menu-desc">Kolsch-style · light, crisp · bottle</div></div><span class="menu-leader"></span><div class="menu-price">6</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Modelo Especial</div><div class="menu-desc">Bottle</div></div><span class="menu-leader"></span><div class="menu-price">5</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Athletic Brewing Free Wave</div><div class="menu-desc">Non-alcoholic IPA · hazy, hoppy, zero ABV</div></div><span class="menu-leader"></span><div class="menu-price">6</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Fresh Lemonade</div><div class="menu-desc">House-made, still or sparkling</div></div><span class="menu-leader"></span><div class="menu-price">5</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Topo Chico</div><div class="menu-desc">Still or sparkling mineral water</div></div><span class="menu-leader"></span><div class="menu-price">4</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Agua Fresca</div><div class="menu-desc">Rotating seasonal flavors — ask your server</div></div><span class="menu-leader"></span><div class="menu-price">5</div></div>
+            <div class="menu-item"><div class="menu-name-wrap"><div class="menu-name">Coffee &amp; Tea</div><div class="menu-desc">Local roast drip, espresso, cappuccino, hot tea</div></div><span class="menu-leader"></span><div class="menu-price">4–6</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<section class="pullquote" aria-label="Press quote">
+  <div class="pullquote-inner">
+    <svg class="flourish" width="80" height="20" viewBox="0 0 80 20" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+      <path d="M0 10 L28 10" stroke-linecap="round"/>
+      <path d="M52 10 L80 10" stroke-linecap="round"/>
+      <circle cx="40" cy="10" r="3" fill="currentColor" stroke="none"/>
+      <path d="M34 10 Q37 4 40 10 Q43 16 46 10" stroke-linecap="round"/>
+    </svg>
+    <q>A room that feels genuinely loved — where the ribeye comes from a ranch with a name, and the room itself seems to know yours by the second visit.</q>
+    <cite><em>Houston Chronicle</em> Dining Critic's Pick · 2024</cite>
+    <svg class="flourish bottom" width="80" height="20" viewBox="0 0 80 20" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+      <path d="M0 10 L28 10" stroke-linecap="round"/>
+      <path d="M52 10 L80 10" stroke-linecap="round"/>
+      <circle cx="40" cy="10" r="3" fill="currentColor" stroke="none"/>
+      <path d="M34 10 Q37 4 40 10 Q43 16 46 10" stroke-linecap="round"/>
+    </svg>
+  </div>
+</section>
+
+<!-- PHOTO TRIO -->
+<div class="photo-trio">
+  <div class="photo-trio-item">
+    <img src="https://images.pexels.com/photos/3465604/pexels-photo-3465604.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Restaurant interior" loading="lazy"/>
+    <div class="cap">The Room</div>
+  </div>
+  <div class="photo-trio-item">
+    <img src="https://images.pexels.com/photos/306059/pexels-photo-306059.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Gourmet food plating" loading="lazy"/>
+    <div class="cap">The Plate</div>
+  </div>
+  <div class="photo-trio-item">
+    <img src="https://images.pexels.com/photos/8922185/pexels-photo-8922185.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Fine dining experience" loading="lazy"/>
+    <div class="cap">The Night</div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<section class="experience">
+  <div class="exp-inner">
+    <div class="exp-text">
+      <span class="eyebrow">The Mesa Experience</span>
+      <h2>More than <em>just a meal.</em></h2>
+      <p>We believe dining out should feel special — not rushed. Our team is trained to make every visit feel personal, and our kitchen is committed to food that actually tastes like something.</p>
+      <p>Private dining available for groups of 10 to 40. Ask about our Chef's Tasting menu for special occasions.</p>
+      <div style="margin-top:1.5rem">
+        <span class="exp-tag">Private dining</span>
+        <span class="exp-tag">Chef's tasting</span>
+        <span class="exp-tag">Wine pairings</span>
+      </div>
+    </div>
+    <div class="exp-stats">
+      <div class="exp-stat"><div class="exp-num">6<span class="acc">yr</span></div><div class="exp-lbl">Open in Houston</div></div>
+      <div class="exp-stat"><div class="exp-num">4.8<span class="acc">★</span></div><div class="exp-lbl">Google Rating</div></div>
+      <div class="exp-stat"><div class="exp-num">100<span class="acc">%</span></div><div class="exp-lbl">Local Sourcing</div></div>
+      <div class="exp-stat"><div class="exp-num">18<span class="acc">+</span></div><div class="exp-lbl">Awards &amp; Features</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="reviews-inner">
+    <div class="reviews-head">
+      <span class="eyebrow center">What Guests Say</span>
+      <h2>Stories from <em>our table.</em></h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars" aria-label="5 stars">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-text">The ribeye is the best I've had in Houston. Period. The service matched it — attentive without being overbearing. We'll be back for every anniversary.</p>
+        <div class="reviewer">
+          <div class="rev-av">A</div>
+          <div><div class="rev-name">Amanda B.</div><div class="rev-info">Houston · 2 weeks ago</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars" aria-label="5 stars">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-text">Took a client here for dinner and completely knocked it out of the park. The cocktail program alone is worth the visit. Smoked old fashioned is perfection.</p>
+        <div class="reviewer">
+          <div class="rev-av">R</div>
+          <div><div class="rev-name">Ryan K.</div><div class="rev-info">Houston · 1 month ago</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars" aria-label="5 stars">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-text">Brunch here is something else. The gulf shrimp ceviche, bottomless mimosas, and a room full of sunlight — this is how Saturdays are supposed to feel.</p>
+        <div class="reviewer">
+          <div class="rev-av">S</div>
+          <div><div class="rev-name">Sofia L.</div><div class="rev-info">Midtown · 3 weeks ago</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVE -->
+<section class="reserve" id="reserve">
+  <span class="sec-num">iii.</span>
+  <div class="reserve-inner">
+    <div class="reserve-info">
+      <span class="eyebrow">Reservations</span>
+      <h2>Reserve <em>your table.</em></h2>
+      <p class="lede">Walk-ins always welcome — but reservations ensure we're ready for you. We hold your table for 15 minutes past your reservation time.</p>
+
+      <div class="avail-pill">
+        <span class="live-dot"></span>
+        <span>Available Tonight</span>
+      </div>
+      <div class="timeslots">
+        <button type="button" class="timeslot primary" onclick="selectTime('7:00 PM', this)">7:00</button>
+        <button type="button" class="timeslot" onclick="selectTime('7:30 PM', this)">7:30</button>
+        <button type="button" class="timeslot" onclick="selectTime('8:00 PM', this)">8:00</button>
+        <button type="button" class="timeslot" onclick="selectTime('8:30 PM', this)">8:30</button>
+      </div>
+
+      <div class="r-detail">
+        <div class="r-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l1.87-1.87a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div><div class="r-label">By Phone</div><div class="r-val">(713) 555-0629</div></div>
+      </div>
+      <div class="r-detail">
+        <div class="r-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div><div class="r-label">Hours</div><div class="r-val">Tue–Sun Dinner, 5–10pm<em>Sat–Sun Brunch, 10am–3pm</em></div></div>
+      </div>
+      <div class="r-detail">
+        <div class="r-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><div class="r-label">Find Us</div><div class="r-val">2814 Westheimer Rd<em>Midtown, Houston TX 77098</em></div></div>
+      </div>
+    </div>
+    <form class="reserve-form" action="https://formspree.io/f/YOUR_ID" method="POST">
+      <div class="form-head">
+        <h3>Request a table</h3>
+        <p>We'll confirm by phone or email within the hour.</p>
+      </div>
+      <div class="f-row">
+        <div class="f-group"><label class="f-label">Your Name</label><input class="f-input" type="text" name="name" placeholder="Jane Smith" required/></div>
+        <div class="f-group"><label class="f-label">Phone</label><input class="f-input" type="tel" name="phone" placeholder="(713) 000-0000" required/></div>
+      </div>
+      <div class="f-row">
+        <div class="f-group">
+          <label class="f-label">Date</label>
+          <input class="f-input" type="date" name="date" required/>
+        </div>
+        <div class="f-group">
+          <label class="f-label">Time</label>
+          <select class="f-input" name="time" id="time-select">
+            <option value="">Select a time</option>
+            <option>5:00 PM</option>
+            <option>5:30 PM</option>
+            <option>6:00 PM</option>
+            <option>6:30 PM</option>
+            <option selected>7:00 PM</option>
+            <option>7:30 PM</option>
+            <option>8:00 PM</option>
+            <option>8:30 PM</option>
+            <option>9:00 PM</option>
+          </select>
+        </div>
+      </div>
+      <div class="f-group">
+        <label class="f-label">Party Size</label>
+        <select class="f-input" name="party">
+          <option value="">Select</option>
+          <option>1–2 Guests</option>
+          <option>3–4 Guests</option>
+          <option>5–6 Guests</option>
+          <option>7–10 Guests</option>
+          <option>Large Party (10+)</option>
+        </select>
+      </div>
+      <div class="f-group"><label class="f-label">Special Requests</label><textarea class="f-input" name="message" placeholder="Dietary restrictions, celebrations, allergies..."></textarea></div>
+      <button type="submit" class="f-submit"><span>Request Reservation</span></button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-mark">Mesa <span class="amp">&</span> Kitchen Bar</div>
+  <div class="footer-tag">Seasonal cuts, local fire.</div>
+  <div class="footer-info">
+    2814 Westheimer Rd, Houston TX<span>·</span>(713) 555-0629<span>·</span>Midtown
+  </div>
+  <div class="footer-sig">
+    © 2025 Mesa Kitchen &amp; Bar LLC &nbsp;·&nbsp; Website by <a href="https://charliemikedigital.com">Charlie Mike Digital</a>
+  </div>
+</footer>
+
+<script>
+function showTab(name, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  btn.classList.add('active');
+}
+function selectTime(value, el) {
+  document.querySelectorAll('.timeslot').forEach(b => b.classList.remove('primary'));
+  el.classList.add('primary');
+  var sel = document.getElementById('time-select');
+  if (sel) {
+    for (var i = 0; i < sel.options.length; i++) {
+      if (sel.options[i].text === value) { sel.selectedIndex = i; break; }
+    }
+  }
+}
+</script>
+
+</body>
+</html>

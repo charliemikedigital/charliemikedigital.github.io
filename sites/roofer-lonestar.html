@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Lone Star Roofing Co. | Houston's Most Trusted Roofers</title>
+<meta name="description" content="Licensed roofing contractors in Houston TX. Roof repair, replacement, storm damage & insurance claims. Free inspection. Call (713) 555-0314."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#8a1d1d;
+  --red-deep:#6e1515;
+  --red-bright:#a52626;
+  --red-ember:#c13030;
+  --charcoal:#1a1a1a;
+  --charcoal-2:#242220;
+  --ink:#0f0f0f;
+  --slate:#2a2724;
+  --cream:#f2ebda;
+  --cream-2:#ede4cf;
+  --parchment:#e8dfc6;
+  --paper:#faf6ec;
+  --mid:#5b5248;
+  --muted:#8a8176;
+  --border:#d9cfb4;
+  --border-dark:rgba(242,235,218,0.12);
+  --gold:#b8924a;
+  --r:4px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Source Sans 3',sans-serif;color:var(--charcoal);background:var(--paper);overflow-x:hidden;font-size:16px;line-height:1.7}
+h1,h2,h3,h4{font-family:'Oswald',sans-serif;line-height:1.05;letter-spacing:0.5px}
+a{text-decoration:none;color:inherit}
+::selection{background:var(--red);color:var(--cream)}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:var(--charcoal)}
+::-webkit-scrollbar-thumb{background:var(--red-deep);border-radius:3px}
+
+/* Shared serif accent */
+.serif{font-family:'Roboto Slab',serif;font-style:italic;font-weight:500;letter-spacing:-0.01em}
+.serif-accent{font-family:'Roboto Slab',serif;font-style:italic;font-weight:400;color:var(--red-ember);letter-spacing:-0.01em;text-transform:none}
+
+/* Reusable star marker */
+.star-mark{display:inline-block;width:10px;height:10px;vertical-align:middle;flex-shrink:0}
+
+/* Section eyebrow with star */
+.eyebrow{
+  font-family:'Oswald',sans-serif;font-size:0.72rem;font-weight:700;
+  color:var(--red-bright);letter-spacing:4px;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:0.85rem;
+}
+.eyebrow::before,.eyebrow::after{content:"";display:block;width:28px;height:1px;background:linear-gradient(90deg,transparent,var(--red-bright))}
+.eyebrow::after{background:linear-gradient(90deg,var(--red-bright),transparent)}
+
+/* EMERGENCY BAR — stenciled metal strip */
+.emergency-bar{
+  background:linear-gradient(180deg,var(--red-bright) 0%,var(--red-deep) 100%);
+  padding:0.55rem 1.5rem;
+  display:flex;align-items:center;justify-content:center;gap:1.5rem;
+  flex-wrap:wrap;
+  border-bottom:1px solid rgba(0,0,0,0.4);
+  box-shadow:inset 0 -1px 0 rgba(255,255,255,0.08),inset 0 1px 0 rgba(255,255,255,0.12);
+  position:relative;
+}
+.emergency-bar::before,.emergency-bar::after{
+  content:"";position:absolute;top:50%;transform:translateY(-50%);
+  width:6px;height:6px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,#3a1010,#0c0404);
+  box-shadow:0 1px 1px rgba(255,255,255,0.15);
+}
+.emergency-bar::before{left:10px}
+.emergency-bar::after{right:10px}
+.emergency-bar span{color:var(--cream);font-size:0.82rem;font-weight:600;display:flex;align-items:center;gap:8px;letter-spacing:0.5px}
+.emergency-bar a{color:#fff;font-family:'Oswald',sans-serif;font-weight:700;font-size:0.9rem;letter-spacing:1.2px;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px}
+.emergency-bar a:hover{text-decoration:underline;text-underline-offset:3px}
+
+/* NAV */
+nav{
+  background:linear-gradient(180deg,var(--charcoal) 0%,var(--ink) 100%);
+  padding:0 2rem;height:70px;
+  display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:100;
+  border-bottom:1px solid rgba(184,146,74,0.18);
+  box-shadow:0 1px 0 rgba(255,255,255,0.04) inset;
+}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-seal{
+  width:42px;height:42px;flex-shrink:0;
+  background:radial-gradient(circle at 30% 30%,var(--red-bright),var(--red-deep) 70%,#3f0a0a);
+  border:1px solid rgba(242,235,218,0.18);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.18),0 2px 6px rgba(0,0,0,0.5);
+  position:relative;
+}
+.logo-seal::after{
+  content:"";position:absolute;inset:3px;border-radius:50%;
+  border:1px dashed rgba(242,235,218,0.25);
+}
+.logo-wm{display:flex;flex-direction:column;line-height:1}
+.logo-main{font-family:'Oswald',sans-serif;font-weight:700;font-size:1.05rem;color:var(--cream);text-transform:uppercase;letter-spacing:2.5px}
+.logo-main em{font-family:'Roboto Slab',serif;font-style:italic;font-weight:400;color:var(--red-ember);letter-spacing:0;text-transform:none}
+.logo-sub{font-family:'Oswald',sans-serif;font-size:0.54rem;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold);margin-top:3px;font-weight:600}
+.nav-links{display:flex;gap:0.2rem;list-style:none;align-items:center}
+.nav-links a{color:rgba(242,235,218,0.65);font-family:'Oswald',sans-serif;font-size:0.8rem;font-weight:500;padding:0.45rem 0.85rem;border-radius:var(--r);transition:color 0.2s;letter-spacing:1.8px;text-transform:uppercase;position:relative}
+.nav-links a:not(.nav-cta):hover{color:var(--cream)}
+.nav-links a:not(.nav-cta)::after{content:"";position:absolute;left:0.85rem;right:0.85rem;bottom:0.2rem;height:1px;background:var(--red-ember);transform:scaleX(0);transform-origin:left;transition:transform 0.3s ease}
+.nav-links a:not(.nav-cta):hover::after{transform:scaleX(1)}
+.nav-cta{
+  background:linear-gradient(180deg,var(--red-bright),var(--red-deep)) !important;
+  color:var(--cream) !important;
+  padding:0.5rem 1.1rem !important;
+  border:1px solid rgba(242,235,218,0.18);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 2px 4px rgba(0,0,0,0.4);
+  transition:all 0.2s !important;
+}
+.nav-cta:hover{background:linear-gradient(180deg,var(--red-ember),var(--red-bright)) !important;transform:translateY(-1px)}
+@media(max-width:820px){.nav-links{display:none}nav{padding:0 1.25rem}}
+
+/* HERO */
+.hero{
+  position:relative;min-height:94vh;
+  display:flex;align-items:flex-end;
+  overflow:hidden;
+  background:var(--ink);
+}
+.hero-img{position:absolute;inset:0}
+.hero-img img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(0.85) contrast(1.05)}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at 20% 60%,rgba(138,29,29,0.25),transparent 60%),
+    linear-gradient(to right,rgba(10,10,10,0.92) 0%,rgba(10,10,10,0.65) 55%,rgba(10,10,10,0.25) 100%),
+    linear-gradient(to top,rgba(10,10,10,0.85) 0%,transparent 35%);
+}
+/* noise texture overlay */
+.hero-noise{
+  position:absolute;inset:0;pointer-events:none;opacity:0.35;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='7'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.35 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+/* giant watermark star */
+.hero-star-wm{
+  position:absolute;right:-80px;bottom:-60px;width:520px;height:520px;
+  opacity:0.055;pointer-events:none;color:var(--cream);
+  transform:rotate(-12deg);
+}
+@media(max-width:900px){.hero-star-wm{width:340px;height:340px;right:-100px;bottom:-80px}}
+.hero-content{
+  position:relative;z-index:2;
+  padding:0 3.5rem 5.5rem;max-width:760px;
+}
+@media(max-width:720px){.hero-content{padding:0 1.5rem 3.5rem}}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'Oswald',sans-serif;font-size:0.72rem;font-weight:600;
+  letter-spacing:3.5px;text-transform:uppercase;
+  color:var(--cream);margin-bottom:1.75rem;
+  opacity:0;animation:fadeUp 0.7s 0.15s forwards;
+}
+.hero-eyebrow .tag-stamp{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:4px 10px;
+  background:rgba(165,38,38,0.18);
+  border:1px solid rgba(165,38,38,0.55);
+  border-radius:3px;color:#f5d2d2;font-size:0.62rem;letter-spacing:2.2px;
+}
+.hero h1{
+  font-family:'Oswald',sans-serif;font-weight:700;
+  font-size:clamp(2.9rem,6.4vw,5.4rem);
+  color:var(--cream);margin-bottom:1.5rem;
+  text-transform:uppercase;letter-spacing:0.5px;
+  text-shadow:0 2px 20px rgba(0,0,0,0.5);
+  opacity:0;animation:fadeUp 0.7s 0.3s forwards;
+}
+.hero h1 .serif-accent{
+  font-family:'Roboto Slab',serif;font-style:italic;font-weight:400;
+  color:var(--red-ember);text-transform:none;letter-spacing:-0.01em;
+  display:inline-block;
+}
+.hero h1 .uppercase-strong{color:#fff}
+.hero p.hero-sub{
+  color:rgba(242,235,218,0.78);font-size:1.08rem;line-height:1.65;
+  max-width:540px;margin-bottom:2.25rem;
+  opacity:0;animation:fadeUp 0.7s 0.45s forwards;
+}
+.hero p.hero-sub em{font-family:'Roboto Slab',serif;font-style:italic;color:var(--cream);font-weight:500}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp 0.7s 0.6s forwards;margin-bottom:2.5rem}
+
+/* Vintage metal-sign primary CTA */
+.btn-tin{
+  position:relative;overflow:hidden;
+  background:linear-gradient(180deg,var(--red-bright) 0%,var(--red-deep) 100%);
+  color:var(--cream);
+  padding:1rem 2.1rem;border-radius:var(--r);
+  font-family:'Oswald',sans-serif;font-size:1rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:1.5px;
+  display:inline-flex;align-items:center;gap:10px;
+  border:1px solid rgba(242,235,218,0.22);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.22),
+    inset 0 -1px 0 rgba(0,0,0,0.35),
+    0 4px 12px rgba(0,0,0,0.45),
+    0 1px 0 rgba(0,0,0,0.6);
+  transition:transform 0.08s ease,box-shadow 0.15s ease,filter 0.2s;
+  isolation:isolate;
+}
+.btn-tin::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='2' seed='3'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity:0.4;mix-blend-mode:overlay;
+}
+.btn-tin::after{
+  content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;
+  background:linear-gradient(110deg,transparent,rgba(255,255,255,0.25),transparent);
+  transform:skewX(-20deg);transition:left 0.6s ease;
+}
+.btn-tin:hover::after{left:120%}
+.btn-tin:hover{filter:brightness(1.05)}
+.btn-tin:active{
+  transform:translateY(1px);
+  box-shadow:
+    inset 0 2px 6px rgba(0,0,0,0.55),
+    inset 0 1px 0 rgba(0,0,0,0.3),
+    0 1px 2px rgba(0,0,0,0.3);
+}
+.btn-ghost{
+  background:transparent;color:var(--cream);
+  border:1px solid rgba(242,235,218,0.4);
+  padding:1rem 2rem;border-radius:var(--r);
+  font-family:'Oswald',sans-serif;font-size:1rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:1.5px;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:all 0.2s;
+}
+.btn-ghost:hover{border-color:var(--cream);background:rgba(242,235,218,0.06)}
+
+/* Hero proof row */
+.hero-proof{
+  display:flex;align-items:center;gap:1rem;flex-wrap:wrap;
+  opacity:0;animation:fadeUp 0.7s 0.75s forwards;
+}
+.hero-proof-stars{display:flex;gap:2px;color:var(--gold)}
+.hero-proof-text{font-family:'Roboto Slab',serif;font-style:italic;color:rgba(242,235,218,0.75);font-size:0.9rem;font-weight:400}
+.hero-proof-text strong{color:var(--cream);font-style:normal;font-weight:600}
+
+/* ---- CREST / BADGE ---- */
+.hero-crest{
+  position:absolute;top:2rem;right:2rem;z-index:3;
+  width:260px;height:260px;
+  animation:crestSpin 90s linear infinite;
+  opacity:0;animation:fadeIn 1s 0.8s forwards,crestSpin 90s linear 0.8s infinite;
+}
+.hero-crest .inner-fixed{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  animation:crestSpinReverse 90s linear infinite;
+}
+@keyframes crestSpin{to{transform:rotate(360deg)}}
+@keyframes crestSpinReverse{to{transform:rotate(-360deg)}}
+@keyframes fadeIn{to{opacity:1}}
+@media(max-width:900px){.hero-crest{position:relative;top:auto;right:auto;margin:2rem auto 0;width:220px;height:220px;display:block}}
+
+/* STAT STRIP — metal plate row */
+.stat-strip{
+  background:linear-gradient(180deg,var(--charcoal) 0%,var(--ink) 100%);
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid rgba(184,146,74,0.25);
+  border-bottom:1px solid rgba(184,146,74,0.15);
+  position:relative;
+}
+.stat-strip::before,.stat-strip::after{
+  content:"";position:absolute;top:50%;transform:translateY(-50%);
+  width:8px;height:8px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,#555,#111);
+  box-shadow:inset 0 -1px 0 rgba(0,0,0,0.5),0 1px 1px rgba(255,255,255,0.05);
+}
+.stat-strip::before{left:12px}
+.stat-strip::after{right:12px}
+@media(max-width:600px){.stat-strip{grid-template-columns:repeat(2,1fr)}}
+.stat-item{
+  padding:2.25rem 1.5rem;text-align:center;
+  border-right:1px solid rgba(242,235,218,0.08);
+  position:relative;
+}
+.stat-item:last-child{border-right:none}
+.stat-item::before{
+  content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:30px;height:1px;background:var(--red-ember);
+}
+.stat-num{font-family:'Oswald',sans-serif;font-size:2.6rem;font-weight:700;color:var(--cream);line-height:1;display:flex;align-items:baseline;justify-content:center;gap:4px}
+.stat-num .unit{font-size:1.1rem;color:var(--red-ember);font-weight:500}
+.stat-label{font-family:'Oswald',sans-serif;font-size:0.72rem;color:var(--gold);text-transform:uppercase;letter-spacing:2.5px;font-weight:600;margin-top:0.5rem}
+
+/* --- TRUST STAMP BAND (Insured · Bonded · Licensed · BBB A+) --- */
+.trust-band{
+  background:linear-gradient(180deg,#1e1c19,#141210);
+  padding:1.75rem 1.5rem;
+  border-bottom:1px solid rgba(184,146,74,0.18);
+  position:relative;
+}
+.trust-inner{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;
+}
+@media(max-width:760px){.trust-inner{grid-template-columns:repeat(2,1fr)}}
+.stamp{
+  position:relative;
+  background:linear-gradient(180deg,#2b2824,#1a1815);
+  border:1px solid rgba(184,146,74,0.22);
+  border-radius:var(--r);
+  padding:0.9rem 1rem;text-align:center;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.06);
+}
+.stamp::before,.stamp::after,.stamp > .rivet-a,.stamp > .rivet-b{
+  content:"";position:absolute;width:5px;height:5px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,#7a6b4a,#1a1510);
+  box-shadow:inset 0 -1px 0 rgba(0,0,0,0.5);
+}
+.stamp::before{top:5px;left:5px}
+.stamp::after{top:5px;right:5px}
+.stamp .rivet-a{bottom:5px;left:5px}
+.stamp .rivet-b{bottom:5px;right:5px}
+.stamp-label{font-family:'Oswald',sans-serif;font-size:0.72rem;font-weight:700;color:var(--gold);letter-spacing:3px;text-transform:uppercase;line-height:1.1}
+.stamp-sub{font-family:'Roboto Slab',serif;font-style:italic;font-size:0.72rem;color:rgba(242,235,218,0.55);margin-top:3px}
+
+/* --- SINCE 1998 PLAQUE --- */
+.since-band{
+  background:var(--parchment);
+  padding:4rem 1.5rem;
+  position:relative;
+  border-bottom:1px solid var(--border);
+  overflow:hidden;
+}
+.since-band::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='5'/><feColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.32 0 0 0 0 0.18 0 0 0 0.18 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  mix-blend-mode:multiply;opacity:0.4;
+}
+.since-inner{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:auto 1fr;gap:3rem;align-items:center;
+  position:relative;z-index:1;
+}
+@media(max-width:820px){.since-inner{grid-template-columns:1fr;gap:2rem;text-align:center}}
+.plaque{
+  position:relative;
+  background:linear-gradient(180deg,var(--charcoal) 0%,var(--ink) 100%);
+  border:2px solid var(--gold);
+  border-radius:var(--r);
+  padding:2.25rem 2.5rem;text-align:center;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.08),0 6px 30px rgba(0,0,0,0.25);
+  min-width:280px;
+}
+.plaque::before,.plaque::after,.plaque > .p-r-a,.plaque > .p-r-b{
+  content:"";position:absolute;width:7px;height:7px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,var(--gold),#3a2e14);
+  box-shadow:inset 0 -1px 0 rgba(0,0,0,0.5);
+}
+.plaque::before{top:8px;left:8px}
+.plaque::after{top:8px;right:8px}
+.plaque .p-r-a{bottom:8px;left:8px}
+.plaque .p-r-b{bottom:8px;right:8px}
+.plaque-eyebrow{font-family:'Oswald',sans-serif;font-size:0.72rem;color:var(--gold);letter-spacing:4px;text-transform:uppercase;font-weight:600;margin-bottom:0.5rem}
+.plaque-year{font-family:'Oswald',sans-serif;font-size:4rem;color:var(--cream);font-weight:700;line-height:1;letter-spacing:2px}
+.plaque-rule{width:60%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0.75rem auto}
+.plaque-count{font-family:'Oswald',sans-serif;font-size:1.4rem;color:var(--red-ember);font-weight:600;letter-spacing:2px;text-transform:uppercase}
+.plaque-count em{font-family:'Roboto Slab',serif;font-style:italic;color:var(--gold);font-weight:400}
+.since-copy h2{font-family:'Oswald',sans-serif;font-size:clamp(1.8rem,3.2vw,2.6rem);text-transform:uppercase;color:var(--charcoal);margin-bottom:1rem;letter-spacing:0.5px}
+.since-copy h2 em{font-family:'Roboto Slab',serif;font-style:italic;color:var(--red-bright);font-weight:400;text-transform:none;letter-spacing:-0.01em}
+.since-copy p{color:var(--mid);font-size:1rem;max-width:560px}
+@media(max-width:820px){.since-copy p{margin:0 auto}}
+.since-signature{
+  margin-top:1.5rem;
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:'Roboto Slab',serif;font-style:italic;color:var(--charcoal);font-size:0.95rem;
+  padding:0.75rem 1.25rem;background:rgba(255,255,255,0.5);border-left:3px solid var(--red-bright);
+}
+
+/* SERVICES — alternating rows */
+.services-section{background:var(--cream);padding:4rem 0 5rem;position:relative}
+.services-header{max-width:1100px;margin:0 auto 3rem;padding:0 1.5rem;position:relative}
+.services-header h2{font-family:'Oswald',sans-serif;font-size:clamp(2rem,3.6vw,3.1rem);color:var(--charcoal);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.5rem}
+.services-header h2 em{font-family:'Roboto Slab',serif;font-style:italic;color:var(--red-bright);font-weight:400;text-transform:none;letter-spacing:-0.01em}
+.services-header p{color:var(--mid);font-size:1rem;max-width:560px}
+.svc-num-huge{
+  position:absolute;top:-10px;right:1.5rem;
+  font-family:'Roboto Slab',serif;font-style:italic;font-weight:400;
+  font-size:8rem;color:var(--red-bright);opacity:0.09;line-height:1;user-select:none;pointer-events:none;
+}
+.svc-row{
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:420px;
+  max-width:1200px;margin:0 auto;
+  background:var(--paper);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+.svc-row + .svc-row{border-top:none}
+.svc-row:nth-child(even){direction:rtl}
+.svc-row:nth-child(even) .svc-text{direction:ltr}
+@media(max-width:820px){.svc-row,.svc-row:nth-child(even){grid-template-columns:1fr;direction:ltr}}
+.svc-photo{overflow:hidden;min-height:380px;position:relative}
+.svc-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.7s ease;filter:saturate(0.9)}
+.svc-row:hover .svc-photo img{transform:scale(1.05)}
+.svc-photo::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(135deg,transparent 60%,rgba(138,29,29,0.25));
+}
+.svc-text{
+  padding:3.5rem 3rem;
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;
+  background:linear-gradient(180deg,var(--paper) 0%,var(--cream-2) 100%);
+}
+.svc-numeral{
+  position:absolute;top:1rem;right:1.5rem;
+  font-family:'Roboto Slab',serif;font-style:italic;font-weight:400;
+  font-size:5.5rem;color:var(--red-bright);opacity:0.1;line-height:1;
+}
+.svc-label{
+  font-family:'Oswald',sans-serif;font-size:0.7rem;font-weight:700;
+  color:var(--red-bright);letter-spacing:3.5px;text-transform:uppercase;margin-bottom:0.85rem;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.svc-text h3{font-size:1.9rem;color:var(--charcoal);margin-bottom:0.9rem;text-transform:uppercase;letter-spacing:0.5px}
+.svc-text h3 em{font-family:'Roboto Slab',serif;font-style:italic;color:var(--red-bright);font-weight:400;text-transform:none;letter-spacing:-0.01em}
+.svc-text p{color:var(--mid);font-size:0.98rem;line-height:1.7;margin-bottom:1.4rem}
+.svc-link{
+  display:inline-flex;align-items:center;gap:8px;
+  color:var(--red-bright);font-family:'Oswald',sans-serif;font-weight:600;font-size:0.85rem;
+  text-transform:uppercase;letter-spacing:2px;
+  transition:gap 0.2s,color 0.2s;
+}
+.svc-link:hover{gap:14px;color:var(--red-deep)}
+.svc-link svg{transition:transform 0.2s}
+.svc-link:hover svg{transform:translateX(2px)}
+
+/* INSURANCE BAND — industrial */
+.insurance-band{
+  background:linear-gradient(180deg,var(--charcoal) 0%,var(--ink) 100%);
+  padding:5rem 1.5rem;position:relative;
+  border-top:1px solid rgba(184,146,74,0.2);
+  overflow:hidden;
+}
+.insurance-band::before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:0.15;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2' seed='1'/><feColorMatrix values='0 0 0 0 0.9 0 0 0 0 0.8 0 0 0 0 0.55 0 0 0 0.15 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+.insurance-inner{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;
+  position:relative;z-index:1;
+}
+@media(max-width:820px){.insurance-inner{grid-template-columns:1fr;gap:2.5rem}}
+.insurance-copy .eyebrow{color:var(--red-ember)}
+.insurance-copy .eyebrow::before,.insurance-copy .eyebrow::after{background:linear-gradient(90deg,transparent,var(--red-ember))}
+.insurance-copy .eyebrow::after{background:linear-gradient(90deg,var(--red-ember),transparent)}
+.insurance-copy h2{font-size:clamp(1.9rem,3.2vw,2.6rem);color:var(--cream);text-transform:uppercase;margin-bottom:1.1rem;letter-spacing:0.5px}
+.insurance-copy h2 em{font-family:'Roboto Slab',serif;font-style:italic;color:var(--red-ember);font-weight:400;text-transform:none;letter-spacing:-0.01em}
+.insurance-copy p{color:rgba(242,235,218,0.68);font-size:1rem;line-height:1.7;margin-bottom:1.25rem}
+.insurance-steps{display:flex;flex-direction:column;gap:1.1rem}
+.ins-step{
+  display:flex;align-items:flex-start;gap:1rem;
+  padding:1.1rem 1.2rem;
+  background:linear-gradient(180deg,rgba(242,235,218,0.04),rgba(242,235,218,0.015));
+  border:1px solid rgba(242,235,218,0.08);
+  border-left:3px solid var(--red-bright);
+  border-radius:var(--r);
+  transition:border-color 0.2s,background 0.2s;
+}
+.ins-step:hover{border-left-color:var(--red-ember);background:linear-gradient(180deg,rgba(242,235,218,0.06),rgba(242,235,218,0.02))}
+.ins-step-num{
+  width:40px;height:40px;flex-shrink:0;
+  background:radial-gradient(circle at 30% 30%,var(--red-bright),var(--red-deep));
+  border:1px solid rgba(242,235,218,0.2);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Oswald',sans-serif;font-weight:700;font-size:1rem;color:var(--cream);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.25),0 2px 6px rgba(0,0,0,0.4);
+}
+.ins-step-title{font-family:'Oswald',sans-serif;font-weight:600;color:var(--cream);font-size:0.95rem;margin-bottom:0.15rem;text-transform:uppercase;letter-spacing:1px}
+.ins-step-sub{font-size:0.86rem;color:rgba(242,235,218,0.55);line-height:1.55}
+
+/* REVIEWS */
+.reviews-section{padding:5.5rem 1.5rem;background:var(--parchment);position:relative;overflow:hidden}
+.reviews-section::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='9'/><feColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.32 0 0 0 0 0.18 0 0 0 0.12 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  mix-blend-mode:multiply;opacity:0.5;
+}
+.reviews-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.section-h2{font-family:'Oswald',sans-serif;font-size:clamp(2rem,3.4vw,2.9rem);color:var(--charcoal);text-transform:uppercase;margin-bottom:0.5rem;letter-spacing:0.5px}
+.section-h2 em{font-family:'Roboto Slab',serif;font-style:italic;color:var(--red-bright);font-weight:400;text-transform:none;letter-spacing:-0.01em}
+.reviews-sub{color:var(--mid);font-size:1rem;max-width:520px;margin-bottom:2.5rem}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+@media(max-width:820px){.reviews-grid{grid-template-columns:1fr}}
+.review-card{
+  background:linear-gradient(180deg,var(--paper) 0%,var(--cream) 100%);
+  border-radius:var(--r);padding:2rem 1.85rem;
+  border:1px solid var(--border);
+  border-top:3px solid var(--red-bright);
+  position:relative;
+  box-shadow:0 1px 2px rgba(0,0,0,0.04),0 6px 20px rgba(0,0,0,0.05);
+  transition:transform 0.2s,box-shadow 0.2s;
+}
+.review-card:hover{transform:translateY(-3px);box-shadow:0 4px 8px rgba(0,0,0,0.06),0 12px 30px rgba(0,0,0,0.08)}
+.review-card::before{
+  content:"";position:absolute;top:12px;right:12px;width:28px;height:28px;
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238a1d1d' opacity='0.18'><path d='M6 9l4-8 4 8L6 9zm0 6l4 8 4-8H6z' transform='rotate(0 12 12)'/></svg>") center/contain no-repeat;
+  opacity:0.5;
+}
+.review-stars{display:flex;gap:2px;color:var(--gold);margin-bottom:1rem}
+.review-quote{
+  font-family:'Roboto Slab',serif;font-weight:400;font-style:italic;
+  font-size:1.3rem;line-height:1;color:var(--red-bright);margin-bottom:0.4rem;
+  display:block;letter-spacing:-0.02em;
+}
+.review-text{font-size:0.95rem;color:var(--mid);line-height:1.65;margin-bottom:1.4rem;font-family:'Roboto Slab',serif;font-style:italic}
+.reviewer{display:flex;align-items:center;gap:12px;padding-top:1rem;border-top:1px dashed var(--border)}
+.rev-av{
+  width:40px;height:40px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,var(--red-bright),var(--red-deep));
+  border:1px solid rgba(242,235,218,0.25);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Oswald',sans-serif;font-weight:700;font-size:0.85rem;color:var(--cream);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.2);
+}
+.rev-name{font-family:'Oswald',sans-serif;font-weight:600;font-size:0.9rem;color:var(--charcoal);letter-spacing:1px;text-transform:uppercase}
+.rev-info{font-size:0.78rem;color:var(--muted);font-family:'Roboto Slab',serif;font-style:italic}
+
+/* BOOKING */
+.booking-section{padding:5.5rem 1.5rem;background:var(--paper);position:relative;border-top:1px solid var(--border)}
+.booking-inner{max-width:1100px;margin:0 auto}
+.booking-header{margin-bottom:2.5rem;max-width:620px}
+.booking-header p.lead{color:var(--mid);font-size:1rem;margin-top:0.5rem;line-height:1.7}
+.booking-wrap{
+  background:linear-gradient(180deg,var(--parchment) 0%,var(--cream) 100%);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  padding:1.25rem;
+  box-shadow:0 8px 30px rgba(0,0,0,0.08);
+  position:relative;
+}
+.booking-wrap::before,.booking-wrap::after,.booking-wrap > .bw-a,.booking-wrap > .bw-b{
+  content:"";position:absolute;width:7px;height:7px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,var(--gold),#3a2e14);
+  box-shadow:inset 0 -1px 0 rgba(0,0,0,0.4);
+}
+.booking-wrap::before{top:8px;left:8px}
+.booking-wrap::after{top:8px;right:8px}
+.booking-wrap .bw-a{bottom:8px;left:8px}
+.booking-wrap .bw-b{bottom:8px;right:8px}
+
+/* CONTACT */
+.contact-section{background:linear-gradient(180deg,var(--charcoal) 0%,var(--ink) 100%);padding:5.5rem 1.5rem;position:relative;border-top:1px solid rgba(184,146,74,0.22)}
+.contact-section::before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:0.1;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='11'/><feColorMatrix values='0 0 0 0 0.9 0 0 0 0 0.8 0 0 0 0 0.55 0 0 0 0.2 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+.contact-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:3.5rem;align-items:start;position:relative;z-index:1}
+@media(max-width:820px){.contact-inner{grid-template-columns:1fr}}
+.contact-h2{font-family:'Oswald',sans-serif;font-size:clamp(1.9rem,3.2vw,2.6rem);color:var(--cream);text-transform:uppercase;margin-bottom:0.75rem;letter-spacing:0.5px}
+.contact-h2 em{font-family:'Roboto Slab',serif;font-style:italic;color:var(--red-ember);font-weight:400;text-transform:none;letter-spacing:-0.01em}
+.contact-sub{color:rgba(242,235,218,0.6);font-size:0.95rem;margin-bottom:2rem}
+.c-detail{display:flex;align-items:flex-start;gap:14px;margin-bottom:1.5rem;padding-bottom:1.25rem;border-bottom:1px dashed rgba(242,235,218,0.1)}
+.c-detail:last-of-type{border-bottom:none}
+.c-icon{width:44px;height:44px;background:linear-gradient(180deg,rgba(165,38,38,0.18),rgba(110,21,21,0.22));border:1px solid rgba(165,38,38,0.35);border-radius:var(--r);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:inset 0 1px 0 rgba(255,255,255,0.06)}
+.c-label{font-family:'Oswald',sans-serif;font-size:0.7rem;font-weight:700;color:var(--red-ember);text-transform:uppercase;letter-spacing:2.5px;margin-bottom:0.25rem}
+.c-val{font-size:0.95rem;color:rgba(242,235,218,0.75)}
+.c-val a:hover{color:var(--cream)}
+.contact-form{
+  background:linear-gradient(180deg,rgba(242,235,218,0.05),rgba(242,235,218,0.02));
+  border:1px solid rgba(242,235,218,0.1);
+  border-radius:var(--r);padding:2.25rem;
+  position:relative;
+  box-shadow:0 6px 24px rgba(0,0,0,0.3);
+}
+.contact-form::before,.contact-form::after,.contact-form > .cf-a,.contact-form > .cf-b{
+  content:"";position:absolute;width:6px;height:6px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,var(--gold),#3a2e14);
+  box-shadow:inset 0 -1px 0 rgba(0,0,0,0.4);
+}
+.contact-form::before{top:7px;left:7px}
+.contact-form::after{top:7px;right:7px}
+.contact-form .cf-a{bottom:7px;left:7px}
+.contact-form .cf-b{bottom:7px;right:7px}
+.form-title{font-family:'Oswald',sans-serif;font-size:0.82rem;color:var(--gold);text-transform:uppercase;letter-spacing:3px;margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px dashed rgba(242,235,218,0.12);font-weight:600;display:flex;align-items:center;gap:8px}
+.f-group{display:flex;flex-direction:column;gap:6px;margin-bottom:1rem}
+.f-label{font-family:'Oswald',sans-serif;font-size:0.7rem;font-weight:600;color:rgba(242,235,218,0.55);text-transform:uppercase;letter-spacing:2px}
+.f-input{
+  background:rgba(242,235,218,0.05);
+  border:1px solid rgba(242,235,218,0.12);
+  border-radius:var(--r);padding:0.8rem 1rem;
+  font-family:'Source Sans 3',sans-serif;font-size:0.95rem;color:var(--cream);
+  width:100%;outline:none;
+  transition:border-color 0.2s,box-shadow 0.2s,background 0.2s;
+  -webkit-appearance:none;
+}
+.f-input::placeholder{color:rgba(242,235,218,0.3)}
+.f-input:focus{
+  border-color:var(--red-ember);
+  background:rgba(242,235,218,0.08);
+  box-shadow:0 0 0 3px rgba(165,38,38,0.25);
+}
+.f-input option{background:var(--charcoal);color:var(--cream)}
+textarea.f-input{min-height:110px;resize:vertical;font-family:'Source Sans 3',sans-serif}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:480px){.f-row{grid-template-columns:1fr}}
+.f-submit{
+  position:relative;overflow:hidden;
+  width:100%;
+  background:linear-gradient(180deg,var(--red-bright),var(--red-deep));
+  color:var(--cream);border:1px solid rgba(242,235,218,0.22);
+  border-radius:var(--r);padding:1rem;
+  font-family:'Oswald',sans-serif;font-size:1rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:2px;cursor:pointer;
+  margin-top:0.5rem;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.22),
+    inset 0 -1px 0 rgba(0,0,0,0.35),
+    0 4px 12px rgba(0,0,0,0.4);
+  transition:transform 0.08s,filter 0.2s;
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+}
+.f-submit::after{
+  content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;
+  background:linear-gradient(110deg,transparent,rgba(255,255,255,0.22),transparent);
+  transform:skewX(-20deg);transition:left 0.6s;
+}
+.f-submit:hover::after{left:120%}
+.f-submit:hover{filter:brightness(1.08)}
+.f-submit:active{
+  transform:translateY(1px);
+  box-shadow:inset 0 2px 6px rgba(0,0,0,0.55),0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* FOOTER */
+footer{
+  background:var(--ink);
+  padding:2rem;
+  border-top:1px solid rgba(184,146,74,0.2);
+}
+.footer-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;
+}
+.footer-brand{display:flex;align-items:center;gap:10px;color:rgba(242,235,218,0.55);font-family:'Oswald',sans-serif;font-size:0.78rem;letter-spacing:2px;text-transform:uppercase}
+.footer-brand svg{color:var(--red-ember)}
+footer p{font-size:0.78rem;color:rgba(242,235,218,0.35);font-family:'Roboto Slab',serif;font-style:italic}
+footer a{color:var(--red-ember);text-decoration:none}
+footer a:hover{color:var(--cream)}
+
+/* Animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes live-pulse{0%,100%{opacity:1}50%{opacity:0.35}}
+
+/* Responsive polish */
+@media(max-width:600px){
+  .hero-content{padding:0 1.25rem 3rem}
+  .hero-crest{width:180px;height:180px}
+  .stat-num{font-size:2.1rem}
+  .svc-text{padding:2.5rem 1.75rem}
+}
+</style>
+</head>
+<body>
+
+<!-- Reusable SVG symbols -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="texas-star" viewBox="0 0 24 24">
+      <polygon points="12,1.5 14.9,9.3 23.1,9.5 16.6,14.4 19,22.5 12,17.6 5,22.5 7.4,14.4 0.9,9.5 9.1,9.3" fill="currentColor"/>
+    </symbol>
+    <symbol id="chevron-r" viewBox="0 0 24 24">
+      <polyline points="9 6 15 12 9 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- EMERGENCY BAR -->
+<div class="emergency-bar">
+  <span>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    Storm damage? We dispatch same day.
+  </span>
+  <a href="tel:7135550314">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l1.87-1.87a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    (713) 555-0314 &mdash; 24/7 Emergency Line
+  </a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <div class="logo-seal" aria-hidden="true">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f2ebda" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 13 15 13 15 22"/></svg>
+    </div>
+    <div class="logo-wm">
+      <span class="logo-main">Lone Star <em>Roofing</em></span>
+      <span class="logo-sub">Co. &middot; Houston TX</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#insurance">Insurance</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#booking">Book Inspection</a></li>
+    <li><a href="tel:7135550314" class="nav-cta">Call Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-img">
+    <img src="https://images.pexels.com/photos/18098285/pexels-photo-18098285.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Beautiful house with shingle roof" loading="eager"/>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-noise" aria-hidden="true"></div>
+
+  <!-- Watermark Texas star -->
+  <svg class="hero-star-wm" viewBox="0 0 24 24" aria-hidden="true"><use href="#texas-star"/></svg>
+
+  <!-- CREST BADGE -->
+  <div class="hero-crest" aria-hidden="true">
+    <svg viewBox="0 0 260 260" width="260" height="260" style="display:block">
+      <defs>
+        <path id="crestArcTop" d="M 130,130 m -108,0 a 108,108 0 1,1 216,0" fill="none"/>
+        <path id="crestArcBottom" d="M 130,130 m -108,0 a 108,108 0 1,0 216,0" fill="none"/>
+        <radialGradient id="crestBg" cx="50%" cy="40%" r="70%">
+          <stop offset="0%" stop-color="#242220"/>
+          <stop offset="70%" stop-color="#141210"/>
+          <stop offset="100%" stop-color="#0a0806"/>
+        </radialGradient>
+      </defs>
+      <!-- outer ring -->
+      <circle cx="130" cy="130" r="124" fill="url(#crestBg)" stroke="#b8924a" stroke-width="2"/>
+      <circle cx="130" cy="130" r="116" fill="none" stroke="#b8924a" stroke-width="0.8" stroke-dasharray="2 3" opacity="0.55"/>
+      <circle cx="130" cy="130" r="92" fill="none" stroke="#b8924a" stroke-width="1" opacity="0.75"/>
+
+      <!-- text path -->
+      <text font-family="Oswald, sans-serif" font-size="11" font-weight="700" fill="#f2ebda" letter-spacing="5">
+        <textPath href="#crestArcTop" startOffset="8%">LICENSED ROOFING &#8226; EST. 1998 &#8226; HOUSTON TX</textPath>
+      </text>
+      <text font-family="Oswald, sans-serif" font-size="10" font-weight="600" fill="#b8924a" letter-spacing="4">
+        <textPath href="#crestArcBottom" startOffset="15%">&#8226; INSURED &#8226; BONDED &#8226; BBB A+ &#8226; TEXAS PROUD &#8226;</textPath>
+      </text>
+
+      <!-- small stars flanking bottom text break -->
+      <g fill="#b8924a">
+        <use href="#texas-star" x="18" y="118" width="12" height="12"/>
+        <use href="#texas-star" x="230" y="118" width="12" height="12"/>
+      </g>
+
+      <!-- inner roof icon -->
+      <g transform="translate(130,108)">
+        <path d="M -42,12 L 0,-22 L 42,12 L 42,32 L -42,32 Z" fill="none" stroke="#a52626" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M -28,12 L 0,-10 L 28,12" fill="none" stroke="#f2ebda" stroke-width="1.2" opacity="0.5"/>
+        <rect x="-6" y="18" width="12" height="14" fill="#a52626"/>
+      </g>
+
+      <!-- big Texas star center -->
+      <g transform="translate(130,160)">
+        <use href="#texas-star" x="-14" y="-14" width="28" height="28" style="color:#a52626"/>
+      </g>
+
+      <!-- wordmark -->
+      <text x="130" y="205" text-anchor="middle" font-family="Oswald, sans-serif" font-size="14" font-weight="700" fill="#f2ebda" letter-spacing="4">LONE STAR</text>
+      <text x="130" y="221" text-anchor="middle" font-family="Roboto Slab, serif" font-style="italic" font-size="9" fill="#b8924a" letter-spacing="2">Roofing Co.</text>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="tag-stamp">
+        <svg width="9" height="9" viewBox="0 0 24 24" style="color:#f5d2d2" aria-hidden="true"><use href="#texas-star"/></svg>
+        Houston's #1 Rated Roofer
+      </span>
+      <span>Since 1998</span>
+    </div>
+    <h1>Your Roof. <span class="uppercase-strong">Done Right.</span><br><span class="serif-accent">Done once.</span></h1>
+    <p class="hero-sub">Licensed Houston roofing contractors <em>protecting Texas homes since 1998.</em> Storm damage, full replacements, repairs, and insurance claims &mdash; handled from start to finish.</p>
+    <div class="hero-btns">
+      <a href="#booking" class="btn-tin">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Book Free Inspection
+      </a>
+      <a href="tel:7135550314" class="btn-ghost">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l1.87-1.87a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Emergency? Call Now
+      </a>
+    </div>
+    <div class="hero-proof">
+      <div class="hero-proof-stars" aria-label="5 out of 5 stars">
+        <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><use href="#texas-star"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><use href="#texas-star"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><use href="#texas-star"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><use href="#texas-star"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><use href="#texas-star"/></svg>
+      </div>
+      <p class="hero-proof-text"><strong>4.8 / 5</strong> from 640+ Houston homeowners</p>
+    </div>
+  </div>
+</section>
+
+<!-- STAT STRIP -->
+<div class="stat-strip">
+  <div class="stat-item"><div class="stat-num" id="yearCount">26<span class="unit">+</span></div><div class="stat-label">Years in Business</div></div>
+  <div class="stat-item"><div class="stat-num">4.8<span class="unit">&#9733;</span></div><div class="stat-label">Google Rating</div></div>
+  <div class="stat-item"><div class="stat-num">2,400<span class="unit">+</span></div><div class="stat-label">Roofs Completed</div></div>
+  <div class="stat-item"><div class="stat-num">100<span class="unit">%</span></div><div class="stat-label">Satisfaction Guaranteed</div></div>
+</div>
+
+<!-- TRUST STAMP BAND -->
+<section class="trust-band" aria-label="Credentials">
+  <div class="trust-inner">
+    <div class="stamp"><span class="rivet-a"></span><span class="rivet-b"></span>
+      <div class="stamp-label">Insured</div>
+      <div class="stamp-sub">$2M Liability</div>
+    </div>
+    <div class="stamp"><span class="rivet-a"></span><span class="rivet-b"></span>
+      <div class="stamp-label">Bonded</div>
+      <div class="stamp-sub">Full Coverage</div>
+    </div>
+    <div class="stamp"><span class="rivet-a"></span><span class="rivet-b"></span>
+      <div class="stamp-label">Licensed</div>
+      <div class="stamp-sub">#RCO-204817</div>
+    </div>
+    <div class="stamp"><span class="rivet-a"></span><span class="rivet-b"></span>
+      <div class="stamp-label">BBB A+</div>
+      <div class="stamp-sub">Accredited</div>
+    </div>
+  </div>
+</section>
+
+<!-- SINCE 1998 PLAQUE -->
+<section class="since-band" aria-label="Our heritage">
+  <div class="since-inner">
+    <div class="plaque">
+      <span class="p-r-a"></span><span class="p-r-b"></span>
+      <div class="plaque-eyebrow">
+        <svg width="10" height="10" viewBox="0 0 24 24" style="color:#b8924a;display:inline-block;vertical-align:middle;margin-right:6px" aria-hidden="true"><use href="#texas-star"/></svg>
+        Since
+      </div>
+      <div class="plaque-year">1998</div>
+      <div class="plaque-rule"></div>
+      <div class="plaque-count"><span id="yearsBadge">26+</span> <em>years strong</em></div>
+    </div>
+    <div class="since-copy">
+      <div class="eyebrow">
+        <svg width="10" height="10" viewBox="0 0 24 24" style="color:var(--red-bright)" aria-hidden="true"><use href="#texas-star"/></svg>
+        Third Generation Roofers
+      </div>
+      <h2>Built on a <em>Texas handshake.</em><br>Backed by our warranty.</h2>
+      <p>We started in a one-truck garage on the south side of Houston and we're still family-owned today. Every job goes up the way we'd roof our own house &mdash; straight lines, full flashing, no shortcuts.</p>
+      <div class="since-signature">
+        <svg width="14" height="14" viewBox="0 0 24 24" style="color:var(--red-bright)" aria-hidden="true"><use href="#texas-star"/></svg>
+        <span><strong>Hank Calloway</strong> &middot; Owner &amp; Master Roofer</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="services-header">
+    <div class="svc-num-huge">04</div>
+    <div class="eyebrow">
+      <svg width="10" height="10" viewBox="0 0 24 24" style="color:var(--red-bright)" aria-hidden="true"><use href="#texas-star"/></svg>
+      What We Do
+    </div>
+    <h2>The trade, <em>done right.</em></h2>
+    <p>Four services, each one treated like it's the only one. From a single leak to a full tear-off, you get the same crew, the same care, and the same 10-year labor warranty.</p>
+  </div>
+
+  <div class="svc-row">
+    <div class="svc-photo">
+      <img src="https://images.pexels.com/photos/7788264/pexels-photo-7788264.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Roof repair" loading="lazy"/>
+    </div>
+    <div class="svc-text">
+      <div class="svc-numeral">01</div>
+      <div class="svc-label">
+        <svg width="9" height="9" viewBox="0 0 24 24" style="color:var(--red-bright)" aria-hidden="true"><use href="#texas-star"/></svg>
+        Service 01
+      </div>
+      <h3>Roof Repair</h3>
+      <p>Leaks, missing shingles, flashing failures &mdash; we diagnose the problem fast and <em class="serif-accent">fix it right</em> the first time. Most repairs completed same day.</p>
+      <a href="#contact" class="svc-link">Get a Quote
+        <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><use href="#chevron-r"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="svc-row">
+    <div class="svc-photo">
+      <img src="https://images.pexels.com/photos/5264825/pexels-photo-5264825.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Roof replacement team" loading="lazy"/>
+    </div>
+    <div class="svc-text">
+      <div class="svc-numeral">02</div>
+      <div class="svc-label">
+        <svg width="9" height="9" viewBox="0 0 24 24" style="color:var(--red-bright)" aria-hidden="true"><use href="#texas-star"/></svg>
+        Service 02
+      </div>
+      <h3>Full Roof Replacement</h3>
+      <p>Complete tear-off and replacement with premium asphalt shingles, metal roofing, or tile. Built to last and backed by a <em class="serif-accent">10-year labor warranty.</em></p>
+      <a href="#contact" class="svc-link">Get a Quote
+        <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><use href="#chevron-r"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="svc-row">
+    <div class="svc-photo">
+      <img src="https://images.pexels.com/photos/3766107/pexels-photo-3766107.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Storm damage" loading="lazy"/>
+    </div>
+    <div class="svc-text">
+      <div class="svc-numeral">03</div>
+      <div class="svc-label">
+        <svg width="9" height="9" viewBox="0 0 24 24" style="color:var(--red-bright)" aria-hidden="true"><use href="#texas-star"/></svg>
+        Service 03
+      </div>
+      <h3>Storm Damage Response</h3>
+      <p>Hail, wind, and storm damage require fast action. We deploy same-day, document everything for your insurance claim, and <em class="serif-accent">restore your roof completely.</em></p>
+      <a href="#contact" class="svc-link">Get a Quote
+        <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><use href="#chevron-r"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="svc-row">
+    <div class="svc-photo">
+      <img src="https://images.pexels.com/photos/28954789/pexels-photo-28954789.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Roof inspection shingles" loading="lazy"/>
+    </div>
+    <div class="svc-text">
+      <div class="svc-numeral">04</div>
+      <div class="svc-label">
+        <svg width="9" height="9" viewBox="0 0 24 24" style="color:var(--red-bright)" aria-hidden="true"><use href="#texas-star"/></svg>
+        Service 04
+      </div>
+      <h3>Roof Inspections</h3>
+      <p>Annual roof inspections catch small problems before they become expensive disasters. We provide a full written report &mdash; <em class="serif-accent">free for all new customers.</em></p>
+      <a href="#booking" class="svc-link">Schedule Free Inspection
+        <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><use href="#chevron-r"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- INSURANCE CLAIM BAND -->
+<section class="insurance-band" id="insurance">
+  <div class="insurance-inner">
+    <div class="insurance-copy">
+      <div class="eyebrow">
+        <svg width="10" height="10" viewBox="0 0 24 24" style="color:var(--red-ember)" aria-hidden="true"><use href="#texas-star"/></svg>
+        We Handle It All
+      </div>
+      <h2>We work directly with <em>your insurance.</em></h2>
+      <p>Storm damage claims are confusing. We've handled thousands of them. Let us manage your claim from inspection to payout so you get <em class="serif-accent" style="color:var(--cream)">every dollar you're entitled to</em> &mdash; without the headache.</p>
+      <p style="color:rgba(242,235,218,0.48);font-size:0.88rem;border-left:2px solid var(--red-ember);padding-left:0.9rem;margin-top:1.25rem">Preferred contractor for State Farm, Allstate, Farmers, USAA and most major carriers serving the Houston metro.</p>
+    </div>
+    <div class="insurance-steps">
+      <div class="ins-step">
+        <div class="ins-step-num">1</div>
+        <div><div class="ins-step-title">Free Damage Inspection</div><div class="ins-step-sub">We document all damage thoroughly with photos and a written report</div></div>
+      </div>
+      <div class="ins-step">
+        <div class="ins-step-num">2</div>
+        <div><div class="ins-step-title">We File Your Claim</div><div class="ins-step-sub">We submit directly to your insurer and handle all back and forth</div></div>
+      </div>
+      <div class="ins-step">
+        <div class="ins-step-num">3</div>
+        <div><div class="ins-step-title">Repair or Replace</div><div class="ins-step-sub">Work begins once your claim is approved &mdash; usually within days</div></div>
+      </div>
+      <div class="ins-step">
+        <div class="ins-step-num">4</div>
+        <div><div class="ins-step-title">Final Inspection &amp; Warranty</div><div class="ins-step-sub">We walk the roof with you and issue your 10-year labor warranty</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section" id="reviews">
+  <div class="reviews-inner">
+    <div class="eyebrow">
+      <svg width="10" height="10" viewBox="0 0 24 24" style="color:var(--red-bright)" aria-hidden="true"><use href="#texas-star"/></svg>
+      Customer Reviews
+    </div>
+    <h2 class="section-h2">What Houston homeowners <em>say about us.</em></h2>
+    <p class="reviews-sub">Straight from our neighbors &mdash; Katy to The Woodlands, Pearland to Sugar Land.</p>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars" aria-label="5 stars">
+          <svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><use href="#texas-star"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><use href="#texas-star"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><use href="#texas-star"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><use href="#texas-star"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><use href="#texas-star"/></svg>
+        </div>
+        <span class="review-quote">&ldquo;</span>
+        <p class="review-text">Hail took out half our roof after a storm. Lone Star had a crew out the next morning, handled our entire insurance claim, and had us back to normal in a week. Incredible team.</p>
+        <div class="reviewer">
+          <div class="rev-av">JM</div>
+          <div><div class="rev-name">James M.</div><div class="rev-info">Katy, TX &middot; 2 weeks ago</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars" aria-label="5 stars">
+          <svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><use href="#texas-star"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><use href="#texas-star"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><use href="#texas-star"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><use href="#texas-star"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><use href="#texas-star"/></svg>
+        </div>
+        <span class="review-quote">&ldquo;</span>
+        <p class="review-text">Full roof replacement done in two days. Price matched the quote exactly. The crew was professional, cleaned up completely, and the new roof looks incredible.</p>
+        <div class="reviewer">
+          <div class="rev-av">SK</div>
+          <div><div class="rev-name">Sandra K.</div><div class="rev-info">Sugar Land, TX &middot; 1 month ago</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars" aria-label="5 stars">
+          <svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><use href="#texas-star"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><use href="#texas-star"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><use href="#texas-star"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><use href="#texas-star"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><use href="#texas-star"/></svg>
+        </div>
+        <span class="review-quote">&ldquo;</span>
+        <p class="review-text">I've used three roofers over the years. Lone Star is the only one I'll call going forward. Honest, fast, and they actually stand behind their work. 10-year warranty means something.</p>
+        <div class="reviewer">
+          <div class="rev-av">RD</div>
+          <div><div class="rev-name">Robert D.</div><div class="rev-info">The Woodlands, TX &middot; 6 weeks ago</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING — CALENDLY -->
+<section class="booking-section" id="booking">
+  <div class="booking-inner">
+    <div class="booking-header">
+      <div class="eyebrow">
+        <svg width="10" height="10" viewBox="0 0 24 24" style="color:var(--red-bright)" aria-hidden="true"><use href="#texas-star"/></svg>
+        Free Inspection
+      </div>
+      <h2 class="section-h2">Schedule your <em>free roof inspection.</em></h2>
+      <p class="lead">Pick a time that works for you. Our inspector will show up on time, assess your roof top to bottom, and give you an honest written report &mdash; no pressure, no sales pitch.</p>
+    </div>
+    <div class="booking-wrap">
+      <span class="bw-a"></span><span class="bw-b"></span>
+      <!-- Calendly — replace YOUR_CALENDLY_USERNAME with client's actual link -->
+      <div class="calendly-inline-widget"
+        data-url="https://calendly.com/mbutler2498/30min?hide_gdpr_banner=1&primary_color=8a1d1d"
+        style="min-width:320px;height:700px;border-radius:var(--r);overflow:hidden">
+      </div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="eyebrow" style="color:var(--red-ember)">
+        <svg width="10" height="10" viewBox="0 0 24 24" style="color:var(--red-ember)" aria-hidden="true"><use href="#texas-star"/></svg>
+        Get In Touch
+      </div>
+      <h2 class="contact-h2">Get a <em>free quote.</em></h2>
+      <p class="contact-sub">Fill this out and we'll call you back within the hour. For emergencies, call us directly &mdash; we answer 24/7.</p>
+      <div class="c-detail">
+        <div class="c-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red-ember)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l1.87-1.87a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div><div class="c-label">Phone</div><div class="c-val"><a href="tel:7135550314">(713) 555-0314</a> &mdash; 24/7 Emergency</div></div>
+      </div>
+      <div class="c-detail">
+        <div class="c-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red-ember)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div><div class="c-label">Email</div><div class="c-val">info@lonestarroofingco.com</div></div>
+      </div>
+      <div class="c-detail">
+        <div class="c-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red-ember)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><div class="c-label">Service Area</div><div class="c-val">All of Greater Houston &mdash; Katy, Sugar Land, Pearland, The Woodlands</div></div>
+      </div>
+      <div class="c-detail" style="border-bottom:none">
+        <div class="c-icon"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style="color:var(--red-ember)"><use href="#texas-star"/></svg></div>
+        <div><div class="c-label">Heritage</div><div class="c-val" style="font-family:'Roboto Slab',serif;font-style:italic">Family owned since 1998 &middot; 3rd generation roofers</div></div>
+      </div>
+    </div>
+    <form class="contact-form" action="https://formspree.io/f/YOUR_ID" method="POST">
+      <span class="cf-a"></span><span class="cf-b"></span>
+      <div class="form-title">
+        <svg width="12" height="12" viewBox="0 0 24 24" style="color:var(--gold)" aria-hidden="true"><use href="#texas-star"/></svg>
+        Request a Quote
+      </div>
+      <div class="f-row">
+        <div class="f-group"><label class="f-label">Your Name</label><input class="f-input" type="text" name="name" placeholder="John Smith" required/></div>
+        <div class="f-group"><label class="f-label">Phone</label><input class="f-input" type="tel" name="phone" placeholder="(713) 000-0000" required/></div>
+      </div>
+      <div class="f-group">
+        <label class="f-label">What Do You Need?</label>
+        <select class="f-input" name="service">
+          <option value="">Select...</option>
+          <option>Free Roof Inspection</option>
+          <option>Storm Damage Assessment</option>
+          <option>Roof Repair</option>
+          <option>Full Roof Replacement</option>
+          <option>Insurance Claim Help</option>
+          <option>Other / Not Sure</option>
+        </select>
+      </div>
+      <div class="f-group"><label class="f-label">Tell Us More</label><textarea class="f-input" name="message" placeholder="Describe your roof issue, when it started, any visible damage..."></textarea></div>
+      <button type="submit" class="f-submit">
+        <svg width="14" height="14" viewBox="0 0 24 24" style="color:currentColor" aria-hidden="true"><use href="#texas-star"/></svg>
+        Send &mdash; We'll Call You Back Today
+      </button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><use href="#texas-star"/></svg>
+      <span>Lone Star Roofing Co.</span>
+      <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><use href="#texas-star"/></svg>
+    </div>
+    <p>&copy; <span id="copyYear">2026</span> Lone Star Roofing Co. LLC &middot; Houston, TX &middot; License #RCO-204817</p>
+    <p>Website by <a href="https://charliemikedigital.com">Charlie Mike Digital</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var year = new Date().getFullYear();
+  var founded = 1998;
+  var yrs = year - founded;
+  var yEl = document.getElementById('yearCount');
+  if(yEl){ yEl.innerHTML = yrs + '<span class="unit">+</span>'; }
+  var yBadge = document.getElementById('yearsBadge');
+  if(yBadge){ yBadge.textContent = yrs + '+'; }
+  var cy = document.getElementById('copyYear');
+  if(cy){ cy.textContent = year; }
+})();
+</script>
+
+</body>
+</html>
