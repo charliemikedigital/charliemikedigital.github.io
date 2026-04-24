@@ -11,14 +11,13 @@ export function About() {
     target: sectionRef,
     offset: ['start end', 'end start'],
   });
-  const portraitY = useTransform(scrollYProgress, [0, 1], ['8%', '-8%']);
   const orbY = useTransform(scrollYProgress, [0, 1], ['0%', '-20%']);
 
   return (
     <section
       id="about"
       ref={sectionRef}
-      className="relative py-24 md:py-32 px-5 md:px-8 bg-[#0d0c10] border-y border-[#2a2730] overflow-hidden"
+      className="relative py-24 md:py-32 px-5 md:px-8 bg-[#0d0c10] border-y border-[#2a2730] overflow-clip"
     >
       {/* Parallax background orbs */}
       <motion.div
@@ -38,14 +37,13 @@ export function About() {
 
       <div className="relative mx-auto max-w-[1100px]">
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,420px)_1fr] gap-10 lg:gap-16 items-start">
-          {/* ============ Left: portrait card ============ */}
+          {/* ============ Left: portrait card (sticky on lg+) ============ */}
           <motion.div
             ref={portraitRef}
-            style={{ y: portraitY }}
-            initial={{ opacity: 0, y: 30, scale: 0.96 }}
-            animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={inView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="relative mx-auto lg:mx-0 w-full max-w-[420px]"
+            className="relative mx-auto lg:mx-0 w-full max-w-[420px] lg:sticky lg:top-[100px] lg:self-start"
           >
             <div
               className="relative glass-strong rounded-2xl overflow-hidden glow-amber border border-[#f5b84a]/25"
