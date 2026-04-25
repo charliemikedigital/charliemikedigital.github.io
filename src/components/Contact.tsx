@@ -1,7 +1,10 @@
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { Clock, MapPin, Send, ArrowRight } from 'lucide-react';
+import { Clock, MapPin, Send, ArrowRight, Check } from 'lucide-react';
 import { cn } from '@/lib/cn';
+
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mzdyoyvg';
+type SubmitStatus = 'idle' | 'submitting' | 'success' | 'error';
 
 type FormFields = {
   name: string;
@@ -51,6 +54,8 @@ export function Contact() {
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [touched, setTouched] = useState<Partial<Record<keyof FormFields, boolean>>>({});
+  const [status, setStatus] = useState<SubmitStatus>('idle');
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   function validate(values: FormFields): FormErrors {
     const e: FormErrors = {};
@@ -83,14 +88,50 @@ export function Contact() {
     setErrors(validate(form));
   }
 
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    // Always prevent native submission so we never redirect away from the site.
+    e.preventDefault();
+
     const eMap = validate(form);
     setErrors(eMap);
     setTouched({ name: true, email: true, phone: true, need: true, message: true });
-    if (Object.keys(eMap).length > 0) {
-      e.preventDefault();
+    if (Object.keys(eMap).length > 0) return;
+
+    setSubmitError(null);
+    setStatus('submitting');
+
+    try {
+      const formData = new FormData(e.currentTarget);
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' },
+      });
+
+      if (res.ok) {
+        setStatus('success');
+        // Reset the fields so a follow-up submission would be clean.
+        setForm({ name: '', email: '', phone: '', need: '', message: '' });
+        setTouched({});
+      } else {
+        const data = await res.json().catch(() => ({}));
+        const msg =
+          (data && Array.isArray(data.errors) && data.errors[0]?.message) ||
+          'Something went wrong sending your message. Please try again or email matt@charliemikedigital.com.';
+        setSubmitError(msg);
+        setStatus('error');
+      }
+    } catch {
+      setSubmitError(
+        'Network error. Please check your connection and try again, or email matt@charliemikedigital.com.'
+      );
+      setStatus('error');
     }
-    // If no errors, Formspree handles submission natively.
+  }
+
+  function resetForm() {
+    setStatus('idle');
+    setSubmitError(null);
   }
 
   return (
@@ -198,8 +239,49 @@ export function Contact() {
               </p>
             </div>
 
-            <form
-              action="https://formspree.io/f/mzdyoyvg"
+            <AnimatePresence mode="wait" initial={false}>
+              {status === 'success' ? (
+                <motion.div
+                  key="success"
+                  initial={{ opacity: 0, y: 12, scale: 0.97 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                  className="mt-7 flex flex-col items-center text-center py-8 px-2"
+                  role="status"
+                  aria-live="polite"
+                >
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.15, type: 'spring', stiffness: 260, damping: 18 }}
+                    className="flex h-16 w-16 items-center justify-center rounded-full bg-[#3fd687]/15 ring-1 ring-[#3fd687]/40 mb-5"
+                  >
+                    <Check size={28} strokeWidth={3} className="text-[#3fd687]" />
+                  </motion.div>
+
+                  <h4 className="font-semibold text-[1.4rem] tracking-tight text-[#efeae0]">
+                    Message <em className="serif-i gradient-warm">received</em>.
+                  </h4>
+                  <p className="mt-3 max-w-[380px] text-[0.95rem] leading-[1.6] text-[#c5beb1]">
+                    Thanks for reaching out. I&rsquo;ll be in touch within{' '}
+                    <em className="serif-i text-[#f5b84a]">24 hours</em> with next steps.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={resetForm}
+                    className="mt-6 text-[0.78rem] font-medium text-[#8a8376] hover:text-[#f5b84a] underline underline-offset-4 decoration-[#54504a]/60 hover:decoration-[#f5b84a]/60 transition-colors"
+                  >
+                    Send another message
+                  </button>
+                </motion.div>
+              ) : (
+            <motion.form
+              key="form"
+              initial={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              action={FORMSPREE_ENDPOINT}
               method="POST"
               onSubmit={onSubmit}
               noValidate
@@ -282,16 +364,48 @@ export function Contact() {
 
               <button
                 type="submit"
-                className="btn-sweep group mt-2 inline-flex items-center justify-center gap-2.5 rounded-full bg-[#ff3b2e] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_16px_40px_-10px_rgba(255,59,46,0.55)] hover:shadow-[0_22px_54px_-8px_rgba(255,59,46,0.85)] transition-all"
+                disabled={status === 'submitting'}
+                className="btn-sweep group mt-2 inline-flex items-center justify-center gap-2.5 rounded-full bg-[#ff3b2e] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_16px_40px_-10px_rgba(255,59,46,0.55)] hover:shadow-[0_22px_54px_-8px_rgba(255,59,46,0.85)] transition-all disabled:opacity-70 disabled:cursor-wait"
               >
-                <span className="relative z-[1]">Send Message</span>
-                <Send size={14} strokeWidth={2.4} className="relative z-[1] transition-transform group-hover:translate-x-0.5" />
+                {status === 'submitting' ? (
+                  <>
+                    <svg
+                      className="relative z-[1] animate-spin h-4 w-4"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden
+                    >
+                      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeOpacity="0.3" strokeWidth="3" />
+                      <path d="M21 12a9 9 0 0 0-9-9" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+                    </svg>
+                    <span className="relative z-[1]">Sending…</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="relative z-[1]">Send Message</span>
+                    <Send size={14} strokeWidth={2.4} className="relative z-[1] transition-transform group-hover:translate-x-0.5" />
+                  </>
+                )}
               </button>
+
+              {status === 'error' && submitError && (
+                <motion.p
+                  initial={{ opacity: 0, y: -4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-[0.78rem] text-[#ff6a5f] text-center"
+                  role="alert"
+                >
+                  {submitError}
+                </motion.p>
+              )}
 
               <p className="text-[0.72rem] text-[#8a8376] text-center">
                 By submitting you agree to be contacted about your project. No spam. Ever.
               </p>
-            </form>
+            </motion.form>
+              )}
+            </AnimatePresence>
           </motion.div>
         </div>
       </div>
