@@ -108,7 +108,9 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.95 }}
               className="mt-7 max-w-[520px] text-[1.05rem] leading-[1.65] text-[#c5beb1]"
             >
-              Premium websites for trades and small businesses. Built from scratch for your industry, delivered in three days, and{' '}
+              You're great at your trade but you've never had{' '}
+              <em className="serif-i text-[#f5b84a]">someone in your corner</em> when it comes to technology. I fix that.
+              Built from scratch for your industry, delivered in three days, and{' '}
               <em className="serif-i text-[#f5b84a]">yours outright</em>. No lock in. No recurring fees to exist online.
             </motion.p>
 
