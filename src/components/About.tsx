@@ -166,25 +166,38 @@ export function About() {
               className="text-[1.02rem] text-[#c5beb1]"
               style={{ lineHeight: 1.72 }}
             >
-              I spent 10 years at firms like Accenture and ManTech delivering technology for the Air Force, the VA,
-              the IRS, and the Department of Labor. Before that I served in the U.S. Army, which is where I learned
-              that{' '}
+              10 years at Accenture and ManTech building technology for the Air Force, the VA, the IRS, and the
+              Department of Labor.{' '}
               <em className="serif-i text-[#f5b84a]" style={{ fontFamily: "'Instrument Serif', serif", fontStyle: 'italic' }}>
-                when you say you're going to do something, you do it
+                U.S. Army veteran
               </em>
-              . When I started Charlie Mike Digital, I found the people who needed the most help were the ones
-              getting{' '}
-              <em className="serif-i text-[#f5b84a]" style={{ fontFamily: "'Instrument Serif', serif", fontStyle: 'italic' }}>
-                ignored
-              </em>
-              . Small business owners with five star reviews and no website, losing calls every day to competitors
-              with a better online presence.
+              . The kind of projects where missing a deadline isn't an option.
             </motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.45 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+              className="mt-5 text-[1.02rem] text-[#c5beb1]"
+              style={{ lineHeight: 1.72 }}
+            >
+              I started Charlie Mike Digital because the people who needed the most help were the ones getting{' '}
+              <em className="serif-i text-[#f5b84a]" style={{ fontFamily: "'Instrument Serif', serif", fontStyle: 'italic' }}>
+                ignored
+              </em>
+              . The plumber with 50 five star reviews and no website. The roofer losing calls to a competitor with
+              a better online presence. You didn't start your business to worry about websites and hosting. You
+              started it because you're good at your trade. My trade is{' '}
+              <em className="serif-i text-[#f5b84a]" style={{ fontFamily: "'Instrument Serif', serif", fontStyle: 'italic' }}>
+                making sure people can find yours
+              </em>
+              .
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.5 }}
               className="mt-5 text-[1.02rem] text-[#c5beb1]"
               style={{ lineHeight: 1.72 }}
             >
@@ -196,7 +209,7 @@ export function About() {
               <em className="serif-i text-[#f5b84a]" style={{ fontFamily: "'Instrument Serif', serif", fontStyle: 'italic' }}>
                 Continue Mission.
               </em>
-              " The plan changed, something went wrong, or it got harder than expected, but{' '}
+              " In the Army it means the plan changed, something went wrong, or it got harder than expected, but{' '}
               <em className="serif-i text-[#f5b84a]" style={{ fontFamily: "'Instrument Serif', serif", fontStyle: 'italic' }}>
                 the mission doesn't stop
               </em>
@@ -211,7 +224,7 @@ export function About() {
             <motion.div
               initial={{ opacity: 0, y: 14 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 0.65 }}
               className="mt-12"
             >
               <div
