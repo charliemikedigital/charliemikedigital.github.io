@@ -199,7 +199,7 @@ export function Contact() {
             </div>
 
             <form
-              action="https://formspree.io/f/YOUR_ID"
+              action="https://formspree.io/f/mzdyoyvg"
               method="POST"
               onSubmit={onSubmit}
               noValidate
