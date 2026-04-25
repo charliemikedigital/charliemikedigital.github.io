@@ -185,9 +185,9 @@ export function About() {
               <em className="serif-i text-[#f5b84a]" style={{ fontFamily: "'Instrument Serif', serif", fontStyle: 'italic' }}>
                 ignored
               </em>
-              . The plumber with 50 five star reviews and no website. The roofer losing calls to a competitor with
-              a better online presence. You didn't start your business to worry about websites and hosting. You
-              started it because you're good at your trade. My trade is{' '}
+              . Small businesses with five star reviews and no website. Owners losing calls every day to competitors
+              with a better online presence. You didn't start your business to worry about websites and hosting.
+              You started it because you're good at your trade. My trade is{' '}
               <em className="serif-i text-[#f5b84a]" style={{ fontFamily: "'Instrument Serif', serif", fontStyle: 'italic' }}>
                 making sure people can find yours
               </em>
