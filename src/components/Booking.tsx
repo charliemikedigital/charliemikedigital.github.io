@@ -134,7 +134,7 @@ export function Booking() {
           {/* Calendly inline widget */}
           <div
             className="calendly-inline-widget rounded-xl overflow-hidden bg-[#0d0c10]"
-            data-url="https://calendly.com/mbutler2498/30min?hide_gdpr_banner=1&primary_color=ff3b2e"
+            data-url="https://calendly.com/matt-charliemikedigital/30min?hide_gdpr_banner=1&primary_color=ff3b2e"
             style={{ minWidth: 320, height: 700 }}
           />
         </motion.div>
