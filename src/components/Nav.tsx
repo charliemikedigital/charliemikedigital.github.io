@@ -72,7 +72,7 @@ export function Nav() {
         </ul>
 
         {/* Right cluster */}
-        <div className="flex items-center gap-2.5">
+        <div className="flex items-center gap-2 sm:gap-2.5">
           {/* Desktop CTA */}
           <a
             href="#booking"
@@ -81,6 +81,18 @@ export function Nav() {
             <span className="relative z-[1] flex items-center gap-2">
               Book a Call
               <ArrowRight size={14} strokeWidth={2.5} className="transition-transform group-hover:translate-x-0.5" />
+            </span>
+          </a>
+
+          {/* Mobile compact CTA — pinned in the nav so it stays visible while scrolling */}
+          <a
+            href="#booking"
+            onClick={() => setOpen(false)}
+            className="btn-sweep md:hidden group relative inline-flex h-11 items-center gap-1.5 rounded-full bg-[#ff3b2e] px-3.5 text-[0.78rem] font-semibold text-white shadow-[0_8px_24px_-6px_rgba(255,59,46,0.55)] active:scale-[0.97] transition-transform whitespace-nowrap"
+          >
+            <span className="relative z-[1] flex items-center gap-1.5">
+              Book a Call
+              <ArrowRight size={12} strokeWidth={2.6} />
             </span>
           </a>
 
