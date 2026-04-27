@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Charlie Mike Digital — Logo Concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&family=Oswald:wght@500;600;700&family=Space+Grotesk:wght@500;600;700&family=Special+Elite&family=Stardos+Stencil:wght@400;700&family=Syne:wght@600;700;800&display=swap"
+  rel="stylesheet"
+/>
+<style>
+  :root {
+    --ink: #08070a;
+    --ink-2: #0d0c10;
+    --paper: #efeae0;
+    --paper-mid: #c5beb1;
+    --paper-dim: #8a8376;
+    --warm-1: #ffd79a;
+    --warm-2: #f5b84a;
+    --warm-3: #ff6a5f;
+    --signal: #ff3b2e;
+    --border: #2a2730;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--ink);
+    color: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.55;
+  }
+
+  /* ============== Header ============== */
+  header {
+    padding: 4rem 1.5rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  header h1 {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+  header h1 em {
+    background: linear-gradient(135deg, var(--warm-1), var(--warm-2), var(--warm-3));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  header p {
+    color: var(--paper-mid);
+    max-width: 580px;
+    margin: 0 auto;
+    font-size: 0.95rem;
+  }
+  .legend {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--paper-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+
+  /* ============== Grid ============== */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(420px, 100%), 1fr));
+    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+    max-width: 1480px;
+    margin: 0 auto;
+  }
+
+  .card {
+    background: linear-gradient(180deg, #1a1820, #131115);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-head {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  .card-num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--warm-2);
+    font-size: 1.1rem;
+  }
+  .card-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--paper);
+  }
+  .card-vibe {
+    padding: 0 1.25rem;
+    margin-top: 0.85rem;
+    font-size: 0.82rem;
+    color: var(--paper-mid);
+    line-height: 1.55;
+    min-height: 3.4em;
+  }
+  .card-fonts {
+    padding: 0 1.25rem;
+    margin-top: 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--paper-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+
+  /* On-light & on-dark preview surfaces */
+  .preview {
+    margin-top: 1.1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+  }
+  .light-bg, .dark-bg {
+    padding: 2.25rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 130px;
+  }
+  .light-bg { background: #f4f0e6; }
+  .dark-bg  { background: #0a0907; }
+
+  /* ============== Concept-specific styles ============== */
+
+  /* Concept 1 — STENCIL CREST */
+  .crest-svg { width: 110px; height: 110px; }
+  .crest-light { color: #1a1614; }
+  .crest-dark  { color: #efeae0; }
+
+  /* Concept 2 — GEOMETRIC MONOGRAM */
+  .geo-wrap { display: flex; align-items: center; gap: 0.85rem; }
+  .geo-mark {
+    width: 56px; height: 56px;
+    border: 2px solid currentColor;
+    border-radius: 6px;
+    display: grid; place-items: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.45rem;
+    letter-spacing: -0.02em;
+  }
+  .geo-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -0.025em;
+    line-height: 1.05;
+  }
+  .geo-text small {
+    display: block;
+    font-weight: 500;
+    font-size: 0.72rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    margin-top: 0.2em;
+    opacity: 0.7;
+  }
+
+  /* Concept 3 — EDITORIAL FRAUNCES */
+  .editorial-wrap { text-align: center; line-height: 0.95; }
+  .editorial-text {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 2.4rem;
+    letter-spacing: -0.025em;
+    font-variation-settings: "opsz" 144;
+  }
+  .editorial-text em {
+    background: linear-gradient(135deg, var(--warm-1), var(--warm-2), var(--warm-3));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .editorial-sub {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.62rem;
+    letter-spacing: 0.45em;
+    margin-top: 0.6rem;
+    opacity: 0.65;
+  }
+
+  /* Concept 4 — CONDENSED MASTHEAD */
+  .masthead {
+    text-align: center;
+    line-height: 0.85;
+  }
+  .masthead-top {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.3rem;
+    letter-spacing: 0.04em;
+  }
+  .masthead-rule {
+    height: 1px; background: currentColor; opacity: 0.5;
+    margin: 0.6rem auto;
+    width: 70%;
+  }
+  .masthead-bot {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.68rem;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+  }
+
+  /* Concept 5 — TARGETING RETICLE */
+  .target-wrap { display: flex; align-items: center; gap: 0.85rem; }
+  .target-svg { width: 50px; height: 50px; }
+  .target-text {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    letter-spacing: -0.022em;
+    line-height: 1.05;
+  }
+  .target-text small {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    font-size: 0.6rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    margin-top: 0.25em;
+    opacity: 0.7;
+  }
+
+  /* Concept 6 — DOG TAG */
+  .dogtag {
+    width: 220px; height: 110px;
+    border: 1.5px solid currentColor;
+    border-radius: 14px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Special Elite', monospace;
+    text-align: center;
+    padding: 0.5rem;
+    color: currentColor;
+  }
+  .dogtag::before {
+    content: "";
+    position: absolute;
+    top: -7px; left: 16px;
+    width: 14px; height: 14px;
+    border: 1.5px solid currentColor;
+    border-radius: 50%;
+    background: currentColor;
+  }
+  .dogtag-line1 { font-size: 1.15rem; letter-spacing: 0.08em; line-height: 1.1; }
+  .dogtag-line2 { font-size: 0.78rem; letter-spacing: 0.5em; opacity: 0.7; margin-top: 0.3rem; }
+  .dogtag-line3 { font-size: 0.55rem; letter-spacing: 0.3em; opacity: 0.55; margin-top: 0.4rem; }
+
+  /* Concept 7 — RANK CHEVRONS */
+  .rank-wrap { display: flex; align-items: center; gap: 1rem; }
+  .rank-svg { width: 56px; height: 50px; }
+  .rank-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: -0.022em;
+    line-height: 1.05;
+  }
+  .rank-text small {
+    display: block;
+    font-weight: 500;
+    font-size: 0.62rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    margin-top: 0.25em;
+    opacity: 0.62;
+  }
+
+  /* Concept 8 — DOT MONO */
+  .dot-wrap { display: flex; align-items: center; gap: 0.65rem; }
+  .dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--signal);
+    box-shadow: 0 0 12px rgba(255, 59, 46, 0.6);
+  }
+  .dot-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+  }
+
+  /* Concept 9 — BRUTALIST */
+  .brutal {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 1.85rem;
+    letter-spacing: -0.04em;
+    line-height: 0.92;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .brutal span {
+    display: inline-block;
+    background: var(--signal);
+    color: white;
+    padding: 0.05em 0.25em 0.1em;
+    margin-top: 0.05em;
+  }
+
+  /* Concept 10 — SIGNAL WAVES */
+  .signal-wrap { display: flex; align-items: center; gap: 1rem; }
+  .signal-svg { width: 52px; height: 52px; }
+  .signal-text {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.32rem;
+    letter-spacing: -0.022em;
+    line-height: 1.05;
+  }
+  .signal-text small {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    font-size: 0.58rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    margin-top: 0.25em;
+    opacity: 0.65;
+  }
+
+  /* ============== Footer hint ============== */
+  footer {
+    text-align: center;
+    padding: 3rem 1.5rem 4rem;
+    border-top: 1px solid var(--border);
+    color: var(--paper-dim);
+    font-size: 0.85rem;
+  }
+  footer a { color: var(--warm-2); text-decoration: none; }
+  footer a:hover { color: var(--warm-1); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Logo concepts &mdash; <em>Charlie Mike Digital</em></h1>
+  <p>Ten different directions, fonts, and icon approaches. Each one rendered on both a light surface (left) and a dark surface (right) so you can see how it sits against email signatures, business cards, and overlays.</p>
+  <div class="legend">10 directions &middot; left = on light &middot; right = on dark</div>
+</header>
+
+<main class="grid">
+
+<!-- ========================== CONCEPT 1 ========================== -->
+<div class="card">
+  <div class="card-head">
+    <span class="card-num">01</span>
+    <span class="card-name">Field Crest</span>
+  </div>
+  <p class="card-vibe">Military badge / rubber stamp. Stencil typography circling a central CM monogram with chevron rank stripes. Reads as veteran, traditional, hand-stamped.</p>
+  <p class="card-fonts">Stardos Stencil &middot; Special Elite</p>
+  <div class="preview">
+    <div class="light-bg">
+      <svg class="crest-svg crest-light" viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <path id="crest-arc-top" d="M 14 55 a 41 41 0 0 1 82 0" fill="none"/>
+          <path id="crest-arc-bot" d="M 18 60 a 37 37 0 0 0 74 0" fill="none"/>
+        </defs>
+        <circle cx="55" cy="55" r="50" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="55" cy="55" r="44" fill="none" stroke="currentColor" stroke-width="0.6" stroke-dasharray="2 3" opacity="0.5"/>
+        <text fill="currentColor" font-family="'Stardos Stencil', monospace" font-size="9" font-weight="700" letter-spacing="3">
+          <textPath href="#crest-arc-top" startOffset="50%" text-anchor="middle">CHARLIE MIKE DIGITAL</textPath>
+        </text>
+        <text fill="currentColor" font-family="'Stardos Stencil', monospace" font-size="6.5" letter-spacing="3" opacity="0.55">
+          <textPath href="#crest-arc-bot" startOffset="50%" text-anchor="middle">CONTINUE MISSION &middot; HOUSTON TX</textPath>
+        </text>
+        <path d="M30 47 L55 35 L80 47" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M34 53 L55 43 L76 53" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+        <text x="55" y="76" fill="currentColor" font-family="'Stardos Stencil', monospace" font-size="20" font-weight="700" letter-spacing="3" text-anchor="middle">CM</text>
+        <circle cx="55" cy="86" r="1.3" fill="#ff3b2e"/>
+      </svg>
+    </div>
+    <div class="dark-bg">
+      <svg class="crest-svg crest-dark" viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <path id="crest-arc-top-2" d="M 14 55 a 41 41 0 0 1 82 0" fill="none"/>
+          <path id="crest-arc-bot-2" d="M 18 60 a 37 37 0 0 0 74 0" fill="none"/>
+        </defs>
+        <circle cx="55" cy="55" r="50" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="55" cy="55" r="44" fill="none" stroke="currentColor" stroke-width="0.6" stroke-dasharray="2 3" opacity="0.5"/>
+        <text fill="currentColor" font-family="'Stardos Stencil', monospace" font-size="9" font-weight="700" letter-spacing="3">
+          <textPath href="#crest-arc-top-2" startOffset="50%" text-anchor="middle">CHARLIE MIKE DIGITAL</textPath>
+        </text>
+        <text fill="currentColor" font-family="'Stardos Stencil', monospace" font-size="6.5" letter-spacing="3" opacity="0.55">
+          <textPath href="#crest-arc-bot-2" startOffset="50%" text-anchor="middle">CONTINUE MISSION &middot; HOUSTON TX</textPath>
+        </text>
+        <path d="M30 47 L55 35 L80 47" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M34 53 L55 43 L76 53" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+        <text x="55" y="76" fill="currentColor" font-family="'Stardos Stencil', monospace" font-size="20" font-weight="700" letter-spacing="3" text-anchor="middle">CM</text>
+        <circle cx="55" cy="86" r="1.3" fill="#ff3b2e"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ========================== CONCEPT 2 ========================== -->
+<div class="card">
+  <div class="card-head">
+    <span class="card-num">02</span>
+    <span class="card-name">Geometric Mono</span>
+  </div>
+  <p class="card-vibe">Modernist sans-serif wordmark with a tight square CM monogram. Clean, technical, contemporary. Reads as a precise, design-savvy operator. Apple/Linear adjacent.</p>
+  <p class="card-fonts">Space Grotesk</p>
+  <div class="preview">
+    <div class="light-bg" style="color:#0a0907">
+      <div class="geo-wrap">
+        <span class="geo-mark">CM</span>
+        <span class="geo-text">Charlie Mike<small>Digital</small></span>
+      </div>
+    </div>
+    <div class="dark-bg" style="color:#efeae0">
+      <div class="geo-wrap">
+        <span class="geo-mark">CM</span>
+        <span class="geo-text">Charlie Mike<small>Digital</small></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================== CONCEPT 3 ========================== -->
+<div class="card">
+  <div class="card-head">
+    <span class="card-num">03</span>
+    <span class="card-name">Editorial Italic</span>
+  </div>
+  <p class="card-vibe">Pure typography &mdash; no icon. Massive italic Fraunces with "Mike" in warm gradient. Reads like a luxury magazine masthead. Best when you want elegance over military.</p>
+  <p class="card-fonts">Fraunces (italic)</p>
+  <div class="preview">
+    <div class="light-bg" style="color:#0a0907">
+      <div class="editorial-wrap">
+        <div class="editorial-text">Charlie <em>Mike</em></div>
+        <div class="editorial-sub">DIGITAL</div>
+      </div>
+    </div>
+    <div class="dark-bg" style="color:#efeae0">
+      <div class="editorial-wrap">
+        <div class="editorial-text">Charlie <em>Mike</em></div>
+        <div class="editorial-sub">DIGITAL</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================== CONCEPT 4 ========================== -->
+<div class="card">
+  <div class="card-head">
+    <span class="card-num">04</span>
+    <span class="card-name">Newspaper Masthead</span>
+  </div>
+  <p class="card-vibe">Bold condensed Bebas Neue stacked over a hairline rule. Reads like a journalistic masthead, unfussy and confident. Great for trades who want serious, not pretty.</p>
+  <p class="card-fonts">Bebas Neue &middot; Inter</p>
+  <div class="preview">
+    <div class="light-bg" style="color:#0a0907">
+      <div class="masthead">
+        <div class="masthead-top">CHARLIE MIKE</div>
+        <div class="masthead-rule"></div>
+        <div class="masthead-bot">DIGITAL</div>
+      </div>
+    </div>
+    <div class="dark-bg" style="color:#efeae0">
+      <div class="masthead">
+        <div class="masthead-top">CHARLIE MIKE</div>
+        <div class="masthead-rule"></div>
+        <div class="masthead-bot">DIGITAL</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================== CONCEPT 5 ========================== -->
+<div class="card">
+  <div class="card-head">
+    <span class="card-num">05</span>
+    <span class="card-name">Targeting Reticle</span>
+  </div>
+  <p class="card-vibe">Crosshair / sniper reticle icon paired with a clean sans wordmark. Plays on "Continue Mission" precision metaphor without being too literal. Tactical without being military-cosplay.</p>
+  <p class="card-fonts">DM Sans &middot; JetBrains Mono</p>
+  <div class="preview">
+    <div class="light-bg" style="color:#0a0907">
+      <div class="target-wrap">
+        <svg class="target-svg" viewBox="0 0 50 50">
+          <circle cx="25" cy="25" r="22" fill="none" stroke="currentColor" stroke-width="1.4"/>
+          <circle cx="25" cy="25" r="14" fill="none" stroke="currentColor" stroke-width="1"/>
+          <line x1="25" y1="0" x2="25" y2="10" stroke="currentColor" stroke-width="1.4"/>
+          <line x1="25" y1="40" x2="25" y2="50" stroke="currentColor" stroke-width="1.4"/>
+          <line x1="0" y1="25" x2="10" y2="25" stroke="currentColor" stroke-width="1.4"/>
+          <line x1="40" y1="25" x2="50" y2="25" stroke="currentColor" stroke-width="1.4"/>
+          <circle cx="25" cy="25" r="2.2" fill="#ff3b2e"/>
+        </svg>
+        <span class="target-text">Charlie Mike<small>Digital</small></span>
+      </div>
+    </div>
+    <div class="dark-bg" style="color:#efeae0">
+      <div class="target-wrap">
+        <svg class="target-svg" viewBox="0 0 50 50">
+          <circle cx="25" cy="25" r="22" fill="none" stroke="currentColor" stroke-width="1.4"/>
+          <circle cx="25" cy="25" r="14" fill="none" stroke="currentColor" stroke-width="1"/>
+          <line x1="25" y1="0" x2="25" y2="10" stroke="currentColor" stroke-width="1.4"/>
+          <line x1="25" y1="40" x2="25" y2="50" stroke="currentColor" stroke-width="1.4"/>
+          <line x1="0" y1="25" x2="10" y2="25" stroke="currentColor" stroke-width="1.4"/>
+          <line x1="40" y1="25" x2="50" y2="25" stroke="currentColor" stroke-width="1.4"/>
+          <circle cx="25" cy="25" r="2.2" fill="#ff3b2e"/>
+        </svg>
+        <span class="target-text">Charlie Mike<small>Digital</small></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================== CONCEPT 6 ========================== -->
+<div class="card">
+  <div class="card-head">
+    <span class="card-num">06</span>
+    <span class="card-name">Dog Tag</span>
+  </div>
+  <p class="card-vibe">Stamped military dog tag. Special Elite typewriter font for the embossed feel. Most overtly military of the set. Distinctive but uses up most of the brand "look" in one move.</p>
+  <p class="card-fonts">Special Elite</p>
+  <div class="preview">
+    <div class="light-bg" style="color:#0a0907">
+      <div class="dogtag">
+        <div class="dogtag-line1">CHARLIE MIKE</div>
+        <div class="dogtag-line2">DIGITAL</div>
+        <div class="dogtag-line3">CONTINUE MISSION</div>
+      </div>
+    </div>
+    <div class="dark-bg" style="color:#efeae0">
+      <div class="dogtag">
+        <div class="dogtag-line1">CHARLIE MIKE</div>
+        <div class="dogtag-line2">DIGITAL</div>
+        <div class="dogtag-line3">CONTINUE MISSION</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================== CONCEPT 7 ========================== -->
+<div class="card">
+  <div class="card-head">
+    <span class="card-num">07</span>
+    <span class="card-name">Sergeant Stripes</span>
+  </div>
+  <p class="card-vibe">Three Army sergeant chevrons stacked as the icon, paired with a bold Inter wordmark. Direct military rank reference, but cleaner and more modern than the dog tag.</p>
+  <p class="card-fonts">Inter (extrabold)</p>
+  <div class="preview">
+    <div class="light-bg" style="color:#0a0907">
+      <div class="rank-wrap">
+        <svg class="rank-svg" viewBox="0 0 56 50">
+          <path d="M4 16 L28 4 L52 16" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M4 28 L28 16 L52 28" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M4 40 L28 28 L52 40" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <circle cx="28" cy="2" r="1.6" fill="#ff3b2e"/>
+        </svg>
+        <span class="rank-text">Charlie Mike<small>Digital</small></span>
+      </div>
+    </div>
+    <div class="dark-bg" style="color:#efeae0">
+      <div class="rank-wrap">
+        <svg class="rank-svg" viewBox="0 0 56 50">
+          <path d="M4 16 L28 4 L52 16" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M4 28 L28 16 L52 28" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M4 40 L28 28 L52 40" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <circle cx="28" cy="2" r="1.6" fill="#ff3b2e"/>
+        </svg>
+        <span class="rank-text">Charlie Mike<small>Digital</small></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================== CONCEPT 8 ========================== -->
+<div class="card">
+  <div class="card-head">
+    <span class="card-num">08</span>
+    <span class="card-name">Signal Dot</span>
+  </div>
+  <p class="card-vibe">Minimal, tech-forward. A pulsing red signal dot precedes a lowercase mono wordmark. Reads like a developer brand or Linear / Vercel adjacent SaaS. Most "modern."</p>
+  <p class="card-fonts">JetBrains Mono</p>
+  <div class="preview">
+    <div class="light-bg" style="color:#0a0907">
+      <div class="dot-wrap">
+        <span class="dot"></span>
+        <span class="dot-text">charlie mike digital</span>
+      </div>
+    </div>
+    <div class="dark-bg" style="color:#efeae0">
+      <div class="dot-wrap">
+        <span class="dot"></span>
+        <span class="dot-text">charlie mike digital</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================== CONCEPT 9 ========================== -->
+<div class="card">
+  <div class="card-head">
+    <span class="card-num">09</span>
+    <span class="card-name">Brutalist Block</span>
+  </div>
+  <p class="card-vibe">Heavy Archivo Black with the word "DIGITAL" knocked out on a red signal block. Loudest, most opinionated of the set. Reads as confident and direct, not corporate.</p>
+  <p class="card-fonts">Archivo Black</p>
+  <div class="preview">
+    <div class="light-bg" style="color:#0a0907">
+      <div class="brutal">
+        CHARLIE<br>
+        MIKE<br>
+        <span>DIGITAL</span>
+      </div>
+    </div>
+    <div class="dark-bg" style="color:#efeae0">
+      <div class="brutal">
+        CHARLIE<br>
+        MIKE<br>
+        <span>DIGITAL</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================== CONCEPT 10 ========================== -->
+<div class="card">
+  <div class="card-head">
+    <span class="card-num">10</span>
+    <span class="card-name">Continue Mission</span>
+  </div>
+  <p class="card-vibe">Radio-signal antenna icon (the literal "Charlie Mike" radio metaphor). Sans wordmark with "CONTINUE MISSION" tagline. The most on-brand storytelling of the icon-based options.</p>
+  <p class="card-fonts">DM Sans &middot; JetBrains Mono</p>
+  <div class="preview">
+    <div class="light-bg" style="color:#0a0907">
+      <div class="signal-wrap">
+        <svg class="signal-svg" viewBox="0 0 52 52">
+          <line x1="26" y1="40" x2="26" y2="14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="26" cy="11" r="3" fill="#ff3b2e"/>
+          <path d="M16 36 a 14 14 0 0 1 20 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M11 40 a 21 21 0 0 1 30 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+          <path d="M6 44 a 28 28 0 0 1 40 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity="0.4"/>
+        </svg>
+        <span class="signal-text">Charlie Mike Digital<small>Continue Mission</small></span>
+      </div>
+    </div>
+    <div class="dark-bg" style="color:#efeae0">
+      <div class="signal-wrap">
+        <svg class="signal-svg" viewBox="0 0 52 52">
+          <line x1="26" y1="40" x2="26" y2="14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="26" cy="11" r="3" fill="#ff3b2e"/>
+          <path d="M16 36 a 14 14 0 0 1 20 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M11 40 a 21 21 0 0 1 30 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+          <path d="M6 44 a 28 28 0 0 1 40 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity="0.4"/>
+        </svg>
+        <span class="signal-text">Charlie Mike Digital<small>Continue Mission</small></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  Pick a number, send it back, and I'll wire that one up everywhere &mdash; nav, footer, favicon, OG image, and the brand-kit downloadables.
+  <br><br>
+  <a href="/">&larr; back to the site</a>
+</footer>
+
+</body>
+</html>
