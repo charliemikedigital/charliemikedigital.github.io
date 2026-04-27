@@ -4,7 +4,7 @@
   USE FOR: anywhere the icon needs to sit on a dark or photographic background
   with no dark square competing — overlays, watermarks, dark social avatars
 -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512" role="img" aria-label="Charlie Mike Digital mark">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-3 -3 70 70" width="512" height="512" role="img" aria-label="Charlie Mike Digital mark">
   <defs>
     <linearGradient id="warm" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#ffd79a"/>
