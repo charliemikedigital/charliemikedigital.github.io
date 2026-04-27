@@ -22,3 +22,9 @@ google-creds.json
 lead_scraper.py
 lead_scraper_v2.py
 *.csv
+
+# Local demo workflow scripts (contain API keys / business data, not for the public repo)
+demo_prep.py
+deploy_demo.py
+meta_*.json
+prompt_*.txt
