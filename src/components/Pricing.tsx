@@ -95,7 +95,7 @@ const CARE_PLANS: CarePlan[] = [
     title: 'Maintenance',
     features: [
       'Hosting management',
-      'Uptime monitoring',
+      '24/7 uptime monitoring',
       'Security updates',
       'Monthly health check',
     ],
@@ -107,9 +107,9 @@ const CARE_PLANS: CarePlan[] = [
     recommended: true,
     features: [
       'Everything in Basic',
-      'Up to 2hrs monthly edits',
+      'Up to 2 hours of monthly edits',
       'Google review monitoring',
-      'Priority response',
+      'Priority response within 24 hours',
     ],
   },
   {
@@ -118,9 +118,12 @@ const CARE_PLANS: CarePlan[] = [
     title: 'Full Care',
     features: [
       'Everything in Growth',
-      'Quarterly design refresh',
-      'New page builds',
-      'Same day support',
+      'Up to 4 hours of monthly edits',
+      '1 new page or major update per month',
+      'Monthly security + performance report',
+      'Daily site backups',
+      'Quarterly SEO check in',
+      'Same day response, Mon to Fri',
     ],
   },
 ];
