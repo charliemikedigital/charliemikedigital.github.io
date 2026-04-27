@@ -13,9 +13,6 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    // Copy sites/ and public/ content verbatim into dist so the existing
-    // demo sites remain reachable at /sites/*.html after build.
-    assetsInlineLimit: 0,
   },
   publicDir: 'public',
 });
