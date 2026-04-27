@@ -106,6 +106,10 @@ export function Footer() {
           className="mt-2 text-[0.85rem] text-[#c5beb1]"
         >
           © 2025 Charlie Mike Digital LLC ·{' '}
+          <a href="tel:+18325342485" className="tabular hover:text-[#f5b84a] transition-colors">
+            (832) 534-2485
+          </a>{' '}
+          ·{' '}
           <em
             className="gradient-warm"
             style={{ fontFamily: "'Instrument Serif', serif", fontStyle: 'italic' }}

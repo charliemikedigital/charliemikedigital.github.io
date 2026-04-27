@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowRight, Mail } from 'lucide-react';
+import { Menu, X, ArrowRight, Mail, Phone } from 'lucide-react';
 import { LogoWordmark } from './Logo';
 import { cn } from '@/lib/cn';
 
@@ -73,6 +73,15 @@ export function Nav() {
 
         {/* Right cluster */}
         <div className="flex items-center gap-2 sm:gap-2.5">
+          {/* Desktop "Call" link — sits before the primary CTA */}
+          <a
+            href="tel:+18325342485"
+            className="hidden lg:inline-flex group items-center gap-2 rounded-full px-3.5 py-2 text-sm font-medium text-[#c5beb1] hover:text-[#f5b84a] transition-colors"
+          >
+            <Phone size={14} strokeWidth={2.2} className="transition-transform group-hover:scale-110" />
+            <span className="font-mono text-[0.78rem] tabular tracking-wide">(832) 534-2485</span>
+          </a>
+
           {/* Desktop CTA */}
           <a
             href="#contact"

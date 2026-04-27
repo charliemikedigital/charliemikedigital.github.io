@@ -1,6 +1,6 @@
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { Clock, MapPin, Send, ArrowRight, Check } from 'lucide-react';
+import { Clock, MapPin, Phone, Send, ArrowRight, Check } from 'lucide-react';
 import { cn } from '@/lib/cn';
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mzdyoyvg';
@@ -28,10 +28,16 @@ const NEED_OPTIONS = [
 
 const DETAILS = [
   {
+    icon: Phone,
+    label: 'Phone',
+    value: '(832) 534-2485',
+    href: 'tel:+18325342485' as string | null,
+  },
+  {
     icon: Clock,
     label: 'Response Time',
     value: 'Same day, usually within a few hours',
-    href: null as string | null,
+    href: null,
   },
   {
     icon: MapPin,
