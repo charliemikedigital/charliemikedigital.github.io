@@ -85,7 +85,7 @@ export function Hero() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#3fd687]" />
               </span>
               <span className="font-mono text-[0.62rem] uppercase tracking-[0.25em] text-[#c5beb1]">
-                Booking April build slots
+                Booking build slots now
               </span>
               <span className="h-3 w-px bg-white/10" />
               <span className="text-[0.62rem] uppercase tracking-[0.22em] text-[#f5b84a] font-semibold">
