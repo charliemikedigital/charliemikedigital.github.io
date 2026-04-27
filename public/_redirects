@@ -1,0 +1,24 @@
+# Cloudflare Pages routing rules
+# Rules are evaluated top-to-bottom — first match wins.
+# Static pages MUST be listed before the SPA fallback so they're not
+# hijacked by the catch-all.
+
+# ============== Static legal pages ==============
+# Serve /privacy and /terms from their .html source files (URL stays
+# pretty in the address bar; status 200 = rewrite, not redirect).
+/privacy        /privacy.html       200
+/terms          /terms.html         200
+
+# ============== Demo sites ==============
+# CF Pages already strips .html extensions to give pretty URLs for
+# /sites/<slug>. These rules are explicit for clarity and to ensure
+# they're served from their actual files, not the SPA fallback.
+/sites/*        /sites/:splat       200
+
+# ============== Brand kit ==============
+/brand/*        /brand/:splat       200
+
+# ============== SPA fallback ==============
+# Everything else gets the React app so client-side anchors keep
+# working. This MUST be last.
+/*              /index.html         200
