@@ -323,7 +323,7 @@ function CaseCard({
                 'mt-3 text-[#c5beb1] leading-[1.55]',
                 isFeatured
                   ? 'text-[0.98rem] max-w-[58ch]'
-                  : 'text-[0.88rem] line-clamp-2'
+                  : 'text-[0.88rem]'
               )}
             >
               {data.description}
