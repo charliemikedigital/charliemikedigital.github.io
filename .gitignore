@@ -18,3 +18,7 @@ npm-debug.log*
 node_modules/
 dist/
 build/
+google-creds.json
+lead_scraper.py
+lead_scraper_v2.py
+*.csv
