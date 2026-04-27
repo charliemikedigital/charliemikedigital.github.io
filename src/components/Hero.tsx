@@ -178,7 +178,7 @@ export function Hero() {
                   </svg>
                 </div>
                 <img
-                  src="sites/thumbnails/plumber-landing.jpg"
+                  src="/sites/thumbnails/plumber-landing.jpg"
                   alt="Rivera Plumbing & Drain, navy and brass trades site"
                   className="block w-full h-auto rounded-lg"
                   loading="eager"

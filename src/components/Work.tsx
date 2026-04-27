@@ -237,7 +237,7 @@ function CaseCard({
             )}
           >
             <img
-              src={`sites/thumbnails/${data.slug}.jpg`}
+              src={`/sites/thumbnails/${data.slug}.jpg`}
               alt={`${data.business} live site screenshot`}
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
               loading="lazy"
