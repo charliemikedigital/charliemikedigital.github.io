@@ -121,10 +121,10 @@ export function Hero() {
               className="mt-8 flex flex-wrap items-center gap-3.5"
             >
               <a
-                href="#booking"
+                href="#contact"
                 className="btn-sweep group inline-flex items-center gap-2.5 rounded-full bg-[#ff3b2e] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_16px_40px_-10px_rgba(255,59,46,0.55)] hover:shadow-[0_22px_54px_-8px_rgba(255,59,46,0.8)] transition-all"
               >
-                <span className="relative z-[1]">Book a free 30-min call</span>
+                <span className="relative z-[1]">Get a free quote</span>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="relative z-[1] transition-transform group-hover:translate-x-0.5">
                   <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -151,11 +151,11 @@ export function Hero() {
             className="relative"
           >
             <a
-              href="sites/restaurant-mesa.html"
+              href="sites/plumber-landing.html"
               target="_blank"
               rel="noopener"
               className="block relative"
-              aria-label="View Mesa Kitchen & Bar live demo"
+              aria-label="View Rivera Plumbing live demo"
             >
               <motion.div
                 onMouseMove={onCardMove}
@@ -169,7 +169,7 @@ export function Hero() {
                   <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
                   <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
                   <div className="ml-3 flex-1 rounded-md bg-black/30 px-3 py-1 text-[0.65rem] text-[#8a8376] font-mono">
-                    mesakitchenbar.com
+                    riveraplumbing.com
                   </div>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#f5b84a" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
@@ -178,12 +178,12 @@ export function Hero() {
                   </svg>
                 </div>
                 <img
-                  src="sites/thumbnails/restaurant-mesa.jpg"
-                  alt="Mesa Kitchen & Bar, editorial restaurant site"
+                  src="sites/thumbnails/plumber-landing.jpg"
+                  alt="Rivera Plumbing & Drain, navy and brass trades site"
                   className="block w-full h-auto rounded-lg"
                   loading="eager"
                   width={1200}
-                  height={750}
+                  height={900}
                 />
 
                 {/* Overlaid live badge */}
@@ -196,11 +196,11 @@ export function Hero() {
 
                 {/* Corner tag */}
                 <div className="absolute -bottom-3 -right-3 rounded-full bg-[#ff3b2e] px-3.5 py-1.5 text-[0.58rem] font-bold uppercase tracking-[0.25em] text-white shadow-lg">
-                  Restaurant · Mesa
+                  Plumbing &middot; Rivera
                 </div>
               </motion.div>
 
-              {/* Testimonial under the Mesa featured card */}
+              {/* Testimonial under the featured card */}
               <motion.figure
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -209,8 +209,11 @@ export function Hero() {
               >
                 <blockquote className="serif-i text-[0.88rem] md:text-[0.95rem] leading-[1.5] text-[#c5beb1]">
                   <span aria-hidden className="text-[#f5b84a] mr-1">&ldquo;</span>
-                  Online reservations went from zero to 15+ a week within the first month.
+                  Six calls from Google my first week. Haven&rsquo;t looked back.
                   <span aria-hidden className="text-[#f5b84a] ml-0.5">&rdquo;</span>
+                  <footer className="mt-2 not-italic font-mono text-[0.62rem] uppercase tracking-[0.22em] text-[#a67a20]">
+                    Carlos R. &middot; Rivera Plumbing
+                  </footer>
                 </blockquote>
               </motion.figure>
             </a>

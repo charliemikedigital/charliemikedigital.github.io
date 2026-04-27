@@ -9,7 +9,6 @@ type Step = {
   accent: string; // italicized tail word/phrase
   desc: string;
   detail: string;
-  detailSub: string;
   icon: LucideIcon;
 };
 
@@ -18,27 +17,24 @@ const STEPS: Step[] = [
     num: '01',
     title: 'Free discovery',
     accent: 'call',
-    desc: '30 minutes, no pitch. I learn your business, goals, and what you want the site to do.',
+    desc: '30 minutes, no pitch. I learn your business and what you want the site to do.',
     detail: '~30 min',
-    detailSub: 'Video call, zero pressure',
     icon: Clock,
   },
   {
     num: '02',
     title: 'I build your',
     accent: 'site',
-    desc: 'Built from scratch in 72 hours. Real photos, copy for your industry and your customers.',
+    desc: 'Built from scratch in 72 hours. Real photos, copy for your industry.',
     detail: '48hrs avg',
-    detailSub: 'From brief to preview link',
     icon: Wrench,
   },
   {
     num: '03',
     title: 'You review &',
     accent: 'approve',
-    desc: "Full site before launch. Two rounds of revisions. We don't launch until you love it.",
+    desc: "Full site before launch. Two rounds of revisions until you love it.",
     detail: '2 rounds',
-    detailSub: 'Revisions included',
     icon: CheckCircle2,
   },
   {
@@ -47,24 +43,22 @@ const STEPS: Step[] = [
     accent: 'launch',
     desc: 'Goes live on your domain. Full access. Optional monthly maintenance available.',
     detail: 'Your domain',
-    detailSub: 'You own it outright',
     icon: Zap,
   },
 ];
 
 export function Process(): ReactElement {
   const sectionRef = useRef<HTMLElement>(null);
-  const timelineRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLDivElement>(null);
   const headingInView = useInView(headingRef, { once: true, margin: '-10% 0px' });
 
-  // Drives the progressive vertical-line fill as the user scrolls through the timeline
+  // Drives the progressive horizontal-line fill as the user scrolls past the track
   const { scrollYProgress } = useScroll({
-    target: timelineRef,
-    offset: ['start 70%', 'end 40%'],
+    target: trackRef,
+    offset: ['start 80%', 'end 30%'],
   });
   const lineScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
-  const lineGlow = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 1]);
 
   return (
     <section
@@ -94,7 +88,7 @@ export function Process(): ReactElement {
           initial={{ opacity: 0, y: 18 }}
           animate={headingInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-16 max-w-3xl md:mb-24"
+          className="mb-14 max-w-3xl md:mb-20"
         >
           <div className="mb-5 inline-flex items-center gap-2.5">
             <span className="h-px w-8 bg-[#a67a20]" />
@@ -112,47 +106,35 @@ export function Process(): ReactElement {
           </p>
         </motion.div>
 
-        {/* ============ Timeline ============ */}
-        <div ref={timelineRef} className="relative">
-          {/* Vertical rail: background + progressive fill */}
+        {/* ============ Horizontal track ============ */}
+        <div ref={trackRef} className="relative">
+          {/* Connector line — visible md+, scales from left to right with scroll */}
           <div
             aria-hidden
-            className="pointer-events-none absolute bottom-0 top-0 hidden w-px md:block"
-            style={{ left: 'calc(80px + 1.5rem)' }}
+            className="pointer-events-none absolute left-0 right-0 hidden md:block"
+            style={{ top: 'calc(2.25rem + 18px)' }}
           >
-            <div className="absolute inset-0 bg-white/5" />
-            <motion.div
-              style={{ scaleY: lineScale, transformOrigin: 'top' }}
-              className="absolute inset-0"
-            >
-              <div
-                className="h-full w-full"
-                style={{
-                  background:
-                    'linear-gradient(180deg, #ffd79a 0%, #f5b84a 40%, #ff6a5f 80%, #ff3b2e 100%)',
-                  boxShadow: '0 0 14px rgba(245,184,74,0.55)',
-                }}
-              />
-            </motion.div>
-            {/* Additive glow */}
-            <motion.div
-              style={{ opacity: lineGlow }}
-              className="absolute inset-0 blur-[2px]"
-            >
-              <div
-                className="h-full w-full"
-                style={{
-                  background:
-                    'linear-gradient(180deg, transparent, rgba(245,184,74,0.4) 50%, transparent)',
-                }}
-              />
-            </motion.div>
+            <div className="relative mx-[12.5%] h-px bg-white/8">
+              <motion.div
+                style={{ scaleX: lineScale, transformOrigin: 'left' }}
+                className="absolute inset-0"
+              >
+                <div
+                  className="h-full w-full"
+                  style={{
+                    background:
+                      'linear-gradient(90deg, #ffd79a 0%, #f5b84a 40%, #ff6a5f 80%, #ff3b2e 100%)',
+                    boxShadow: '0 0 14px rgba(245,184,74,0.55)',
+                  }}
+                />
+              </motion.div>
+            </div>
           </div>
 
-          {/* Steps */}
-          <ol className="relative flex flex-col gap-14 md:gap-20">
+          {/* Step cards in a row (4 col on md+, stacked on mobile) */}
+          <ol className="relative grid grid-cols-1 gap-7 md:grid-cols-4 md:gap-5 lg:gap-7">
             {STEPS.map((step, i) => (
-              <StepRow key={step.num} step={step} index={i} />
+              <StepCard key={step.num} step={step} index={i} total={STEPS.length} />
             ))}
           </ol>
         </div>
@@ -164,90 +146,80 @@ export function Process(): ReactElement {
   );
 }
 
-function StepRow({ step, index }: { step: Step; index: number }): ReactElement {
-  const rowRef = useRef<HTMLLIElement>(null);
-  const inView = useInView(rowRef, { once: true, margin: '-15% 0px -10% 0px' });
+function StepCard({ step, index, total }: { step: Step; index: number; total: number }): ReactElement {
+  const ref = useRef<HTMLLIElement>(null);
+  const inView = useInView(ref, { once: true, margin: '-15% 0px -10% 0px' });
   const Icon = step.icon;
 
   return (
     <motion.li
-      ref={rowRef}
-      initial={{ opacity: 0, y: 40 }}
+      ref={ref}
+      initial={{ opacity: 0, y: 28 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: index * 0.05 }}
-      className="relative grid grid-cols-1 items-start gap-6 md:grid-cols-[80px_1fr_auto] md:gap-10"
+      transition={{
+        duration: 0.85,
+        delay: Math.min(index * 0.1, 0.4),
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className="relative flex flex-col items-start"
     >
-      {/* Left: oversized number */}
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        animate={inView ? { opacity: 1, x: 0 } : {}}
-        transition={{ duration: 0.9, delay: index * 0.05 + 0.1, ease: [0.22, 1, 0.36, 1] }}
-        className="relative z-10 flex items-start"
-      >
+      {/* Big italic step number + node dot lined up with the connector */}
+      <div className="relative mb-4 flex w-full items-center justify-between">
         <span
-          className="serif-i gradient-warm block leading-[0.82] tracking-[-0.04em]"
-          style={{ fontSize: 'clamp(3.5rem, 6vw, 5rem)' }}
+          className="serif-i gradient-warm leading-[0.82] tracking-[-0.04em]"
+          style={{ fontSize: 'clamp(2.5rem, 4.5vw, 3.6rem)' }}
         >
           {step.num}
         </span>
-      </motion.div>
-
-      {/* Middle: title + description */}
-      <div className="relative min-w-0 md:pt-2">
-        {/* Timeline node dot (next to the rail, middle column) */}
-        <div
+        {/* The node dot — sits on the connector line on desktop */}
+        <motion.span
           aria-hidden
-          className="absolute -left-[calc(1.5rem+6px)] top-3 hidden h-3 w-3 md:block"
-        >
-          <motion.span
-            initial={{ scale: 0 }}
-            animate={inView ? { scale: 1 } : {}}
-            transition={{ duration: 0.5, delay: index * 0.05 + 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute inset-0 rounded-full bg-[#ff3b2e]"
-            style={{ boxShadow: '0 0 0 3px rgba(255,59,46,0.15), 0 0 18px rgba(255,59,46,0.6)' }}
-          />
-        </div>
-
-        <div className="mb-3 inline-flex items-center gap-2">
-          <Icon className="h-4 w-4 text-[#f5b84a]" strokeWidth={2} />
-          <span className="font-mono text-[0.62rem] uppercase tracking-[0.28em] text-[#8a8376]">
-            Step {step.num}
-          </span>
-        </div>
-        <h3 className="font-semibold leading-[1.08] tracking-[-0.025em] text-[#efeae0] text-[clamp(1.5rem,2.8vw,2.1rem)]">
-          {step.title}{' '}
-          <span className="serif-i gradient-warm">{step.accent}</span>
-        </h3>
-        <p className="mt-3 max-w-[52ch] text-[1rem] leading-[1.65] text-[#c5beb1]">
-          {step.desc}
-        </p>
-      </div>
-
-      {/* Right: glass detail card */}
-      <motion.div
-        initial={{ opacity: 0, x: 30, scale: 0.96 }}
-        animate={inView ? { opacity: 1, x: 0, scale: 1 } : {}}
-        transition={{ duration: 0.9, delay: index * 0.05 + 0.2, ease: [0.22, 1, 0.36, 1] }}
-        whileHover={{ y: -3 }}
-        className="glass-strong relative w-full overflow-hidden rounded-2xl p-5 md:w-[220px]"
-      >
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -right-12 -top-12 h-28 w-28 rounded-full opacity-50 blur-2xl"
+          initial={{ scale: 0, opacity: 0 }}
+          animate={inView ? { scale: 1, opacity: 1 } : {}}
+          transition={{ duration: 0.5, delay: index * 0.1 + 0.3, ease: [0.22, 1, 0.36, 1] }}
+          className="hidden md:block h-3 w-3 rounded-full bg-[#ff3b2e]"
           style={{
-            background: 'radial-gradient(circle, rgba(245,184,74,0.35), transparent 70%)',
+            boxShadow: '0 0 0 4px rgba(255,59,46,0.18), 0 0 20px rgba(255,59,46,0.55)',
           }}
         />
-        <div className="relative">
-          <span className="font-mono text-[0.6rem] uppercase tracking-[0.25em] text-[#8a8376]">
-            Detail
-          </span>
-          <div className="serif-i gradient-warm mt-1.5 text-[1.9rem] leading-none">
-            {step.detail}
-          </div>
-          <p className="mt-2 text-[0.78rem] leading-[1.45] text-[#c5beb1]">{step.detailSub}</p>
-        </div>
-      </motion.div>
+      </div>
+
+      {/* Icon + step label */}
+      <div className="mb-3 inline-flex items-center gap-2">
+        <span className="inline-flex h-7 w-7 items-center justify-center rounded-md bg-white/[0.04] ring-1 ring-white/10">
+          <Icon className="h-3.5 w-3.5 text-[#f5b84a]" strokeWidth={2} />
+        </span>
+        <span className="font-mono text-[0.6rem] uppercase tracking-[0.28em] text-[#8a8376]">
+          Step {step.num}
+        </span>
+      </div>
+
+      {/* Title + accent */}
+      <h3 className="font-semibold leading-[1.1] tracking-[-0.022em] text-[#efeae0] text-[clamp(1.2rem,1.6vw,1.4rem)]">
+        {step.title}{' '}
+        <span className="serif-i gradient-warm">{step.accent}</span>
+      </h3>
+
+      {/* Description */}
+      <p className="mt-2.5 text-[0.92rem] leading-[1.55] text-[#c5beb1]">
+        {step.desc}
+      </p>
+
+      {/* Detail chip at bottom */}
+      <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5">
+        <span className="h-1 w-1 rounded-full bg-[#f5b84a]" />
+        <span className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-[#ffd79a]">
+          {step.detail}
+        </span>
+      </div>
+
+      {/* Mobile-only mini-rule between cards */}
+      {index < total - 1 && (
+        <div
+          aria-hidden
+          className="md:hidden mt-7 h-px w-full bg-gradient-to-r from-transparent via-[#54504a] to-transparent"
+        />
+      )}
     </motion.li>
   );
 }
@@ -262,7 +234,7 @@ function GuaranteeCard(): ReactElement {
       initial={{ opacity: 0, y: 40, scale: 0.97 }}
       animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
       transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-      className="glass-strong glow-amber relative mt-20 overflow-hidden rounded-3xl p-7 md:mt-28 md:p-10"
+      className="glass-strong glow-amber relative mt-16 overflow-hidden rounded-3xl p-7 md:mt-20 md:p-10"
       style={{ borderColor: 'rgba(245,184,74,0.35)' }}
     >
       {/* Glow washes */}
@@ -278,12 +250,8 @@ function GuaranteeCard(): ReactElement {
       />
 
       <div className="relative flex flex-col items-start gap-6 md:flex-row md:items-center md:gap-8">
-        {/* Shield */}
         <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#f5b84a]/20 to-[#ff3b2e]/20 ring-1 ring-[#f5b84a]/30 md:h-20 md:w-20">
-          <ShieldCheck
-            className="h-8 w-8 text-[#ffd79a] md:h-10 md:w-10"
-            strokeWidth={1.7}
-          />
+          <ShieldCheck className="h-8 w-8 text-[#ffd79a] md:h-10 md:w-10" strokeWidth={1.7} />
         </div>
 
         <div className="flex-1">

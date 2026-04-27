@@ -75,23 +75,23 @@ export function Nav() {
         <div className="flex items-center gap-2 sm:gap-2.5">
           {/* Desktop CTA */}
           <a
-            href="#booking"
+            href="#contact"
             className="btn-sweep hidden md:inline-flex group relative items-center gap-2 rounded-full bg-[#ff3b2e] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_10px_30px_-8px_rgba(255,59,46,0.55)] hover:shadow-[0_14px_40px_-8px_rgba(255,59,46,0.8)] transition-all duration-300"
           >
             <span className="relative z-[1] flex items-center gap-2">
-              Book a Call
+              Get a Quote
               <ArrowRight size={14} strokeWidth={2.5} className="transition-transform group-hover:translate-x-0.5" />
             </span>
           </a>
 
           {/* Mobile compact CTA — pinned in the nav so it stays visible while scrolling */}
           <a
-            href="#booking"
+            href="#contact"
             onClick={() => setOpen(false)}
             className="btn-sweep md:hidden group relative inline-flex h-11 items-center gap-1.5 rounded-full bg-[#ff3b2e] px-3.5 text-[0.78rem] font-semibold text-white shadow-[0_8px_24px_-6px_rgba(255,59,46,0.55)] active:scale-[0.97] transition-transform whitespace-nowrap"
           >
             <span className="relative z-[1] flex items-center gap-1.5">
-              Book a Call
+              Get a Quote
               <ArrowRight size={12} strokeWidth={2.6} />
             </span>
           </a>
@@ -217,11 +217,11 @@ export function Nav() {
                 <div className="hr-glow my-2" />
 
                 <a
-                  href="#booking"
+                  href="#contact"
                   onClick={() => setOpen(false)}
                   className="btn-sweep mt-4 group relative inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-[#ff3b2e] px-5 py-3.5 text-[0.95rem] font-semibold text-white shadow-[0_16px_40px_-10px_rgba(255,59,46,0.55)]"
                 >
-                  <span className="relative z-[1]">Book a free 30-min call</span>
+                  <span className="relative z-[1]">Get a free quote</span>
                   <ArrowRight size={16} strokeWidth={2.5} className="relative z-[1]" />
                 </a>
 

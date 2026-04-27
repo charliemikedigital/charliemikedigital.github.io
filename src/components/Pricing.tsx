@@ -30,11 +30,11 @@ const TIERS: Tier[] = [
     blurb: 'Single page site, live in 72 hours.',
     features: [
       'Single page landing site',
-      'Mobile responsive',
+      'Mobile responsive design',
       'Contact form',
-      'Google Maps embed',
+      'Click to call mobile button',
       'Basic SEO setup',
-      'Free hosting setup',
+      'Hosting + domain setup',
       '2 rounds of revisions',
       'Delivered in 72 hours',
     ],
@@ -48,15 +48,15 @@ const TIERS: Tier[] = [
     blurb: 'The phone ringing package most clients pick.',
     features: [
       'Everything in Starter',
+      'Up to 5 pages',
       'Online booking embed',
-      'Google Business setup',
-      'Animated stat counters',
-      'Live Google Reviews widget',
-      'Industry specific features',
+      'Google Business profile setup',
+      'Schema markup (Google rich snippets)',
+      'Service area map',
       'Photo sourcing & optimization',
       'Full SEO meta setup',
     ],
-    cta: 'Book Standard',
+    cta: 'Pick Standard',
     featured: true,
   },
   {
@@ -64,18 +64,19 @@ const TIERS: Tier[] = [
     label: 'Full Package',
     price: '$1,299',
     period: 'one time',
-    blurb: 'Copy, logo, AI chat. The whole kit.',
+    blurb: 'Logo, Spanish version, the whole kit.',
     features: [
       'Everything in Standard',
-      'AI chat assistant',
-      'Full page copywriting',
       'Logo design',
-      'Email capture integration',
-      'Custom contact page',
+      'Multilingual (Spanish) version',
+      'Speed + performance optimization',
+      'Privacy + Terms pages',
+      'Custom 404 page',
+      'Branded email signature',
       'Priority 24hr turnaround',
     ],
     cta: 'Go Premium',
-    priceNote: 'Includes $850+ in add ons',
+    priceNote: 'Includes $1,000+ in add ons',
   },
 ];
 
@@ -132,23 +133,18 @@ type AddOn = {
 };
 
 const ADDONS: AddOn[] = [
-  { name: 'Online Booking', price: '+$100', description: 'Live scheduling, clients pick a time, you get notified.' },
-  { name: 'AI Chat Assistant', price: '+$300', description: 'Smart widget trained on your business, answers 24/7. (API subscription ~$10/mo)' },
-  { name: 'Google Business Setup', price: '+$150', description: 'Full profile created & optimized for local search.' },
-  { name: 'Logo Design', price: '+$200', description: 'Professional design, multiple concepts, all file formats.' },
-  { name: 'Full Copywriting', price: '+$200', description: 'Every word on the site written for you.' },
-  {
-    name: 'Google Reviews Widget',
-    price: '+$100',
-    description: 'Your real Google reviews displayed directly on your site. Social proof that builds trust instantly.',
-    note: 'Included free in Standard & Premium',
-  },
-  { name: 'Live Weather Widget', price: '+$75', description: 'Local weather on your site (HVAC/outdoor).' },
-  { name: 'Animated Counters', price: '+$75', description: 'Stats that count up on scroll.' },
-  { name: 'Social Feed Embed', price: '+$100', description: 'Latest posts displayed live (feed subscription ~$10/mo).' },
-  { name: 'Email List Signup', price: '+$150', description: 'Capture integrated with marketing platform.' },
-  { name: 'SMS Text Button', price: '+$75', description: 'One tap text on mobile.' },
-  { name: '5 Additional Pages', price: '+$150', description: 'Service area pages, team, FAQ, gallery.' },
+  { name: 'Logo Design', price: '+$350', description: 'Professional design, multiple concepts, all file formats and a transparent brand kit.' },
+  { name: 'Online Booking', price: '+$100', description: 'Live scheduling embed, clients pick a time, you get notified.' },
+  { name: 'Google Business Setup', price: '+$150', description: 'Full profile created and optimized for local search.' },
+  { name: 'Schema + Rich Snippets', price: '+$100', description: 'Star ratings, hours, and service area show up directly in Google search results.' },
+  { name: 'Speed Optimization', price: '+$100', description: 'Lazy loading, image compression, deferred scripts. PageSpeed 95+ target.' },
+  { name: '5 Additional Pages', price: '+$300', description: 'Service area pages, team, FAQ, gallery, anything you need.' },
+  { name: 'Spanish Version', price: '+$300', description: 'Full Spanish translation of your site. Big edge in Houston for trades.' },
+  { name: 'Quote Calculator', price: '+$250', description: 'Interactive estimator that gives prospects a price range before they call.' },
+  { name: 'Service Area Map', price: '+$100', description: 'Visual map with pins on every neighborhood you serve.' },
+  { name: 'Click to Text Button', price: '+$75', description: 'One tap text on mobile, the way most service calls actually start.' },
+  { name: 'Privacy + Terms', price: '+$75', description: 'Legal pages for any site that takes form submissions or bookings.' },
+  { name: 'Custom 404 Page', price: '+$50', description: 'Branded "page not found" with your voice instead of a dead end.' },
 ];
 
 export function Pricing() {
@@ -378,7 +374,7 @@ function TierCard({ tier, index }: { tier: Tier; index: number }) {
         <div className="mt-8">
           {tier.featured ? (
             <a
-              href="#booking"
+              href="#contact"
               className="btn-sweep group relative inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-[#ff3b2e] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_16px_40px_-10px_rgba(255,59,46,0.55)] hover:shadow-[0_22px_54px_-8px_rgba(255,59,46,0.8)] transition-all"
             >
               <span className="relative z-[1]">{tier.cta}</span>
@@ -398,7 +394,7 @@ function TierCard({ tier, index }: { tier: Tier; index: number }) {
             </a>
           ) : (
             <a
-              href="#booking"
+              href="#contact"
               className="group inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-medium text-[#efeae0] glass hover:bg-white/[0.06] transition"
             >
               {tier.cta}
