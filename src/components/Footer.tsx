@@ -136,14 +136,14 @@ export function Footer() {
           className="flex items-center gap-3 text-[0.72rem] text-[#8a8376]"
         >
           <a
-            href="#"
+            href="/privacy"
             className="hover:text-[#efeae0] transition-colors"
           >
             Privacy
           </a>
           <span className="h-1 w-1 rounded-full bg-[#54504a]" aria-hidden />
           <a
-            href="#"
+            href="/terms"
             className="hover:text-[#efeae0] transition-colors"
           >
             Terms

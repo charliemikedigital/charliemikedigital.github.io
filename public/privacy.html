@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy — Charlie Mike Digital</title>
+<meta name="description" content="How Charlie Mike Digital handles personal information collected through this website." />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+<meta name="theme-color" content="#08070a" />
+<style>
+  :root {
+    --ink: #08070a;
+    --ink-2: #0d0c10;
+    --paper: #efeae0;
+    --paper-mid: #c5beb1;
+    --paper-dim: #8a8376;
+    --warm: #f5b84a;
+    --warm-soft: #ffd79a;
+    --signal: #ff3b2e;
+    --border: #2a2730;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--ink);
+    color: var(--paper-mid);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.72;
+    font-size: 16px;
+  }
+  ::selection { background: var(--signal); color: var(--ink); }
+
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem 1.5rem;
+  }
+  .nav-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    text-decoration: none;
+    color: var(--paper);
+  }
+  .brand svg { flex-shrink: 0; }
+  .brand-text {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    letter-spacing: -0.01em;
+  }
+  .brand-text span {
+    background: linear-gradient(135deg, var(--warm-soft), var(--warm), #ff6a5f);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .back {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--paper-dim);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .back:hover { color: var(--warm); }
+
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 6rem;
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--warm);
+    margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--warm);
+    opacity: 0.6;
+  }
+  h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    color: var(--paper);
+    margin-bottom: 1rem;
+  }
+  h1 em {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: 400;
+    background: linear-gradient(135deg, var(--warm-soft), var(--warm), #ff6a5f);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .updated {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--paper-dim);
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.18rem;
+    letter-spacing: -0.012em;
+    color: var(--paper);
+    margin-top: 2.75rem;
+    margin-bottom: 0.85rem;
+  }
+  h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--paper);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  p { margin-bottom: 1rem; }
+  ul {
+    margin: 0 0 1.25rem 0;
+    padding-left: 1.4rem;
+  }
+  li { margin-bottom: 0.45rem; }
+  a {
+    color: var(--warm);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(245, 184, 74, 0.35);
+    transition: color 0.2s, border-color 0.2s;
+  }
+  a:hover { color: var(--warm-soft); border-color: var(--warm-soft); }
+  strong { color: var(--paper); font-weight: 600; }
+
+  hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 3rem 0;
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+  }
+  footer p {
+    font-size: 0.78rem;
+    color: var(--paper-dim);
+    margin: 0;
+  }
+  footer a { color: var(--paper-dim); border-bottom-color: transparent; }
+  footer a:hover { color: var(--warm); border-bottom-color: var(--warm); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a class="brand" href="/">
+      <svg width="28" height="28" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="w" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#ffd79a"/>
+            <stop offset="50%" stop-color="#f5b84a"/>
+            <stop offset="100%" stop-color="#ff6a5f"/>
+          </linearGradient>
+          <linearGradient id="d" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1c1a20"/>
+            <stop offset="100%" stop-color="#0d0c10"/>
+          </linearGradient>
+        </defs>
+        <rect x="1" y="1" width="62" height="62" rx="14" fill="url(#d)" stroke="url(#w)" stroke-width="1.25"/>
+        <path d="M10 22 L32 10 L54 22" stroke="url(#w)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.85"/>
+        <path d="M30 38 C 26 38 22 42 22 46 C 22 50 26 54 30 54" stroke="#efeae0" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        <path d="M34 54 L34 38 L38 46 L42 38 L42 54" stroke="#efeae0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="32" cy="14" r="1.5" fill="#ff3b2e"/>
+      </svg>
+      <span class="brand-text">Charlie <span>Mike</span></span>
+    </a>
+    <a class="back" href="/">&larr; Back to site</a>
+  </div>
+</header>
+
+<main>
+  <p class="eyebrow">Legal</p>
+  <h1>Privacy <em>Policy</em></h1>
+  <p class="updated">Last updated: April 27, 2026</p>
+
+  <p>
+    Charlie Mike Digital LLC (<strong>"we"</strong>, <strong>"us"</strong>) respects your privacy. This policy
+    explains what information we collect when you visit charliemikedigital.com or contact us, how we use
+    it, and your rights regarding it.
+  </p>
+
+  <h2>Information we collect</h2>
+
+  <h3>Information you give us directly</h3>
+  <p>
+    When you fill out the contact form, you provide your name, email address, optional phone number, the
+    project type you're interested in, and a short message describing your business. We use this
+    information solely to respond to your inquiry and to provide the services you request.
+  </p>
+
+  <h3>Information collected automatically</h3>
+  <p>
+    Like any website, ours receives standard log information (IP address, browser type, pages visited,
+    referring URL) through our hosting provider, Cloudflare. This is used for security, fraud prevention,
+    and basic traffic analytics. We don't use it for advertising or marketing tracking.
+  </p>
+
+  <h2>How we use your information</h2>
+  <ul>
+    <li>To respond to inquiries you submit through the contact form.</li>
+    <li>To send you proposals, quotes, or follow-up communication about a project you've asked about.</li>
+    <li>To provide, maintain, and improve our services.</li>
+    <li>To comply with legal obligations.</li>
+  </ul>
+  <p>
+    <strong>We do not sell, rent, or share your personal information with third parties for marketing
+    purposes.</strong>
+  </p>
+
+  <h2>Third-party services</h2>
+  <p>We use the following services that may receive limited data on our behalf:</p>
+  <ul>
+    <li>
+      <strong>Formspree</strong> processes contact form submissions. See their policy at
+      <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener">formspree.io/legal/privacy-policy</a>.
+    </li>
+    <li>
+      <strong>Cloudflare</strong> provides hosting, CDN delivery, and basic analytics. See
+      <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">cloudflare.com/privacypolicy</a>.
+    </li>
+    <li>
+      <strong>Google Fonts</strong> loads typography from Google's CDN. See
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.
+    </li>
+  </ul>
+
+  <h2>Cookies</h2>
+  <p>
+    This site uses minimal cookies. We don't use advertising or cross-site tracking cookies. Cloudflare may
+    set technical cookies for security (bot detection) and performance.
+  </p>
+
+  <h2>Your rights</h2>
+  <p>
+    You can request a copy of any personal information we hold about you, ask us to correct or delete it,
+    or object to our use of it, by emailing
+    <a href="mailto:matt@charliemikedigital.com">matt@charliemikedigital.com</a>. We'll respond within 30
+    days.
+  </p>
+
+  <h2>Children</h2>
+  <p>
+    This site isn't directed to children under 13, and we don't knowingly collect information from
+    children.
+  </p>
+
+  <h2>Changes to this policy</h2>
+  <p>
+    We may update this policy occasionally. The "Last updated" date at the top will reflect any changes.
+    Material changes will be highlighted on our site.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    Questions about this policy? Email
+    <a href="mailto:matt@charliemikedigital.com">matt@charliemikedigital.com</a> or call
+    <a href="tel:+18325342485">(832) 534-2485</a>.
+  </p>
+
+  <hr />
+  <p style="text-align: center; font-size: 0.85rem;">
+    See also: <a href="/terms">Terms of Service</a>
+  </p>
+</main>
+
+<footer>
+  <p>&copy; 2025 Charlie Mike Digital LLC &middot; <a href="/">charliemikedigital.com</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Terms of Service — Charlie Mike Digital</title>
+<meta name="description" content="The terms governing use of charliemikedigital.com and services provided by Charlie Mike Digital LLC." />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+<meta name="theme-color" content="#08070a" />
+<style>
+  :root {
+    --ink: #08070a;
+    --ink-2: #0d0c10;
+    --paper: #efeae0;
+    --paper-mid: #c5beb1;
+    --paper-dim: #8a8376;
+    --warm: #f5b84a;
+    --warm-soft: #ffd79a;
+    --signal: #ff3b2e;
+    --border: #2a2730;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--ink);
+    color: var(--paper-mid);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.72;
+    font-size: 16px;
+  }
+  ::selection { background: var(--signal); color: var(--ink); }
+
+  header { border-bottom: 1px solid var(--border); padding: 1.25rem 1.5rem; }
+  .nav-inner {
+    max-width: 760px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 0.65rem;
+    text-decoration: none; color: var(--paper);
+  }
+  .brand svg { flex-shrink: 0; }
+  .brand-text {
+    font-family: 'Instrument Serif', serif; font-style: italic;
+    font-size: 1.1rem; letter-spacing: -0.01em;
+  }
+  .brand-text span {
+    background: linear-gradient(135deg, var(--warm-soft), var(--warm), #ff6a5f);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .back {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.7rem;
+    text-transform: uppercase; letter-spacing: 0.22em;
+    color: var(--paper-dim); text-decoration: none; transition: color 0.2s;
+  }
+  .back:hover { color: var(--warm); }
+
+  main { max-width: 720px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.68rem;
+    text-transform: uppercase; letter-spacing: 0.3em; color: var(--warm);
+    margin-bottom: 1rem; display: inline-flex; align-items: center; gap: 0.6rem;
+  }
+  .eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--warm); opacity: 0.6; }
+
+  h1 {
+    font-family: 'Inter', sans-serif; font-weight: 600;
+    font-size: clamp(2.25rem, 5vw, 3.5rem); letter-spacing: -0.03em;
+    line-height: 1.05; color: var(--paper); margin-bottom: 1rem;
+  }
+  h1 em {
+    font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400;
+    background: linear-gradient(135deg, var(--warm-soft), var(--warm), #ff6a5f);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .updated {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
+    color: var(--paper-dim); margin-bottom: 2.5rem; letter-spacing: 0.05em;
+  }
+  h2 {
+    font-family: 'Inter', sans-serif; font-weight: 600;
+    font-size: 1.18rem; letter-spacing: -0.012em;
+    color: var(--paper); margin-top: 2.75rem; margin-bottom: 0.85rem;
+  }
+  p { margin-bottom: 1rem; }
+  ul { margin: 0 0 1.25rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.45rem; }
+  a {
+    color: var(--warm); text-decoration: none;
+    border-bottom: 1px solid rgba(245, 184, 74, 0.35);
+    transition: color 0.2s, border-color 0.2s;
+  }
+  a:hover { color: var(--warm-soft); border-color: var(--warm-soft); }
+  strong { color: var(--paper); font-weight: 600; }
+
+  hr {
+    border: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 3rem 0;
+  }
+
+  footer { border-top: 1px solid var(--border); padding: 2.5rem 1.5rem; text-align: center; }
+  footer p { font-size: 0.78rem; color: var(--paper-dim); margin: 0; }
+  footer a { color: var(--paper-dim); border-bottom-color: transparent; }
+  footer a:hover { color: var(--warm); border-bottom-color: var(--warm); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a class="brand" href="/">
+      <svg width="28" height="28" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="w" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#ffd79a"/>
+            <stop offset="50%" stop-color="#f5b84a"/>
+            <stop offset="100%" stop-color="#ff6a5f"/>
+          </linearGradient>
+          <linearGradient id="d" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1c1a20"/>
+            <stop offset="100%" stop-color="#0d0c10"/>
+          </linearGradient>
+        </defs>
+        <rect x="1" y="1" width="62" height="62" rx="14" fill="url(#d)" stroke="url(#w)" stroke-width="1.25"/>
+        <path d="M10 22 L32 10 L54 22" stroke="url(#w)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.85"/>
+        <path d="M30 38 C 26 38 22 42 22 46 C 22 50 26 54 30 54" stroke="#efeae0" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        <path d="M34 54 L34 38 L38 46 L42 38 L42 54" stroke="#efeae0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="32" cy="14" r="1.5" fill="#ff3b2e"/>
+      </svg>
+      <span class="brand-text">Charlie <span>Mike</span></span>
+    </a>
+    <a class="back" href="/">&larr; Back to site</a>
+  </div>
+</header>
+
+<main>
+  <p class="eyebrow">Legal</p>
+  <h1>Terms of <em>Service</em></h1>
+  <p class="updated">Last updated: April 27, 2026</p>
+
+  <p>
+    These terms govern your use of charliemikedigital.com and the services provided by Charlie Mike
+    Digital LLC (<strong>"we"</strong>, <strong>"us"</strong>, <strong>"Charlie Mike Digital"</strong>).
+    By using this site, you agree to these terms.
+  </p>
+
+  <h2>About us</h2>
+  <p>
+    Charlie Mike Digital is a Houston-based web design business owned and operated by Matt Butler. We
+    design and build websites for small businesses, primarily local service trades, restaurants, and
+    similar small operations.
+  </p>
+
+  <h2>Use of this website</h2>
+  <p>You may use this website for legitimate purposes &mdash; to learn about our services, view our portfolio, and contact us. You may not:</p>
+  <ul>
+    <li>Use the site to engage in fraudulent or illegal activity.</li>
+    <li>Attempt to gain unauthorized access to any part of the site or its systems.</li>
+    <li>Interfere with the site's operation, security, or availability.</li>
+    <li>Scrape, copy, or reproduce site content for commercial use without our written permission.</li>
+  </ul>
+
+  <h2>Intellectual property</h2>
+  <p>
+    All content on this website (text, design, code, images, logos) is the property of Charlie Mike
+    Digital LLC unless otherwise noted, and is protected by copyright. The portfolio examples shown are
+    real client work used with permission, or are dummy demo sites we built to showcase our capabilities.
+  </p>
+  <p>
+    When you become a client, intellectual property terms for your specific project are governed by a
+    separate service agreement signed at the start of work. Our standard practice: <strong>once a project
+    is paid in full, you own the final deliverables outright</strong> &mdash; the code, the design, the
+    domain, and the hosting account.
+  </p>
+
+  <h2>Quotes and proposals</h2>
+  <p>
+    Quotes provided through this site are estimates valid for 30 days. Final pricing, scope, and
+    deliverables are confirmed in a separate service agreement before any work begins. The pricing
+    displayed on this site reflects our standard packages and may change without notice; an active
+    proposal locks the price for that engagement.
+  </p>
+
+  <h2>Communications</h2>
+  <p>
+    By submitting our contact form, you agree to be contacted by us via email, phone, or text about your
+    inquiry. We don't send marketing or unsolicited communications, and we don't share your contact
+    details with third parties.
+  </p>
+
+  <h2>Disclaimers</h2>
+  <p>
+    This website is provided <strong>"as is"</strong> without warranties of any kind, express or implied.
+    We don't guarantee that the site will be available without interruption, error-free, or free from
+    viruses or harmful components. Information on the site is for general informational purposes and may
+    change without notice.
+  </p>
+
+  <h2>Limitation of liability</h2>
+  <p>
+    To the fullest extent permitted by law, Charlie Mike Digital LLC and its owners are not liable for
+    indirect, incidental, special, or consequential damages arising from your use of this website or
+    reliance on its content. Our total liability for any claim related to this site is limited to the
+    amount you paid us in the twelve months preceding the claim, or $100, whichever is greater.
+  </p>
+
+  <h2>Governing law</h2>
+  <p>
+    These terms are governed by the laws of the State of Texas, without regard to its conflict-of-laws
+    rules. Any disputes will be resolved in the state or federal courts of Harris County, Texas, and you
+    consent to the jurisdiction and venue of those courts.
+  </p>
+
+  <h2>Changes to these terms</h2>
+  <p>
+    We may update these terms occasionally. The "Last updated" date at the top will reflect any changes.
+    Continued use of the site after changes constitutes acceptance.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    Questions? Email
+    <a href="mailto:matt@charliemikedigital.com">matt@charliemikedigital.com</a> or call
+    <a href="tel:+18325342485">(832) 534-2485</a>.
+  </p>
+
+  <hr />
+  <p style="text-align: center; font-size: 0.85rem;">
+    See also: <a href="/privacy">Privacy Policy</a>
+  </p>
+</main>
+
+<footer>
+  <p>&copy; 2025 Charlie Mike Digital LLC &middot; <a href="/">charliemikedigital.com</a></p>
+</footer>
+
+</body>
+</html>
