@@ -1,4 +1,4 @@
-import { motion, useInView, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
+import { motion, useInView, useScroll, useTransform, useMotionValue, useSpring, useMotionTemplate } from 'framer-motion';
 import { useRef } from 'react';
 import { Check, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/cn';
@@ -543,34 +543,61 @@ function AddOnsHeader() {
 function AddOnCard({ addon, index }: { addon: AddOn; index: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: '-10% 0px -10% 0px' });
+
+  // Cursor-tracking spotlight — drives a radial gradient that follows the mouse
+  const mouseX = useMotionValue(50);
+  const mouseY = useMotionValue(50);
+  const spotlight = useMotionTemplate`radial-gradient(320px circle at ${mouseX}% ${mouseY}%, rgba(245, 184, 74, 0.14), transparent 65%)`;
+
+  function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
+    const rect = e.currentTarget.getBoundingClientRect();
+    mouseX.set(((e.clientX - rect.left) / rect.width) * 100);
+    mouseY.set(((e.clientY - rect.top) / rect.height) * 100);
+  }
+
   return (
     <motion.div
       ref={ref}
+      onMouseMove={handleMouseMove}
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
+      whileHover={{ y: -3 }}
       transition={{
         duration: 0.7,
         delay: Math.min(index * 0.05, 0.4),
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="group relative rounded-xl card-warm p-4 md:p-5 transition-colors hover:border-[#3a3540]"
+      className="group relative rounded-xl card-warm p-4 md:p-5 overflow-hidden transition-[border-color,box-shadow] duration-500 hover:border-[#f5b84a]/35 hover:shadow-[0_18px_42px_-18px_rgba(245,184,74,0.28)]"
     >
-      <div className="flex items-start justify-between gap-3">
-        <h4 className="text-[0.95rem] font-semibold text-[#efeae0] leading-[1.25]">
+      {/* Cursor-tracking amber spotlight */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        style={{ background: spotlight }}
+      />
+
+      {/* Top-edge gradient highlight that animates in */}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-[#f5b84a]/55 to-transparent scale-x-0 origin-center transition-transform duration-500 ease-out group-hover:scale-x-100"
+      />
+
+      <div className="relative flex items-start justify-between gap-3">
+        <h4 className="text-[0.95rem] font-semibold text-[#efeae0] leading-[1.25] transition-colors duration-300 group-hover:text-white">
           {addon.name}
         </h4>
         <div className="shrink-0 flex flex-col items-end gap-0.5">
-          <span className="font-mono text-[0.85rem] font-semibold text-[#f5b84a] tabular">
+          <span className="font-mono text-[0.85rem] font-semibold text-[#f5b84a] tabular transition-colors duration-300 group-hover:text-[#ffd79a]">
             {addon.price}
           </span>
         </div>
       </div>
-      <p className="mt-2 text-[0.78rem] leading-[1.5] text-[#8a8376]">
+      <p className="relative mt-2 text-[0.78rem] leading-[1.5] text-[#8a8376] transition-colors duration-300 group-hover:text-[#c5beb1]">
         {addon.description}
       </p>
       {addon.note && (
-        <div className="mt-2.5 flex items-center gap-1.5 font-mono text-[0.62rem] uppercase tracking-[0.18em] text-[#f5b84a]">
-          <Sparkles size={10} strokeWidth={2.2} />
+        <div className="relative mt-2.5 flex items-center gap-1.5 font-mono text-[0.62rem] uppercase tracking-[0.18em] text-[#f5b84a]">
+          <Sparkles size={10} strokeWidth={2.2} className="transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110" />
           {addon.note}
         </div>
       )}

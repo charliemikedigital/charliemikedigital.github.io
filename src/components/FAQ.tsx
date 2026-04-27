@@ -140,10 +140,7 @@ export function FAQ() {
                     <span className="font-mono text-[0.62rem] uppercase tracking-[0.25em] text-[#a67a20] mt-1.5 tabular">
                       {String(i + 1).padStart(2, '0')}
                     </span>
-                    <span
-                      className="serif-i text-[1.1rem] md:text-[1.25rem] leading-snug text-[#efeae0]"
-                      style={{ fontFamily: "'Instrument Serif', serif", fontStyle: 'italic' }}
-                    >
+                    <span className="text-[1.02rem] md:text-[1.12rem] font-semibold leading-snug tracking-[-0.012em] text-[#efeae0]">
                       {faq.q}
                     </span>
                   </span>
