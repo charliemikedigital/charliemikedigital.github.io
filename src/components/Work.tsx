@@ -213,7 +213,7 @@ function CaseCard({
       className={cn('group relative', className)}
     >
       <a
-        href={`sites/${data.slug}.html`}
+        href={`/sites/${data.slug}`}
         target="_blank"
         rel="noopener"
         aria-label={`View ${data.business} live demo`}

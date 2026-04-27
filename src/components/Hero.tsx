@@ -151,7 +151,7 @@ export function Hero() {
             className="relative"
           >
             <a
-              href="sites/plumber-landing.html"
+              href="/sites/plumber-landing"
               target="_blank"
               rel="noopener"
               className="block relative"
